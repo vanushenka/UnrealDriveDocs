@@ -32,5 +32,31 @@ templates_path = ['_templates']
 
 html_theme = 'sphinx_rtd_theme'
 
+html_theme_options = {
+    #'logo_only': True,
+    #'display_version': True,
+    #'prev_next_buttons_location': 'bottom',
+    'style_external_links': True,
+    ### Toc options
+    'collapse_navigation': False,
+    #'sticky_navigation': False,
+    #'navigation_depth': 3,
+    #'includehidden': True,
+    #'titles_only': False
+    'analytics_id': 'UA-283663249-1',  #  Provided by Google in your dashboard
+}
+
+# These folders are copied to the documentation's HTML output
+html_static_path = ['_static']
+
+#html_favicon = 'img/favicon.ico'
+
+# These paths are either relative to html_static_path
+# or fully qualified paths (eg. https://...)
+html_css_files = [
+    'css/overrides.css',
+]
+
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+

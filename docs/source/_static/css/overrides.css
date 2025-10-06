@@ -1,0 +1,10 @@
+.wy-nav-side .wy-side-nav-search {
+  background: #343131;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+body, .rst-content .toctree-wrapper > p.caption, h1, h2, h3, h4, h5, h6, legend {
+  font-family: 'Roboto', sans-serif;
+}
+
