@@ -1,4 +1,4 @@
-# New & Add Spline Modeling Tools
+# New/Add Spline Modeling Tools
 Для более удобного рисования сплайнов URoadSplineComponent разработано два Modeling Tools: **New Spline** и **Add Spline**. Эти два режима абсолютно одинаковые, отличнаются лишь тем, что в первлм случаем создает  новый AActor и к нему добавлятся новый URoadSplineComponent, во стором случаем добавляется новый URoadSplineComponent к выделленому актору, который уже имеет как минимум один URoadSplineComponent (т.е. для второго случая актор со спланами должен быть выделен).
 ![alt text](img/draw-spline.gif "Drawing Spline")  
 
@@ -18,5 +18,5 @@ There are next options:
     ![alt text](img/lane-source-right-side.gif)  
 	- **Both Sides** -  Copy all road lanes from the *Lane Successor Connection*. Only valid if the spline is drawn from  the *Lane Successor Connection*. 
     ![alt text](img/lane-source-both-sides.gif)  
-	- **Road Profile** - Copy road lanes from the profile.
+	- **Road Profile** - Copy road lanes from the profile. Как управлять профайлами - смотри [Road Lane Profiles](Presets.md#road-lanes-profiles)
     ![alt text](img/lane-source-road-profile.gif)  

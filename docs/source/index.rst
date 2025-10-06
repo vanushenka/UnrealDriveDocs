@@ -1,10 +1,7 @@
 Welcome to UnrealDrive documentation!
 ===================================
-
-
 ..
   _.. subprojecttoctree::
-
 
 .. toctree::
    :numbered:
@@ -14,8 +11,9 @@ Welcome to UnrealDrive documentation!
    Installation.md
    RoadModel.md
    UserInterfcaeOverview.md
-   Modeling.md
-   ProcedureGeneration.md
+   EditorModes.md
+   DrawTool.md
+   ProcedureGenerationTool.md
    Presets.md
    RoadAttributes.md
    TileWindow.md
