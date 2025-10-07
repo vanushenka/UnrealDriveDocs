@@ -44,4 +44,5 @@ Spline Editor Modes это режимы редакториования **URoadSp
 ![alt text](img/width-selection.png)  
 
 ## Attribute Modes
-Эти режимы позволяют добавлять к **Road Lane** различные аттрибуты, который могут использоваться для процедурной генерации или произвольных целей. Смотри раздел [Road Attributes](RoadAttributes.md)
+Эти режимы позволяют добавлять к **Road Lane** различные аттрибуты, который могут использоваться для процедурной генерации или произвольных целей. Смотри раздел [Road Attributes](RoadAttributes.md)  
+![alt text](img/attributes.png)  
