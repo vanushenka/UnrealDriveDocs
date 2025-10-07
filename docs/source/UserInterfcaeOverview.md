@@ -6,10 +6,10 @@
   * Меню режима рисования  
     ![alt text](img/modeling-tools.gif "Road Modeling Tools") 
 
-Два ActoComponents:
+ActoComponents:
   * URoadSplineComponent
   * UTileMapWindowComponent
 
-Класса Пресь
+Пресеты (UUnrealDrivePreset)
 
 
