@@ -12,29 +12,41 @@
 ![alt text](img/default-preset.png)  
 
 ## Lane Mark Profiles
-Содержит дескрипторы типов дорожной разметки вдоль дорожных полос. Можно задать тип (сплошная, прерывистая, двойная), размеры и цвет полосы разметки. Эти профайлы, будут доступны в режиме **Mark Editor Mode**:   
+Содержит дескрипторы типов дорожной разметки вдоль дорожных полос. Можно задать тип (сплошная, прерывистая, двойная), размеры и цвет полосы разметки. Эти профайлы, доступны в режиме [Road Mark Attribute](EditorModes.md#road-mark-attribute):   
 ![alt text](img/preset-mark.png)  
 
 ## Curb Profiles
-Содержит дескрипторы типов бордюров. Можно задать материал и геометрию бордюра. Эти профайлы, будут доступны в режиме **Build Mesh Modeling Tool**:  
+Содержит дескрипторы типов бордюров. Можно задать материал и геометрию бордюра. Эти профайлы, будут доступны в режиме [Build Mesh Modeling Tool](ProcedureGenerationTool.md):  
 ![alt text](img/preset-curb.png)
 
 ## Driveable Material Profiles
-Содержит дескрипторы типов driveable road lanes. Можно задать материал и декали для driveable road lanes. Эти профайлы, будут доступны в режиме **Build Mesh Modeling Tool**:  
+Содержит дескрипторы типов driveable road lanes. Можно задать материал и декали для driveable road lanes. Эти профайлы, будут доступны в режиме [Build Mesh Modeling Tool](ProcedureGenerationTool.md):  
 ![alt text](img/preset-driveable.png)
 
 ## Sidewalk Material Profiles
-Содержит дескрипторы типов sidewolk road lanes. Можно задать материал sidewolk road lanes. Эти профайлы, будут доступны в режиме **Build Mesh Modeling Tool**:  
+Содержит дескрипторы типов sidewolk road lanes. Можно задать материал sidewolk road lanes. Эти профайлы, будут доступны в режиме [Build Mesh Modeling Tool](ProcedureGenerationTool.md):  
 ![alt text](img/preset-sidewolk.png)
 
 ## Road Lanes Material Profiles
-Содержит дескрипторы типов road marks. Можно задать материал road marks. Эти профайлы, будут доступны в режиме **Build Mesh Modeling Tool**:  
+Содержит дескрипторы типов road marks. Можно задать материал road marks. Эти профайлы, будут доступны в режиме [Build Mesh Modeling Tool](ProcedureGenerationTool.md):  
 ![alt text](img/preset-mark-mat.png)
 
 ## Road Lanes Profiles
-Содержит дескрипторы дорожных секций для рисования в режиме **Draw/Add Spline**: 
+Содержит дескрипторы дорожных секций для рисования в режиме **Draw/Add Spline** [Build Mesh Modeling Tool](DrawTool.md#lane-source) -> **Road Profile**: 
 ![alt text](img/preset-lanes.png)
 
 ## Road Attribute Entries
-Содержит дескрипторы Road Lane Attributes. Аттрибут добавленный сюда, станет достпный как новый Road Editor Mode:    
-![alt text](img/preset-attributes.png)
+**Road Attribute Entrie** - это объект-констуктор, который создает [Lane Attribute](RoadModel.md#lane-attributes). Все **Road Attribute Entries** из всех пресетов, автоматически добавляются и становтся доступны в [Road Attribute Editor Mode](EditorModes.md#attribute-modes)  
+![alt text](img/preset-attributes.png)  
+Есит 3 основных типа **Road Attribute Entrie** (Component Template, Spline Mesh, Custom Builder):  
+![alt text](img/entry-type.png)  
+
+### Component Template
+Позволят генерировать произвольный **USceneComponent** вдоль **Road Lane** с заданным интервалом в процессе [Build Mesh](ProcedureGenerationTool.md).
+Достаточно указать класс ```Component Template``` и ```LengthOfSegment```. Этот шаблон удобно использовать для потовряющихся объектов в доль **Road Lane**, напрмиер дорожные конусы, древки, фонарные столбы, линии электро передач.
+
+### Spline Mesh
+Позволят генерировать USplineMeshComponent вдоль **Road Lane**  в процессе [Build Mesh](ProcedureGenerationTool.md).
+
+### Custom Builder
+Отдает "управление" внешнему С++/BP скрипту  в процессе [Build Mesh](ProcedureGenerationTool.md).

@@ -45,16 +45,25 @@ This figure shows how lane sections for complex roads may be defined for one sid
 
 ### Lane Offset
 A lane offset may be used to shift the center lane away from the road reference line. This makes it easier to model local lateral shifts of lanes on roads, for example for left turn lanes.  
-
 A combination of lane offset and shape definition can lead to inconsistencies depending on the interpolation used for the lane offset. Because linear interpolation is used for the road shape along the road reference line, linear interpolation should also be used for the offset definition to enable consistent combined use of both definitions.  
 ![alt text](img/lane-offset.png "Lane Offset")  
 This figure shows the offset of the center lane away from the road reference line.
 
 ### Lane Attributes
-Lane attributes это методанные, которы могут быть закреплены за линией. Это одмин из самых мощных инструментов по кастомизации и добавления новых возможностей в плагин UnrealDrive. Пользователь может регистрировать и определять поведение любого количества атрибутов. Аттрабиты могут быть использованы для кастомизации процедурной генерации (например, для обозначены участки неровной дороги), для определения приоритетов движения и ограничение скокрости (для генерации дорожного трафика), генерации spline mesh (например, генерация ограждений вдоль полосы или растительности) и другое. 
+Lane attributes это произвольные методанные, которы могут быть закреплены вдоль **Road Lane**.  
+Это один из самых мощных инструментов по кастомизации и добавления новых возможностей в плагин UnrealDrive. Пользователь может зарегистрировать и определять поведение любого количества атрибутов. Аттрабиты могут быть использованы для кастомизации процедурной генерации (например, для обозначены участки неровной дороги), для определения приоритетов движения и ограничение скокрости (например, для генерации дорожного трафика), генерации spline mesh (например, генерация ограждений вдоль полосы или растительности) и другое. 
 По умолчанию, доступо два типа атрибутов - speed limit и дорожныая разметка.  
+Атрибут обладает следующими свойствами:
+  - Уникальное имя (например: speed, mark, fence)
+  - Для 
+  - Атрибут добалятся на **Road Lane** и распространяется на всю полосу.
+  - Атрибут может содержать произвольные данные. Данные - это произвольная С++ или BP структура.
+  - Атрибут всегда имеет один или несолько **Attribute Key**. 
+  - **Attribute Key** - это данные Атрибут, который могут меняться на протяжении всей **Road Lane**.  
+  - Атрибут всегда имеет минимум один **Attribute Key**, который всегда расположен в начале **Road Lane**.  
+
 ![alt text](img/lane-attr.png "Lane Attribute")  
-Данная фигура показывает визуализацтю атрибута - дорожная разметка.
+Данная фигура показывает визуализацию атрибута - **Speed**. В этом примере только одна **Road Lane** с ID ```+1``` в **RoadSection** ```1```  имеет Атрибут **Speed**.  Данный Атрибут устанавливает скокрость движения трафика на **Road Lane** и в данном примере имеет 3 ключа с координатами SOffset: 0cm, 400cm, 800см. Ключь содержит только одно поле данных ```speed``` типа - число с плвающей точкой. Это три ключа имют соотвествующие данные: 20km/h,  60km/h, 100km/h. 
 
 ## Intersections and Junctions
 В UnrealDrive нет специальных типов или классов, которые могли бы отвечать за функцию создания перекрестков или развязок. В место этого, UnrealDrive предлагает возможнсть линковать несколько сплайнов между собой. В свою очередь группа залинкованных сплайнов моежт представлять собой перекресток или развязку ественным образом.  
