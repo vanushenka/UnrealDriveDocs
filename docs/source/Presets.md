@@ -36,17 +36,31 @@
 ![alt text](img/preset-lanes.png)
 
 ## Road Attribute Entries
-**Road Attribute Entrie** - это объект-констуктор, который создает [Lane Attribute](RoadModel.md#lane-attributes). Все **Road Attribute Entries** из всех пресетов, автоматически добавляются и становтся доступны в [Road Attribute Editor Mode](EditorModes.md#attribute-modes)  
+**Road Attribute Entrie** - это вспомогательный объект-констуктор, который позволяет быстро создовать престы [Lane Attribute](RoadModel.md#lane-attributes) и быстра добавлять их на **Road Lane**. Все **Road Attribute Entries** из всех пресетов, автоматически становтся доступны в [Road Attribute Editor Mode](EditorModes.md#attribute-modes)  
 ![alt text](img/preset-attributes.png)  
 Есит 3 основных типа **Road Attribute Entrie** (Component Template, Spline Mesh, Custom Builder):  
 ![alt text](img/entry-type.png)  
 
 ### Component Template
-Позволят генерировать произвольный **USceneComponent** вдоль **Road Lane** с заданным интервалом в процессе [Build Mesh](ProcedureGenerationTool.md).
-Достаточно указать класс ```Component Template``` и ```LengthOfSegment```. Этот шаблон удобно использовать для потовряющихся объектов в доль **Road Lane**, напрмиер дорожные конусы, древки, фонарные столбы, линии электро передач.
+Позволят генерировать произвольный **USceneComponent** вдоль **Road Lane** с заданным интервалом в процессе [Build Mesh](ProcedureGenerationTool.md).  
+Достаточно создать BP или С++ класс отнаследованный от **USceneComponent** (например **Cone**):  
+![alt text](img/entry-component.png)  
+И в **Road Attribute Entriy** указать созданный класс  в ```Component Template``` и задать ```LengthOfSegment```, после чего, созданный пресет станет доступен в [Lane Attribute](RoadModel.md#lane-attributes):  
+![alt text](img/entry-component2.png)  
+И теперь его можно добавлять на **RoadLane**:  
+![alt text](img/entry-component4.gif)  
+Этот шаблон удобно использовать для потовряющихся объектов в доль **Road Lane**, напрмиер дорожные конусы, древки, фонарные столбы, линии электро передач:  
 
 ### Spline Mesh
-Позволят генерировать USplineMeshComponent вдоль **Road Lane**  в процессе [Build Mesh](ProcedureGenerationTool.md).
+Позволят генерировать USplineMeshComponent вдоль **Road Lane** в процессе [Build Mesh](ProcedureGenerationTool.md).  
+Для этого необходимо в **Road Attribute Entriy** указать желаемый ```Static Mesh``` и задать ```LengthOfSegment```, после чего, созданный пресет станет доступен в [Lane Attribute](RoadModel.md#lane-attributes):
+![alt text](img/entry-spline.png)  
+И теперь его можно добавлять на **RoadLane**:  
+![alt text](img/entry-spline2.gif)  
 
 ### Custom Builder
-Отдает "управление" внешнему С++/BP скрипту  в процессе [Build Mesh](ProcedureGenerationTool.md).
+Предоставлят возможность написать кастомный обработчик атрибута на С++ или BP скрипту в процессе [Build Mesh](ProcedureGenerationTool.md) 
+Для этого необходимо создать класс отнаследованный от **UCustomSplineBuilder** и переопределить функцию **Generate Asset**:  
+![alt text](img/entry-custom.png)  
+После регестрируем созданный класс в пресете и он станет доступен в [Lane Attribute](RoadModel.md#lane-attributes) для добавления его на **RoadLane**:  
+![alt text](img/entry-custom2.png)  
