@@ -33,7 +33,7 @@ templates_path = ['_templates']
 html_theme = 'sphinx_rtd_theme'
 
 html_theme_options = {
-    #'logo_only': True,
+    'logo_only': True,
     #'display_version': True,
     #'prev_next_buttons_location': 'bottom',
     'style_external_links': True,
