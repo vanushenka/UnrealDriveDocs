@@ -49,7 +49,7 @@ html_theme_options = {
 # These folders are copied to the documentation's HTML output
 html_static_path = ['_static']
 
-html_logo = "_static/logo_256x256.png"
+html_logo = "_static/logo_small.png"
 
 #html_favicon = 'img/favicon.ico'
 
