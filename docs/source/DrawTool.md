@@ -1,5 +1,5 @@
 # New/Add Spline Modeling Tools
-Для более удобного рисования сплайнов URoadSplineComponent разработано два Modeling Tools: **New Spline** и **Add Spline**. Эти два режима абсолютно одинаковые, отличнаются лишь тем, что в первлм случаем создает  новый AActor и к нему добавлятся новый URoadSplineComponent, во стором случаем добавляется новый URoadSplineComponent к выделленому актору, который уже имеет как минимум один URoadSplineComponent (т.е. для второго случая актор со спланами должен быть выделен).
+Для более удобного рисования сплайнов **URoadSplineComponent** разработано два Modeling Tools: **New Spline** и **Add Spline**. Эти два режима абсолютно одинаковые, отличаются лишь тем, что в первом случаем создается новый AActor и к нему добавляется новый **URoadSplineComponent**, во втором случаем добавляется новый **URoadSplineComponent** к уже выделенному актору, который уже имеет как минимум один **URoadSplineComponent** (т.е. для второго случая актор со сплайнами должен быть выделен).
 ![alt text](img/draw-spline.gif "Drawing Spline")  
 
 Начать рисование сплайна можно с *Lane Successor Connection*:  

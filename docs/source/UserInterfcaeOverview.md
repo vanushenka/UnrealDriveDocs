@@ -1,4 +1,4 @@
-# User Interfca Overview
+# User Interface Overview
 
 После установки плгина, становятся доступны два новых элемента пользовательского интерфеса UnrealEngine:
   * Road Modeling Mode  
@@ -6,7 +6,7 @@
   * Меню режима рисования  
     ![alt text](img/modeling-tools.gif "Road Modeling Tools") 
 
-ActoComponents:
+ActorComponents:
   * URoadSplineComponent
   * UTileMapWindowComponent
 
