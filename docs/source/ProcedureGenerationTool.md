@@ -1,16 +1,22 @@
 
 # Build Mesh Modeling Tool
-Этот режим позволят генерировать ассеты (static meshes, dynamic meshes, spline mesh и др.) для одного или нескольких выделенных акторов, содержащих **URoadSplineComponent**.  
-Для каждого выделенного актора, будет сгенерирован новый актор с постфиксом ```_Gen```. Например, для актора *RoadActor11* будет сгенерирован актор *RoadActor11_Gen*, содержащий сгенерированные ActorComponents:
+Этот Modeling Tool позволят генерировать ассеты (static meshes, dynamic meshes, spline mesh и др.) и создать Акторов с этими ассетами на сцене.  
+Для работы этого Modeling Tool достаточно просто выделить один или несколько акторов, содержащих **URoadSplineComponent**, и активировать этот Modeling Tool, и он сразу отобразить предварительный результат:
+![alt text](img/buid-mesh2.gif)  
+Для доступа к **Build Mesh** tool, необходимо переключить **Editor Mode** в режим **Modeling** и выбрать **Road** toolset:  
+![alt text](img/buid-mesh.png)  
+После нажатия кнопки **Accept** для каждого выделенного актора, будет сгенерирован новый актор с постфиксом ```_Gen```. Например, для актора *RoadActor11* будет сгенерирован актор *RoadActor11_Gen*:
 ![alt text](img/gen-actor.png)  
-Отдельной генерит ассеты для:
+Сгенерированный актор содержит ActorComponents (обычно UStaticMeshComponent, USplineMeshComponent) с ссылками на сгенерированные ассеты:  
+![alt text](img/buid-mesh3.png)  
+**Build Mesh** отдельной генерит ассеты для:
   - Drive Surface + Decals
   - Sidewalks
   - Curbs
   - Marks
   - SplineMeshes
 
-Для каждого из этих типов ассетов есть соответствующая группа параметров:  
+Для каждого из этих типов ассетов есть соответствующая группа параметров в **Build Mesh Modeling Tool**:  
 ![alt text](img/gen-params.png)  
 
 ## Mesh Materials
