@@ -43,7 +43,6 @@ Road Editor Modes это режимы редактирования **URoadSpline
 ![alt text](img/width-selection.png)  
 
 ## Attribute Modes
-### Road Mark Attribute
 Эти режимы позволяют добавлять к **Road Lane** различные **Road Attributes**, которые могут использоваться для процедурной генерации или любых других целей (смотри раздел [Road Attributes](RoadModel.md#lane-attributes)).  
 ![alt text](img/attributes.png)  
 По умолчанию, доступно два типа атрибутов - speed limit и дорожная разметка. 
