@@ -52,7 +52,7 @@ Lane attributes это произвольные метаданные, котор
   - Добавленный атрибут распространяется на всю **Road Lane**.
   - Атрибут имеет один или несколько **Attribute Key**.
   - Первый **Attribute Key** фиксировано расположен в начале **Road Lane** (SOffset = 0) 
-  
+
 **Attribute Key** - это пара значений **SOffset** + **Attribute Data**. **SOffset** - это положение **Attribute Key**, SOffset равный 0 - это начало **Road Lane**. **Attribute Data** - это произвольная С++ или BP структура (например, скоростные лимиты, плотность трафика, тип газона на обочине и др.).
  
 
@@ -62,8 +62,8 @@ Lane attributes это произвольные метаданные, котор
 ## Intersections and Junctions
 В UnrealDrive нет специальных типов или классов, которые могли бы отвечать за функцию создания перекрестков или развязок. В место этого, UnrealDrive предлагает возможность линковать несколько **URoadSplineComponent** между собой. В свою очередь группа залинкованных **URoadSplineComponent** могут представлять собой перекресток или развязку естественным образом.  
 
-Как уже было сказано, у каждой **Road Lane** есть направление. Вдоль этого направлению в начале и конец есть *Lane Predecessor Connection* и *Lane Successor Connection* соответственно. 
-Так же у каждого сплайна **URoadSplineComponent** то же есть направление, начало и конец. Эти начало конец являются *Road Predecessor Connection* и *Road Successor Connection*.  
+Как уже было сказано, у каждой **Road Lane** есть направление. Вдоль этого направления в начале и конце есть *Lane Predecessor Connection* и *Lane Successor Connection* соответственно. 
+Так же у каждого сплайна **URoadSplineComponent** то же есть направление, начало и конец. Эти начало и конец являются *Road Predecessor Connection* и *Road Successor Connection*.  
 ![alt text](img/connections.png "Road and Lane Connections")  
 
 Есть только два правила линковки:
