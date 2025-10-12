@@ -3,11 +3,11 @@
 ## Basic concepts
 В основе модели дорожной сети и всего плагина UnrealDrive лежит ActorComponent **URoadSplineComponent**.
 **URoadSplineComponent** - это единственный и достаточный компонент, с помощью которого представляется граф дорожных сетей. Хотя сам компонент описывает всего лишь один простой участок дороги, комбинация **URoadSplineComponent**s способна описать даже очень сложную дорожную сеть, развязки и перекрестки.  
-Любой участок дорожной сети на сцене - это произвольный AActor, который включает в себя один или несколько **URoadSplineComponent** компонента, при том, одна дороги, как правило, состоит из одно **URoadSplineComponent**, а перекрестки или развязки - из нескольких.  
+Любой участок дорожной сети на сцене - это произвольный AActor, который включает в себя один или несколько **URoadSplineComponent**, при том, одна дорога, как правило, состоит из одного **URoadSplineComponent**, а перекрестки или развязки - из нескольких.  
 Тем, кто знаком со спецификацией [ASM OpenDrive](https://www.asam.net/standards/detail/opendrive/), все идеи, реализованные в **URoadSplineComponent**, покажутся очень знакомыми. Действительно UnrealDrive подчеркнул очень многое из этой спецификации.  
 
 ## Road Reference Line
-**URoadSplineComponent** - отнаследован от [USplineComponent](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/USplineComponent), .т.е. он обладает всеми свойствами базового сплайна. И этот базовый сплайна и является опорной линией, вдоль которой и генерируется дорога.
+**URoadSplineComponent** - унаследован от [USplineComponent](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/USplineComponent), т.е. он обладает всеми свойствами базового сплайна, который является опорной линией, вдоль генерируемой дорога.
 Опорная линия обозначается розовым цветом. It is a left-handed coordinate system. The S-axis (or S-Offset in UI) follows the tangent of the road reference line. The R-axis (R-Offset in UI) is orthogonal to the S-axis and may be rotated around the S-axis by superelevation. The left-handed coordinate system is completed by defining the up-direction H orthogonal to S-axis and R-axis.  
 ![alt text](img/ref-line.png "Reference Line")
 
@@ -18,11 +18,11 @@ The center lane has no width and serves as reference for lane numbering. The cen
 This figure shows the center lane for a road with multiple traffic lanes and different driving directions. In this case, the center lane separates the driving directions, depending on left- and right-hand traffic, specified in Road type. Because no lane offset is used, the center lane is identical to the road reference line.
 
 ### Lane Types
-The lane type is defined per lane. A lane type defines the main purpose of a lane and its corresponding traffic rules. Есть базовые типы, такие как (driving, shoulder, border, biking, etc), и пользовательские (могут быть добавлены через C++ API).  
+The lane type is defined per lane. A lane type defines the main purpose of a lane and its corresponding traffic rules. Есть базовые типы (такие как: driving, shoulder, border, biking, etc) и пользовательские (могут быть добавлены через C++ API).  
 ![alt text](img/lane-types.png "Lane Types")  
 
 ### Lane Direction
-Каждая полоса дороги всегда имеет направление. На графах это направление всегда показано белыми анимационными стрелками. This direction is specified by a combination of different elements and attributes, в том числе для любой отдельной линии можно всегда поменять направление движения.  
+Каждая полоса дороги имеет направление. На графах это направление показано белыми движущимися стрелками. This direction is specified by a combination of different elements and attributes. Для любой отдельной линии можно поменять направление движения.  
 ![alt text](img/lane-dir.png "Lane Direction")  
 На данной фигуре показано что линия с индексом -1 имеет инвертирование направление.
 
@@ -46,14 +46,14 @@ This figure shows the offset of the center lane away from the road reference lin
 
 ### Lane Attributes
 Lane attributes это произвольные метаданные, которы могут быть закреплены вдоль **Road Lane**.  
-Это один из самых мощных инструментов для кастомизации и добавления новых возможностей в плагин UnrealDrive. Пользователь может зарегистрировать и определять поведение любого количества атрибутов. Атрибуты могут быть использованы для кастомизации процедурной генерации (например, для обозначены участки неровной дороги), для определения приоритетов движения и ограничение скорости (например, для генерации дорожного трафика), генерации spline mesh (например, генерация ограждений вдоль полосы или растительности) и другое.  
+Это один из самых мощных инструментов для кастомизации и добавления новых возможностей в UnrealDrive. Пользователь может зарегистрировать и определять поведение любого количества атрибутов. Атрибуты могут быть использованы для кастомизации процедурной генерации (например, для обозначения участков неровной дороги), для определения приоритетов движения и ограничение скорости (например, для генерации дорожного трафика), генерации spline mesh (например, для генерации ограждений вдоль полосы или растительности) и другое.  
 Атрибут обладает следующими свойствами:
-  - Уникальное имя (например: speed, mark, fence)
-  - Атрибут добавятся на **Road Lane** и распространяется на всю полосу.
-  - Атрибут может содержать произвольные данные. Данные - это произвольная С++ или BP структура.
-  - Атрибут всегда имеет один или несколько **Attribute Key**. 
-  - **Attribute Key** - это данные Атрибут, который могут меняться на протяжении всей **Road Lane**.  
-  - Атрибут всегда имеет минимум один **Attribute Key**, который всегда расположен в начале **Road Lane**.  
+  - Атрибут имеет уникальное имя (например: speed, mark, fence), которое является типом атрибута.
+  - Добавленный атрибут распространяется на всю **Road Lane**.
+  - Атрибут имеет один или несколько **Attribute Key**.
+  - Первый **Attribute Key** фиксировано расположен в начале **Road Lane** (SOffset = 0) 
+**Attribute Key** - это пара значений **SOffset** + **Attribute Data**. **SOffset** - это положение **Attribute Key**, SOffset равный 0 - это начало **Road Lane**. **Attribute Data** - это произвольная С++ или BP структура (например, скоростные лимиты, плотность трафика, тип газона на обочине и др.).
+ 
 
 ![alt text](img/lane-attr.png "Lane Attribute")  
 Данная фигура показывает визуализацию атрибута - **Speed**. В этом примере только одна **Road Lane** с ID ```+1``` в **RoadSection** ```1```  имеет Атрибут **Speed**.  Данный Атрибут устанавливает скорость движения трафика на **Road Lane** и имеет 3 ключа с координатами SOffset: 0cm, 400cm, 800см. Ключ содержит только одно поле данных ```speed``` типа - число с плавающей точкой. Три ключа из примера имеют соответствующие данные: 20km/h,  60km/h, 100km/h. 
