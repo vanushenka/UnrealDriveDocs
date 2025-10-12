@@ -9,6 +9,7 @@
 ![alt text](img/gen-actor.png)  
 Сгенерированный актор содержит ActorComponents (обычно UStaticMeshComponent, USplineMeshComponent) с ссылками на сгенерированные ассеты:  
 ![alt text](img/buid-mesh3.png)  
+
 **Build Mesh** отдельной генерит ассеты для:
   - Drive Surface + Decals
   - Sidewalks
