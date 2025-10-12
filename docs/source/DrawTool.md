@@ -25,9 +25,9 @@ There are next options:
     </br>
   - **Right Side** - Copy the road lanes from the *Lane Successor Connection* to the last right lane in the source road section. Only valid if the spline is drawn from  the *Lane Successor Connection*.
     ![alt text](img/lane-source-right-side.gif)  
-    
+    </br>
   - **Both Sides** -  Copy all road lanes from the *Lane Successor Connection*. Only valid if the spline is drawn from  the *Lane Successor Connection*. 
     ![alt text](img/lane-source-both-sides.gif)  
-    
+    </br>
   - **Road Profile** - Copy road lanes from the profile. Как добавить новый профайл - смотри [Road Lane Profiles](Presets.md#road-lanes-profiles)
     ![alt text](img/lane-source-road-profile.gif)  

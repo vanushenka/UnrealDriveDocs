@@ -24,10 +24,10 @@
 ## Источники карт
 По умолчанию **Tile Window** поддерживает Google, OSM и Yandex карты. Достаточно просто сменить ```Source```:  
 ![alt text](img/tile-source.gif)  
-
+</br>
 Так же есть возможность добавить собственные источники, для этого необходимо зайти в **Edit -> Project Settings -> Unreal Drive Editor** и добавить новый источник в ```Tile Sources```:  
 ![alt text](img/tile-add-source.png)  
-
+</br>
 ```URL``` источника это произвольный URL адрес формата ```https://sample.map.source.com/{x}/{y}{z}```, где ```{x}```, ```{y}```, ```{z}``` будут заменены на x, y, z координаты тайлов во время рендеринга.
 
 
