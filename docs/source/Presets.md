@@ -8,6 +8,7 @@
 Пресетов в проекте может быть много, но логически все они объединяются в один. Поэтому нужно быть внимательным с именами профайлов в присетах, так как если в двух или более присетах будут найдены профайлы с одинаковым именем, будет использоваться только один случайным образом.  
 Для того, чтобы создать новый пресет, достаточно просто просто создать новый BP ассет в **Content Browser**, унаследованный от UUnrealDrivePreset.  
 ![alt text](img/create-preset.gif)  
+
 **UUnrealDrivePreset** отнаследован от **UPrimaryDataAsset**, поэтому важно чтобы в  **Asset Manager -> Primary Assets to Scan** были добавлены соответствующие пути, где был создан пресет. Обычно достаточно указать только две директории **/Game** и **/UnrealDrive**, но если пресет создан внутри какого либо плагина, то необходимо указать пути и до соответствующих плагинов, где находится пресеты (Смотри раздел [Installation](Installation.md)).  
 Плагин UnrealDrive уже имеет дефолтный пресет по пути */UnrealDrive/DefaultPreset*. Его не следует менять для обратной совместимости, но могут быть случаи, когда в это может быть необходимость (например, для смены левостороннего движения на правостороннее).  
 ![alt text](img/default-preset.png)  
@@ -39,29 +40,35 @@
 ## Road Attribute Entries
 **Road Attribute Entry** - это вспомогательный объект-конструктор, который позволяет быстро создавать престы для [Lane Attribute](RoadModel.md#lane-attributes) и добавлять их на **Road Lane**. Все **Road Attribute Entries** из всех пресетов, автоматически доступны в [Road Attribute Editor Mode](EditorModes.md#attribute-modes):  
 ![alt text](img/preset-attributes.png)   
+
 Есть 3 основных типа **Road Attribute Entries** (Component Template, Spline Mesh, Custom Builder):  
 ![alt text](img/entry-type.png)  
 
 ### Component Template
-Позволят генерировать произвольный **USceneComponent** вдоль **Road Lane** с заданным интервалом в процессе [Build Mesh](ProcedureGenerationTool.md).  
-Достаточно создать BP или С++ класс отнаследованный от **USceneComponent**:  
+Позволяет генерировать произвольный **USceneComponent** вдоль **Road Lane** с заданным интервалом в процессе [Build Mesh](ProcedureGenerationTool.md).  
+Достаточно создать BP или С++ класс унаследованный от **USceneComponent**:  
 ![alt text](img/entry-component.png)  
+
 И в **Road Attribute Entry** указать созданный класс  в ```Component Template``` и задать ```LengthOfSegment```, после чего, созданный пресет станет доступен в [Lane Attribute](RoadModel.md#lane-attributes):  
 ![alt text](img/entry-component2.png)  
+
 И теперь его можно добавлять на **RoadLane**:  
 ![alt text](img/entry-component4.gif)  
+
 Этот шаблон удобно использовать для повторяющихся объектов вдоль **Road Lane**, например, дорожные конусы, древки, фонарные столбы, линии электро передач.  
 
 ### Spline Mesh
-Позволят генерировать **USplineMeshComponent** вдоль **Road Lane** в процессе [Build Mesh](ProcedureGenerationTool.md).  
+Позволяет генерировать **USplineMeshComponent** вдоль **Road Lane** в процессе [Build Mesh](ProcedureGenerationTool.md).  
 Для этого необходимо в **Road Attribute Entry** указать желаемый ```Static Mesh``` и задать ```LengthOfSegment```, после чего, созданный пресет станет доступен в [Lane Attribute](RoadModel.md#lane-attributes):
 ![alt text](img/entry-spline.png)  
+
 И теперь его можно добавлять на **RoadLane**:  
 ![alt text](img/entry-spline2.gif)  
 
 ### Custom Builder
-Предоставят возможность написать кастомный обработчик атрибута на С++ или BP скрипту в процессе [Build Mesh](ProcedureGenerationTool.md). 
-Для этого необходимо создать класс отнаследованный от **UCustomSplineBuilder** и переопределить функцию **Generate Asset**:  
+Предоставляет возможность написать кастомный обработчик атрибута на С++ или BP в процессе [Build Mesh](ProcedureGenerationTool.md). 
+Для этого необходимо создать класс унаследованный от **UCustomSplineBuilder** и переопределить функцию **Generate Asset**:  
 ![alt text](img/entry-custom.png)  
+
 После чего необходимо указать созданный класс в пресете и он станет доступен в [Lane Attribute](RoadModel.md#lane-attributes):  
 ![alt text](img/entry-custom2.png)  
