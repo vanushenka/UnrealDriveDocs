@@ -5,24 +5,24 @@
   - The road lane attributes
   - Профайлы дорог для рисования (количество и типы полос)  
 
-Пресетов в проекте может быть много, но логически все они объединяются в один. Поэтому нужно быть внимательным с именами профайлов в присетах, так как если в двух или более присетах будут найден профайлы с одинаковым именем, будет использоваться только один случайным образом.  
-Для того, чтобы создать новый пресет, достаточно просто просто создать новый BP ассет в Content Browser, отнаследованный от UUnrealDrivePreset.  
+Пресетов в проекте может быть много, но логически все они объединяются в один. Поэтому нужно быть внимательным с именами профайлов в присетах, так как если в двух или более присетах будут найдены профайлы с одинаковым именем, будет использоваться только один случайным образом.  
+Для того, чтобы создать новый пресет, достаточно просто просто создать новый BP ассет в **Content Browser**, унаследованный от UUnrealDrivePreset.  
 ![alt text](img/create-preset.gif)  
 **UUnrealDrivePreset** отнаследован от **UPrimaryDataAsset**, поэтому важно чтобы в  **Asset Manager -> Primary Assets to Scan** были добавлены соответствующие пути, где был создан пресет. Обычно достаточно указать только две директории **/Game** и **/UnrealDrive**, но если пресет создан внутри какого либо плагина, то необходимо указать пути и до соответствующих плагинов, где находится пресеты (Смотри раздел [Installation](Installation.md)).  
-Плагин UnrealDrive уже имеет дефолтный пресет по пути */UnrealDrive/DefaultPreset*. Его не следует менять для обратной совместимости, но могут быть случае, когда в это может быть необходимость.  
+Плагин UnrealDrive уже имеет дефолтный пресет по пути */UnrealDrive/DefaultPreset*. Его не следует менять для обратной совместимости, но могут быть случаи, когда в это может быть необходимость (например, для смены левостороннего движения на правостороннее).  
 ![alt text](img/default-preset.png)  
-
-## Curb Profiles
-Содержит профайлы типов бордюров для **Road Lane** типа **RoadLaneSidewalk**. Можно задать материал и геометрию бордюра. Эти профайлы доступны в режиме [Build Mesh Modeling Tool](ProcedureGenerationTool.md):  
-![alt text](img/preset-curb.png)
 
 ## Driveable Material Profiles
 Содержит профайлы материалов для **Road Lane** типа **RoadLaneDriving**. Можно задать материал и декали для driveable road lanes. Эти профайлы доступны в режиме [Build Mesh Modeling Tool](ProcedureGenerationTool.md):  
 ![alt text](img/preset-driveable.png)
 
 ## Sidewalk Material Profiles
-Содержит профайлы материалов для **Road Lane** типа **RoadLaneDriving**. Можно задать материал sidewalk road lanes. Эти профайлы, будут доступны в режиме [Build Mesh Modeling Tool](ProcedureGenerationTool.md):  
+Содержит профайлы материалов для **Road Lane** типа **RoadLaneSidewalk**. Можно задать материал sidewalk road lanes. Эти профайлы, будут доступны в режиме [Build Mesh Modeling Tool](ProcedureGenerationTool.md):  
 ![alt text](img/preset-sidewolk.png)
+
+## Curb Profiles
+Содержит профайлы типов бордюров для **Road Lane** типа **RoadLaneSidewalk**. Можно задать материал и геометрию бордюра. Эти профайлы доступны в режиме [Build Mesh Modeling Tool](ProcedureGenerationTool.md):  
+![alt text](img/preset-curb.png)
 
 ## Lane Mark Profiles
 Содержит профайлы типов дорожной разметки для **Road Lane** типа **RoadLaneDriving**. Можно задать тип (сплошная, прерывистая, двойная), размеры и цвет полосы разметки. Эти профайлы доступны в режиме [Road Mark Attribute](EditorModes.md#road-mark-attribute):   
@@ -37,7 +37,7 @@
 ![alt text](img/preset-lanes.png)
 
 ## Road Attribute Entries
-**Road Attribute Entry** - это вспомогательный объект-конструктор, который позволяет быстро создавать престы [Lane Attribute](RoadModel.md#lane-attributes) и быстра добавлять их на **Road Lane**. Все **Road Attribute Entries** из всех пресетов, автоматически доступны в [Road Attribute Editor Mode](EditorModes.md#attribute-modes):  
+**Road Attribute Entry** - это вспомогательный объект-конструктор, который позволяет быстро создавать престы для [Lane Attribute](RoadModel.md#lane-attributes) и добавлять их на **Road Lane**. Все **Road Attribute Entries** из всех пресетов, автоматически доступны в [Road Attribute Editor Mode](EditorModes.md#attribute-modes):  
 ![alt text](img/preset-attributes.png)   
 Есть 3 основных типа **Road Attribute Entries** (Component Template, Spline Mesh, Custom Builder):  
 ![alt text](img/entry-type.png)  

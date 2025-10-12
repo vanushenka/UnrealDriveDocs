@@ -1,6 +1,6 @@
 # User Interface Overview
 
-После установки плгина, становятся доступны два новых элемента пользовательского интерфеса UnrealEngine:
+После установки плагина, становятся доступны два новых элемента пользовательского интерфеса UnrealEngine:
   * Road Modeling Mode  
     ![alt text](img/edit-modes.gif "Road Editor Modes") 
   * Меню режима рисования  
