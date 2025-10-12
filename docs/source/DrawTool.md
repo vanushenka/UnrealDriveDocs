@@ -22,12 +22,12 @@ The **Lane Source** defines the rules for detection of road lanes profile (num a
 There are next options:
   - **One Lane** - Copy only one road lane from the *Lane Successor Connection*. Only valid if the spline is drawn from the *Lane Successor Connection*.
     ![alt text](img/lane-source-one-lane.gif)  
-
+    </br>
   - **Right Side** - Copy the road lanes from the *Lane Successor Connection* to the last right lane in the source road section. Only valid if the spline is drawn from  the *Lane Successor Connection*.
     ![alt text](img/lane-source-right-side.gif)  
-
+    
   - **Both Sides** -  Copy all road lanes from the *Lane Successor Connection*. Only valid if the spline is drawn from  the *Lane Successor Connection*. 
     ![alt text](img/lane-source-both-sides.gif)  
-
+    
   - **Road Profile** - Copy road lanes from the profile. Как добавить новый профайл - смотри [Road Lane Profiles](Presets.md#road-lanes-profiles)
     ![alt text](img/lane-source-road-profile.gif)  
