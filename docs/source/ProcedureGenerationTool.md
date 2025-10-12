@@ -3,7 +3,7 @@
 Этот Modeling Tool позволят генерировать ассеты (static meshes, dynamic meshes, spline mesh и др.) и создать Акторов с этими ассетами на сцене.  
 Для работы этого Modeling Tool достаточно просто выделить один или несколько акторов, содержащих **URoadSplineComponent**, и активировать этот Modeling Tool, и он сразу отобразить предварительный результат:
 ![alt text](img/buid-mesh2.gif)  
-Для доступа к **Build Mesh** tool, необходимо переключить **Editor Mode** в режим **Modeling** и выбрать **Road** toolset:  
+Для доступа к **Build Mesh** tool, необходимо переключить **Editor Mode** в режим **Modeling Mode** и выбрать **Road** toolset:  
 ![alt text](img/buid-mesh.png)  
 После нажатия кнопки **Accept** для каждого выделенного актора, будет сгенерирован новый актор с постфиксом ```_Gen```. Например, для актора *RoadActor11* будет сгенерирован актор *RoadActor11_Gen*:
 ![alt text](img/gen-actor.png)  

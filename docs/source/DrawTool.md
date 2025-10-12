@@ -1,7 +1,7 @@
 # Draw Modeling Tools
 Есть два Modeling Tools - **New Spline** и **Add Spline**, которые позволяют "рисовать" **URoadSplineComponent** привычным образом так, как это происходит в популярных 2D векторных редакторах:  
 ![alt text](img/draw-spline.gif)  
-Для доступа к этим tools, необходимо переключить **Editor Mode** в режим **Modeling** и выбрать **Road** toolset:  
+Для доступа к этим tools, необходимо переключить **Editor Mode** в режим **Modeling Mode** и выбрать **Road** toolset:  
 ![alt text](img/draw-spline2.png)  
 Эти два режима идентичны, отличаются лишь необходимостью создания нового AActor:
   - **New Spline** - создаст новый AActor и добавит к нему новый **URoadSplineComponent**.
