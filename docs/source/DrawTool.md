@@ -14,7 +14,7 @@
 ![alt text](img/draw-to-predecessor.gif)  
 
 ## Lane Source
-The **Lanes Sorce** defines the rules for detection of road lanes profile (num and types of the road lanes) for spline drawing.  
+The **Lane Source** defines the rules for detection of road lanes profile (num and types of the road lanes) for spline drawing.  
 ![alt text](img/draw-spline-source.png)  
 There are next options:
   - **One Lane** - Copy only one road lane from the *Lane Successor Connection*. Only valid if the spline is drawn from the *Lane Successor Connection*.
@@ -23,5 +23,5 @@ There are next options:
     ![alt text](img/lane-source-right-side.gif)  
   - **Both Sides** -  Copy all road lanes from the *Lane Successor Connection*. Only valid if the spline is drawn from  the *Lane Successor Connection*. 
     ![alt text](img/lane-source-both-sides.gif)  
-  - **Road Profile** - Copy road lanes from the profile. Как управлять профайлами - смотри [Road Lane Profiles](Presets.md#road-lanes-profiles)
+  - **Road Profile** - Copy road lanes from the profile. Как добавить новый профайл - смотри [Road Lane Profiles](Presets.md#road-lanes-profiles)
     ![alt text](img/lane-source-road-profile.gif)  
