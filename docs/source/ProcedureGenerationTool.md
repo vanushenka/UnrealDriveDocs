@@ -1,72 +1,74 @@
 
 # Build Mesh Modeling Tool
-Этот Modeling Tool позволят генерировать ассеты (static meshes, dynamic meshes, spline mesh и др.) и создавать Акторов с этими ассетами на сцене.  
-Для работы **Build Mesh Tool** достаточно просто выделить один или несколько акторов, содержащих **URoadSplineComponent**, активировать **Build Mesh Tool**, и он сразу отобразит предварительный результат:  
+This Modeling Tool allows you to generate assets (static meshes, dynamic meshes, spline meshes, etc.) and create Actors with these assets on the scene.  
+To use the **Build Mesh Tool**, simply select one or more actors containing **URoadSplineComponent**, activate the **Build Mesh Tool**, and it will immediately display the preliminary result:  
 ![alt text](img/buid-mesh2.gif)  
 
-Для доступа к **Build Mesh Tool**, необходимо переключить **Editor Mode** в режим **Modeling Mode** и выбрать **Road** toolset:  
+To access the **Build Mesh Tool**, switch **Editor Mode** to **Modeling Mode** and select the **Road** toolset:  
 ![alt text](img/buid-mesh.png)  
 
-После нажатия кнопки **Accept** для каждого выделенного актора, будет сгенерирован новый актор с постфиксом ```_Gen```. Например, для актора *RoadActor11* будет сгенерирован актор *RoadActor11_Gen*:
+After clicking the **Accept** button for each selected actor, a new actor with the suffix ```_Gen``` will be created. For example, for the actor *RoadActor11*, the actor *RoadActor11_Gen* will be generated:  
 ![alt text](img/gen-actor.png)  
 
-Сгенерированный актор содержит ActorComponents (обычно UStaticMeshComponent, USplineMeshComponent) с ссылками на сгенерированные ассеты:  
+The generated actor contains ActorComponents (usually UStaticMeshComponent, USplineMeshComponent) with references to the generated assets:  
 ![alt text](img/buid-mesh3.png)  
 
-**Build Mesh Tool** отдельно генерит ассеты для:
+The **Build Mesh Tool** separately generates assets for:
   - Drive Surface + Decals
   - Sidewalks
   - Curbs
   - Marks
   - SplineMeshes
 
-Для каждого из этих типов ассетов есть соответствующая группа параметров в **Build Mesh Tool**:  
+For each of these asset types, there is a corresponding group of parameters in the **Build Mesh Tool**:  
 ![alt text](img/gen-params.png)  
 
 ## Mesh Materials
-Для каждого типа генерируемого ассета (Drive Surface, Sidewalks, Curbs, etc) есть параметр **Materials**. Он позволяет подменить материалы из [Preset Profiles](Presets.md) установленных в **Road Lanes**:  
+For each type of generated asset (Drive Surface, Sidewalks, Curbs, etc.), there is a ```Materials``` parameter. It allows you to replace materials from [Preset Profiles](Presets.md) set in **Road Lanes**:  
 ![alt text](img/gen-materials.png)  
-Почему возникала эта необходимость, в не просто определить все необходимые материалы в **Preset Profiles**?  
-На практике в **Preset Profiles** обычно определяют "домены" профайлов, например **Tram** и ему устанавливают дефолтный материал. А в **Build Mesh Tool** уже удобно переопределить дефолтный материал в случае необходимости. Такой подход более гибок, и позволят для одной и той же дороги быстро переключать сеты материалов, даже полученных из разных источников. Но ничего не мешает в **Preset Profiles** создать несколько профайлов **Tram** (например **Tram-1**, **Tram-new**, **Tram-old**) и назначать соответствующие профайлы на **Road Lanes**.
+
+Why was this necessary, instead of simply defining all the necessary materials in **Preset Profiles**?
+In practice, **Preset Profiles** usually define profile “domains,” such as **Tram**, and set a default material for them. And in the **Build Mesh Tool**, it is convenient to override the default material if necessary. This approach is more flexible and allows you to quickly switch between sets of materials for the same road, even those obtained from different sources. But there is nothing to prevent you from creating several **Tram** profiles in **Preset Profiles** (e.g., **Tram-1**, **Tram-new**, **Tram-old**) and assigning the appropriate profiles to **Road Lanes**.
 
 ## Mesh UVs
-Процедурная генерация для Road Surface генерирует два уровня текстурных координат:  
-![alt text](img/TexCoords.png)
-  - UV0 - отдельный трек для каждой полосы. UV0 удобно использовать для отображения дорожной колеи или трамвайных путей.
-  - UV1 - трек для левой и правой частей дороги. UV1 удобно использовать для отображения дорожных заплаток.
+Procedural generation for Road Surface generates two levels of texture coordinates:  
+  - UV0 - a separate track for each lane. UV0 is useful for displaying road ruts or tram tracks.
+  - UV1 - a track for the left and right sides of the road. UV1 is useful for displaying road patches.
 
-Для отображения дебажных материалов (как на картинке выше), необходимо в меню **Project Settings -> Plugins -> Interactive Tool Presets** добавить **UnrealDriveInteractiveToolsPreset** в **Loaded Preset Collection**. После чего два пресета **UV0 Debug** и **UV1 Debug** станут доступны:   
+![alt text](img/TexCoords.png)  
+
+To display debugging materials (as shown in the image above), you need to add **UnrealDriveInteractiveToolsPreset** to the **Loaded Preset Collection** in the **Project Settings -> Plugins -> Interactive Tool Presets** menu. After that, two presets, **UV0 Debug** and **UV1 Debug** Debug, will become available:  
 ![alt text](img/debug-tex-coords.gif)  
 
 ## Mesh Vertex Color
-В материалах для дорожной поверхности предлагается использовать mesh-атрибут **Vertex Color** для обозначения областей mesh там, где необходимо контролировать наличие текстур натянутых на каналы UV0 и UV1 (такие как лужи, колея, заплатки). Это позволит устранять артефакты на швах (областей пересечения нескольких **URoadSplineComponent**) и улучшать общий вид дорог:  
+For road surface materials, we recommend using the **Vertex Color** mesh attribute to designate areas of the mesh where you need to control the presence of textures stretched across the UV0 and UV1 channels (such as puddles, ruts, and patches). This will eliminate artifacts at the seams (areas where several **URoadSplineComponent** intersect) and improve the overall appearance of the roads:  
 ![alt text](img/VertexColor2.gif)  
 
-Для параметризации **Vertex Color** для **Drive Surface** предлагаются следующие параметры:  
+The following parameters are suggested for parameterizing **Vertex Color** for **Drive Surface**:  
 ![alt text](img/VertexColor3.png)  
 
-Эти параметры позволяют задать цвет вершин в центре и на краях mesh, а так же в зонах пересечения полос:  
+These parameters allow to set the color of vertices in the center and at the edges of the mesh, as well as in the areas where lanes intersect:  
 ![alt text](img/VertexColor.png)  
 
-Но для сложных перекрестков, скорее всего, придется "дораскрасить" вручную необходимые вершины в режиме **Mesh Paint**, как это было показано выше. В будущих релизах UnrealDrive возможно удастся усовершенствовать механизм генерации цвета вершин, что бы не приходилось обращаться к режиму **Mesh Paint**.
+However, for complex intersections, you will most likely have to manually "paint" the necessary vertices in **Mesh Paint**mode, as shown above. In future releases of UnrealDrive, it may be possible to improve the vertex color generation mechanism so that you don't have to resort to **Mesh Paint** mode.
 
 ## The principle of spline grouping
 ```{Important}
-Важно помнить, что процедурная генерация дорог, воспринимает каждого актора содержащего хотя бы один **URoadSplineComponent**, как отдельную единицу генерации, не связанную с другими акторами и **URoadSplineComponent** на сцене. Отсюда следует два правила:
-  - Группа **URoadSplineComponent**, представляющая собой перекресток или развязку, должна находиться внутри одного AActor.
-  - Не следует в одного актора помещать слишком большие участки дорожной сети, в противном случае будут сгенерены большие static meshes, и сними UnrealEngine не эффективно работает в вопросах оптимизации рендеринга и физики.
+It is important to remember that procedural road generation treats each actor containing at least one **URoadSplineComponent** as a separate generation unit, unrelated to other actors and **URoadSplineComponent** on the scene. This leads to two rules:
+  - A group of **URoadSplineComponents** representing an intersection or junction must be located within a single AActor.
+  - Do not place too large sections of the road network in a single actor, otherwise large static meshes will be generated, and UnrealEngine will not work efficiently in terms of rendering and physics optimization.
 ```
 
-Примеры:  
-  - В этом примере четыре **URoadSplineComponent** (SplineA_1, SplineA_2, SplineA_3, SplineA_4) находятся в одном акторе (ActorA), и соответственно процедурная генерация для актора ActorA примет во внимание все четыре сплайна, и правильно сгенерирует перекресток.  
+Examples:  
+  - In this example, four **URoadSplineComponent** (SplineA_1, SplineA_2, SplineA_3, SplineA_4) are located in one actor (ActorA), and accordingly, procedural generation for ActorA will take all four splines into account and correctly generate the intersection.    
     ![alt text](img/good-mesh-gen.png)
-  - В этом примере уже два актора (ActorA и ActorB), включающие в себя по два компонента (SplineA_1, SplineA_2, SplineB_1, SplineB_2):  
+  - In this example, there are already two actors (ActorA and ActorB), each containing two components (SplineA_1, SplineA_2, SplineB_1, SplineB_2):  
     ![alt text](img/bad-mesh-gen.png)  
     
-    Так происходит потому-что сплайны SplineA_1 + SplineA_2 и SplineB_1 + SplineB_2 триангулируются отдельно, и получится следующий результат:  
+    This happens because splines SplineA_1 + SplineA_2 and SplineB_1 + SplineB_2 are triangulated separately, resulting in the following outcome:  
     ![alt text](img/bad-mesh-gen2.png)  
 
-  - Следующий пример показывает, как следует разбивать дорожную сеть на акторы, по принципу - каждый перекресток/развязка помещены в отдельный актор:  
+  - The following example shows how to divide the road network into actors, based on the principle that each intersection/junction is placed in a separate actor:  
     ![alt text](img/actor-groups.png)  
-    
-    Именно поэтому, для удобства, введено два режима рисования сплайнов **New Spline** и **Add Spline** (смотри [Draw Modeling Tools](DrawTool.md)) - это позволяет или добавлять новый сплайн в актор, или создавать новый актор со сплайном внутри.
+    </br>
+    That is why, for convenience, two modes for drawing splines have been introduced: **New Spline** and **Add Spline** (see [Draw Modeling Tools](DrawTool.md)). This allows to either add a new spline to an actor or create a new actor with a spline inside it.

@@ -1,20 +1,20 @@
 # Road Model
 
 ## Basic concepts
-В основе модели дорожной сети и всего плагина UnrealDrive лежит ActorComponent **URoadSplineComponent**.
-**URoadSplineComponent** - это единственный и достаточный компонент, с помощью которого представляется граф дорожных сетей. Хотя сам компонент описывает всего лишь один простой участок дороги, комбинация **URoadSplineComponent**s способна описать даже очень сложную дорожную сеть, развязки и перекрестки.  
-Любой участок дорожной сети на сцене - это произвольный AActor, который включает в себя один или несколько **URoadSplineComponent**, при том, одна дорога, как правило, состоит из одного **URoadSplineComponent**, а перекрестки или развязки - из нескольких.  
-Тем, кто знаком со спецификацией [ASM OpenDrive](https://www.asam.net/standards/detail/opendrive/), все идеи, реализованные в **URoadSplineComponent**, покажутся очень знакомыми. Действительно UnrealDrive подчеркнул очень многое из этой спецификации.  
+The ActorComponent **URoadSplineComponent** forms the basis of the road network model and the entire UnrealDrive plugin. 
+**URoadSplineComponent** is the only component needed to represent a road network graph. Although the component itself describes only a single simple road segment, a combination of **URoadSplineComponent** can describe even very complex road networks, interchanges, and intersections.  
+Any section of the road network on the scene is an arbitrary AActor that includes one or more **URoadSplineComponent**, with one road typically consisting of one **URoadSplineComponent** and intersections or junctions consisting of several.
+Those familiar with the [ASM OpenDrive](https://www.asam.net/standards/detail/opendrive/) specification will find all the ideas implemented in **URoadSplineComponent** very familiar.  
+Indeed, UnrealDrive has emphasized much of this specification.
 
 ## Road Reference Line
-**URoadSplineComponent** - унаследован от [USplineComponent](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/USplineComponent), т.е. он обладает всеми свойствами базового сплайна, который является опорной линией, вдоль генерируемой дорога.
-Опорная линия обозначается розовым цветом. It is a left-handed coordinate system. The S-axis (or S-Offset in UI) follows the tangent of the road reference line. The R-axis (R-Offset in UI) is orthogonal to the S-axis and may be rotated around the S-axis by superelevation. The left-handed coordinate system is completed by defining the up-direction H orthogonal to S-axis and R-axis.  
-![alt text](img/ref-line.png "Reference Line")
+**URoadSplineComponent** - inherits from [USplineComponent](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/USplineComponent), i.e. it has all the properties of the base spline, which is the reference line along which the road is generated.  
+The reference line is marked in pink. It is a left-handed coordinate system. The S-axis (or S-Offset in UI) follows the tangent of the road reference line. The R-axis (R-Offset in UI) is orthogonal to the S-axis and may be rotated around the S-axis by superelevation. The left-handed coordinate system is completed by defining the up-direction H orthogonal to S-axis and R-axis.
 
 ## Road Lanes
 Lanes are an essential part of all roads. Lanes are attached to the road reference line of the road and are defined from inside to outside. A minimum road definition requires a center lane and an additional lane with a defined width. The number of lanes per road is not limited.
 The center lane has no width and serves as reference for lane numbering. The center lane itself has the lane index 0. The numbering of the other lanes starts at the center lane: Lane numbers descend to the right, meaning a positive  R-direction, and ascend to the left, meaning a negative R-direction.
-![alt text](img/lane-indexes.png "Lane Indexes")
+![alt text](img/lane-indexes.png "Lane Indexes")  
 This figure shows the center lane for a road with multiple traffic lanes and different driving directions. In this case, the center lane separates the driving directions, depending on left- and right-hand traffic, specified in Road type. Because no lane offset is used, the center lane is identical to the road reference line.
 
 ### Lane Types
@@ -22,9 +22,9 @@ The lane type is defined per lane. A lane type defines the main purpose of a lan
 ![alt text](img/lane-types.png "Lane Types")  
 
 ### Lane Direction
-Каждая полоса дороги имеет направление. На графах это направление показано белыми движущимися стрелками. This direction is specified by a combination of different elements and attributes. Для любой отдельной линии можно поменять направление движения.  
+Each road lane has a direction. On the graphs, this direction is shown by white moving arrows. This direction is specified by a combination of different elements and attributes. For any individual lane, you can change the direction of movement.  
 ![alt text](img/lane-dir.png "Lane Direction")  
-На данной фигуре показано что линия с индексом -1 имеет инвертирование направление.
+This figure shows that the line with index -1 has an inverted direction.
 
 ### Lane Groups
 For easier navigation through road description, the lanes within a lane section are grouped into left, center, and right lanes.
@@ -45,33 +45,30 @@ A combination of lane offset and shape definition can lead to inconsistencies de
 This figure shows the offset of the center lane away from the road reference line.
 
 ### Lane Attributes
-Lane attributes это произвольные метаданные, которы могут быть закреплены вдоль **Road Lane**.  
-Это один из самых мощных инструментов для кастомизации и добавления новых возможностей в UnrealDrive. Пользователь может зарегистрировать и определять поведение любого количества атрибутов. Атрибуты могут быть использованы для кастомизации процедурной генерации (например, для обозначения участков неровной дороги), для определения приоритетов движения и ограничение скорости (например, для генерации дорожного трафика), генерации spline mesh (например, для генерации ограждений вдоль полосы или растительности) и другое.  
-Атрибут обладает следующими свойствами:
-  - Атрибут имеет уникальное имя (например: speed, mark, fence), которое является типом атрибута.
-  - Добавленный атрибут распространяется на всю **Road Lane**.
-  - Атрибут имеет один или несколько **Attribute Key**.
-  - Первый **Attribute Key** фиксировано расположен в начале **Road Lane** (SOffset = 0) 
+Lane attributes are arbitrary metadata that can be assigned along a **Road Lane**.  
+This is one of the most powerful tools for customizing and adding new features to UnrealDrive. Users can register and define the behavior of any number of attributes. Attributes can be used to customize procedural generation (e.g., to designate sections of uneven road), to define traffic priorities and speed limits (e.g., to generate road traffic), to generate spline meshes (e.g., to generate fences along the lane or vegetation), and more.  
+An attribute has the following properties:
+  - An attribute has a unique name (e.g., speed, mark, fence), which is the attribute type.
+  - The added attribute applies to the entire **Road Lane**.
+  - The attribute has one or more **Attribute Keys**.
+  - The first **Attribute Key** is fixed at the beginning of the **Road Lane** (SOffset = 0). 
 
-**Attribute Key** - это пара значений **SOffset** + **Attribute Data**. **SOffset** - это положение **Attribute Key**, SOffset равный 0 - это начало **Road Lane**. **Attribute Data** - это произвольная С++ или BP структура (например, скоростные лимиты, плотность трафика, тип газона на обочине и др.).
- 
-
+**Attribute Key**  is a pair of values **SOffset** & **Attribute Data**. **SOffset** is the position of the **Attribute Key**, SOffset equal to 0 is the beginning of the **Road Lane**. **Attribute Data** is an arbitrary C++ or BP structure (for example, speed limits, traffic density, type of grass on the roadside, etc.).  
 ![alt text](img/lane-attr.png "Lane Attribute")  
-Данная фигура показывает визуализацию атрибута - **Speed**. В этом примере только одна **Road Lane** с ID ```+1``` в **RoadSection** ```1```  имеет Атрибут **Speed**.  Данный Атрибут устанавливает скорость движения трафика на **Road Lane** и имеет 3 ключа с координатами SOffset: 0cm, 400cm, 800см. Ключ содержит только одно поле данных ```speed``` типа - число с плавающей точкой. Три ключа из примера имеют соответствующие данные: 20km/h,  60km/h, 100km/h. 
+This figure shows a visualization of the ```Speed``` attribute. In this example, only one **Road Lane** with ID ```+1``` in **Road Section** ```1``` has the ```Speed``` attribute. This attribute sets the speed of traffic on the **Road Lane** and has three keys with SOffset coordinates: 0cm, 400cm, and 800cm. The key contains only one **Attribute Data** field - a floating point value ```Speed```. The three keys from the example have the following corresponding **Attribute Data**: 20km/h, 60km/h, 100km/h.
 
 ## Intersections and Junctions
-В UnrealDrive нет специальных типов или классов, которые могли бы отвечать за функцию создания перекрестков или развязок. В место этого, UnrealDrive предлагает возможность линковать несколько **URoadSplineComponent** между собой. В свою очередь группа залинкованных **URoadSplineComponent** могут представлять собой перекресток или развязку естественным образом.  
+UnrealDrive does not have special types or classes that could be responsible for creating intersections or junctions. Instead, UnrealDrive offers the ability to link multiple **URoadSplineComponent** together. In turn, a group of linked **URoadSplineComponent** can naturally represent an intersection or junctions.  
 
-Как уже было сказано, у каждой **Road Lane** есть направление. Вдоль этого направления в начале и конце есть *Lane Predecessor Connection* и *Lane Successor Connection* соответственно. 
-Так же у каждого сплайна **URoadSplineComponent** то же есть направление, начало и конец. Эти начало и конец являются *Road Predecessor Connection* и *Road Successor Connection*.  
+As mentioned earlier, each Road Lane has a direction. Along this direction, there is a **Lane Predecessor Connection** at the beginning and a **Lane Successor Connection** at the end. Similarly, each **URoadSplineComponent** spline also has a direction, a beginning, and an end. These beginnings and ends are an **Road Predecessor Connection** and **Road Successor Connection**.   
 ![alt text](img/connections.png "Road and Lane Connections")  
 
-Есть только два правила линковки:
-  * *Road Successor Connection* -> *Lane Predecessor Connection* (связь один ко многим)  
+There are only two rules for linking:
+  * **Road Successor Connection** -> **Lane Predecessor Connection** (one-to-many connection)  
     ![alt text](img/predecessor-to-successor.png) 
-  * *Road Predecessor  Connection* -> *Lane SuccessorConnection* (связь один ко многим)  
+  * **Road Predecessor  Connection** -> **Lane SuccessorConnection** (one-to-many connection)  
     ![alt text](img/successor-to-predecessor.png)
 
-Двух этих правил достаточно чтобы смоделировать любые перекрестки или развязки, даже самые сложные.  
+These two rules are sufficient to model any intersections or interchanges, even the most complex ones.  
 ![alt text](img/junction.png)  
 

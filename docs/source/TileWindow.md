@@ -1,33 +1,33 @@
 # Tile Window
 
-**Tile Window** - это Actor, который позволяет рендерить открытые растровые geo-карты, такие как Google Map, OSM, Bind и др. Может оказаться полезным для создания цифровых двойников территорий реального мира.  
+**Tile Window** is an Actor that allows to render open raster geo-maps such as Google Map, OSM, Bind, etc. It can be useful for creating digital twins of real-world territories.    
 
-Для начала использования, достаточно просто разместить **Tile Windows** актор на сцену:  
+To get started, simply place the **Tile Windows** actor on the stage:   
 ![alt text](img/tile-create.gif)  
 
-## Система координат
-Достаточно задать ```Longitude``` и ```Latitude``` и **Tile Window** мгновенно перегенерит область окна:  
+## Coordinate system
+Simply set ```Longitude``` and ```Latitude```, and Tile Window will instantly regenerate the window area:  
 ![alt text](img/tile-latlon.gif)  
 
-Параметр ```Use World Coordinate Space``` определяет начало координат для ```Longitude``` и ```Latitude``` в мире Unreal Engine:
-  - Если флаг не установлен, то за начало координат берутся координаты **Tile Window** Актора
-  - Если флаг установлен, то за начало координат берется точка (0, 0)  мира Unreal Engine. В этом случае при изменении координат **Tile Window** Актора, будет автоматически пересчитана область окна **Tile Window** согласно новым координатам. Обычно такой режим удобнее использовать для воссоздания больших участков территорий земли. Так как в этом случае  **Tile Window** работает как "окно" в реальный мир, и при его перемещении будет автоматически отображен новый участок карты:  
+The ```Use World Coordinate Space``` parameter defines the geo-origin for ```Longitude``` and ```Latitude`` in the Unreal Engine world:
+  - If the flag is not set, the geo-origin is taken as position of the **Tile Window** Actor.
+  - If the flag is set, the point (0, 0) of the Unreal Engine world is taken as the origin. In this case, when the position of the **Tile Window** is changing, the area of the **Tile Window** will be automatically recalculated according to the new coordinates. This mode is usually more convenient for recreating large areas of land. In this case, the **Tile Window** acts as a "window" into the real world, and when it is moved, a new aria of the map will be automatically re-rendering:  
   ![alt text](img/tile-world-space.gif)  
 
-## Размеры окна:
-Для изменения размера и разрешения окна используется два параметра ```Window Size``` и ```Zoom```:  
+## Window size
+To change the size and resolution of the window, use the two parameters  ```Window Size``` and ```Zoom```:  
 ![alt text](img/tile-size.png)    
-  - ```Zoom``` - Map tile zoom levels determine the level of detail and the number of tiles displayed by dividing the world into a grid of square tiles at each zoom level, more details [here](https://wiki.openstreetmap.org/wiki/Zoom_levels). Оптимальный уровень zoom - не меньше 18. Редко какие tile sources поддерживают zoom больше 22.
-  - ```Window Size``` - определяет количество тайлов (по горизонтали и вертикали), которое следуют отрендерить. Не стоит здесь указывать слишком большие значения в целях избежания переполнения видео памяти:
+  - ```Zoom``` - Map tile zoom levels determine the level of detail and the number of tiles displayed by dividing the world into a grid of square tiles at each zoom level, more details [here](https://wiki.openstreetmap.org/wiki/Zoom_levels). The optimal zoom level is no less than 18. Rarely do tile sources support zoom levels greater than 22.
+  - ```Window Size``` - determines the number of tiles (horizontally and vertically) to be rendered. Do not specify values that are too large here to avoid video memory overflow:
   ![alt text](img/tile-size2.png)  
 
-## Источники карт
-По умолчанию **Tile Window** поддерживает Google, OSM и Yandex карты. Достаточно просто сменить ```Source```:  
+## Map data sources
+By default, **Tile Window** supports Google, OSM, and Yandex maps. Simply change the ```Source```:
 ![alt text](img/tile-source.gif)  
 </br>
-Так же есть возможность добавить собственные источники, для этого необходимо зайти в **Edit -> Project Settings -> Unreal Drive Editor** и добавить новый источник в ```Tile Sources```:  
+You can also add your own sources. To do this, go to **Edit -> Project Settings -> Unreal Drive Editor** and add a new source to ```Tile Sources```:  
 ![alt text](img/tile-add-source.png)  
 </br>
-```URL``` источника это произвольный URL адрес формата ```https://sample.map.source.com/{x}/{y}{z}```, где ```{x}```, ```{y}```, ```{z}``` будут заменены на x, y, z координаты тайлов во время рендеринга.
+The source ```URL``` is an arbitrary URL address in the format ```https://sample.map.source.com/{x}/{y}{z}```, where ```{x}```, ```{y}```, ```{z}``` will be replaced with the x, y, z coordinates of the tiles during rendering.
 
 
