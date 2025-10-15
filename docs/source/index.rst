@@ -11,10 +11,11 @@ Welcome to UnrealDrive documentation!
    About.md
    Installation.md
    RoadModel.md
-   UserInterfcaeOverview.md
+   UserInterfaceOverview.md
    EditorModes.md
    DrawTool.md
    ProcedureGenerationTool.md
+   ClosedLoopSplines.md
    Presets.md
    TileWindow.md
    CPP_API.md

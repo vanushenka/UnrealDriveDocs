@@ -53,7 +53,10 @@ An attribute has the following properties:
   - The attribute has one or more **Attribute Keys**.
   - The first **Attribute Key** is fixed at the beginning of the **Road Lane** (SOffset = 0). 
 
-**Attribute Key**  is a pair of values **SOffset** & **Attribute Data**. **SOffset** is the position of the **Attribute Key**, SOffset equal to 0 is the beginning of the **Road Lane**. **Attribute Data** is an arbitrary C++ or BP structure (for example, speed limits, traffic density, type of grass on the roadside, etc.).  
+**Attribute Key**  is a pair of values **SOffset** & **Attribute Data**:
+  - **SOffset** is the position of the **Attribute Key**, SOffset equal to 0 is the beginning of the **Road Lane**. 
+  - **Attribute Data** is an arbitrary C++ or BP structure (for example, speed limits, traffic density, type of grass on the roadside, etc.).  
+  
 ![alt text](img/lane-attr.png "Lane Attribute")  
 This figure shows a visualization of the ```Speed``` attribute. In this example, only one **Road Lane** with ID ```+1``` in **Road Section** ```1``` has the ```Speed``` attribute. This attribute sets the speed of traffic on the **Road Lane** and has three keys with SOffset coordinates: 0cm, 400cm, and 800cm. The key contains only one **Attribute Data** field - a floating point value ```Speed```. The three keys from the example have the following corresponding **Attribute Data**: 20km/h, 60km/h, 100km/h.
 
