@@ -1,9 +1,11 @@
 # Closed Loop Spline
 
 The closed loop **URoadSplineComponent** allows to place various "islands" or extra road marks on roads, such as refuge islands, pedestrian crossings, or arrows:  
-![alt text](img/loop-sample1.png)
-![alt text](img/loop-sample2.png)
-![alt text](img/loop-sample3.png) 
+![alt text](img/loop-sample1.png)  
+
+![alt text](img/loop-sample2.png)  
+
+![alt text](img/loop-sample3.png)  
 
 To start using **Closed Loop Spline**, just specify two parameters for **URoadSplineComponent** in the **Details Panel**:
   - Set **Spline -> Closed Loop** to ```true```
