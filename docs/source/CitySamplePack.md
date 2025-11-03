@@ -1,5 +1,5 @@
 
-# City Sample Materials Pack
+# City Sample Pack
 
 The plugin includes a simple, lightweight road materials pack by default. The all videos and images from this docs use the free CitySample material pack. This is a pack of materials from the [CitySample](https://www.fab.com/listings/4898e707-7855-404b-af0e-a505ee690e68) project adapted for the UnrealDrive plugin. 
 If you wish, you can download and install it separately.
