@@ -1,13 +1,12 @@
 
 # City Sample Pack
 
-The plugin includes a simple, lightweight road materials pack by default. The all videos and images from this docs use the free CitySample material pack. This is a pack of materials from the [CitySample](https://www.fab.com/listings/4898e707-7855-404b-af0e-a505ee690e68) project adapted for the UnrealDrive plugin. 
-If you wish, you can download and install it separately.
-Steps:
-  1. Download and install the CitySample materials pack from the [FAB](https://unrealdrive.readthedocs.io/en/latest/CitySamplePack.html). You should get the following project structure:   
+By default the UnrealDrive plugin includes a simple, lightweight road materials pack. The all videos and images from this docs use the free [UnrealDrive: CitySample Pack](https://www.fab.com/listings/fac286e8-31ff-4edc-bfc0-ae5a21ad5cd7). This is a pack of materials from the [CitySample](https://www.fab.com/listings/4898e707-7855-404b-af0e-a505ee690e68) project adapted for the UnrealDrive plugin. 
+To include this pack in your UE project, follow these steps:  
+  1. Download and install the [UnrealDrive: CitySample Pack](https://www.fab.com/listings/fac286e8-31ff-4edc-bfc0-ae5a21ad5cd7) from the FAB. You should get the following project structure:   
     ![alt text](img/city-sample-path.png)  
 
-  2. Add **CitySample_ToolsPreset** to the **Loaded Preset Collection** in the **Project Settings -> Plugins -> Interactive Tool Presets** menu:  
+  2. Add **CitySample_ToolsPreset** to the **Loaded Preset Collection** in the **Project Settings -> Plugins -> Interactive Tool Presets** menu:  
     ![alt text](img/city-sample-add.png)  
      You can also quickly access to the **Interactive Tool Presets** as follows:   
     ![alt text](img/city-sample.gif)  
