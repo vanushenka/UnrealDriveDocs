@@ -10,5 +10,6 @@ UnrealDrive is a plugin for UnrealEngine, so the installation procedure for Unre
      - Set the **Has Blueprint Classes** field
      - Set the **Is Editor Only** field
      - Add **/Game** and **/UnrealDrive**  values to the **Directories** field  
-     
-     ![alt text](img/set-primary-asset.png "Primary Asset")  
+     ![alt text](img/set-primary-asset.png "Primary Asset") 
+  4. Make sure that Translucent Selection is allowed, otherwise there may be problems with selecting road lanes:  
+     ![alt text](img/allow-translucent-selection.png)   
