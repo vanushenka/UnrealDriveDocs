@@ -20,3 +20,12 @@ Welcome to MetaRoad documentation!
    TileWindow.md
    CitySamplePack.md
    CPP_API.md
+
+   Subheading
+-----------
+
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+   CitySamplePack.md
+   CPP_API.md
