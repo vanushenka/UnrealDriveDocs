@@ -13,9 +13,8 @@ Welcome to MetaRoad documentation!
    RoadModel.md
    UserInterfaceOverview.md
    EditorModes.md
-   Tools.md
-   DrawTool.md
-   ProcedureGenerationTool.md
+   Tools/DrawTool.md
+   Tools/ProcedureGenerationTool.md
    ClosedLoopSplines.md
    Presets.md
    TileWindow.md
