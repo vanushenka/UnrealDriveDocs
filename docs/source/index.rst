@@ -14,8 +14,8 @@ Welcome to MetaRoad documentation!
    UserInterfaceOverview.md
    EditorModes.md
    Tools.md
-    DrawTool.md
-    ProcedureGenerationTool.md
+   DrawTool.md
+   ProcedureGenerationTool.md
    ClosedLoopSplines.md
    Presets.md
    TileWindow.md
