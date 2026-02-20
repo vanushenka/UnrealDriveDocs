@@ -1,7 +1,6 @@
 Welcome to MetaRoad documentation!
 ===================================
-..
-  _.. subprojecttoctree::
+
 
 .. toctree::
    :numbered:
@@ -12,10 +11,8 @@ Welcome to MetaRoad documentation!
    Installation.md
    RoadModel.md
    UserInterfaceOverview.md
-   EditorModes.md
-   Tools.rst
-   ClosedLoopSplines.md
+   SplineEditorModes.md
+   MetaRoadEditorMode.rst
    Presets.md
-   TileWindow.md
-   CitySamplePack.md
+   Misc.rst
    CPP_API.md

@@ -1,4 +1,4 @@
-## Draw Modeling Tools
+# Draw Modeling Tools
 There are two Modeling Tools - **New Spline** and **Add Spline**, which allow to "draw" **URoadSplineComponent** in the usual way, as in popular 2D vector editors: 
 ![alt text](img/draw-spline.gif)  
 
@@ -15,7 +15,7 @@ You can start drawing a spline with the [Lane Successor Connection](RoadModel.md
 And finish with [Lane Predecessor Connection](RoadModel.md#intersections-and-junctions):  
 ![alt text](img/draw-to-predecessor.gif)  
 
-### Lane Source
+## Lane Source
 The **Lane Source** defines the rules for detection of road lanes profile (num and types of the road lanes) for spline drawing.  
 ![alt text](img/draw-spline-source.png)  
 

@@ -1,12 +1,11 @@
-qwe
+Miscellaneous
 ===================================
-..
-  _.. subprojecttoctree::
 
 .. toctree::
    :numbered:
    :glob:
    :maxdepth: 2
 
-   DrawTool.md
-   ProcedureGenerationTool.md
+   TileWindow.md
+   ClosedLoopSplines.md
+   CitySamplePack.md
