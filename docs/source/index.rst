@@ -13,19 +13,9 @@ Welcome to MetaRoad documentation!
    RoadModel.md
    UserInterfaceOverview.md
    EditorModes.md
-   Tools/DrawTool.md
-   Tools/ProcedureGenerationTool.md
+   Tools.rst
    ClosedLoopSplines.md
    Presets.md
    TileWindow.md
-   CitySamplePack.md
-   CPP_API.md
-
-   Subheading
------------
-
-.. toctree::
-    :maxdepth: 2
-    :numbered:
    CitySamplePack.md
    CPP_API.md
