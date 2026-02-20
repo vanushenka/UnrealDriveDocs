@@ -1,5 +1,5 @@
 
-# Build Mesh Modeling Tool
+## Build Mesh Modeling Tool
 This Modeling Tool allows you to generate assets (static meshes, dynamic meshes, spline meshes, etc.) and create Actors with these assets on the scene.  
 To use the **Build Mesh Tool**, simply select one or more actors containing **URoadSplineComponent**, activate the **Build Mesh Tool**, and it will immediately display the preliminary result:  
 ![alt text](img/buid-mesh2.gif)  
@@ -23,14 +23,14 @@ The **Build Mesh Tool** separately generates assets for:
 For each of these asset types, there is a corresponding group of parameters in the **Build Mesh Tool**:  
 ![alt text](img/gen-params.png)  
 
-## Mesh Materials
+### Mesh Materials
 For each type of generated asset (Drive Surface, Sidewalks, Curbs, etc.), there is a ```Materials``` parameter. It allows you to replace materials from [Preset Profiles](Presets.md) set in **Road Lanes**:  
 ![alt text](img/gen-materials.png)  
 
 Why was this necessary, instead of simply defining all the necessary materials in **Preset Profiles**?
 In practice, **Preset Profiles** usually define profile “domains,” such as **Tram**, and set a default material for them. And in the **Build Mesh Tool**, it is convenient to override the default material if necessary. This approach is more flexible and allows you to quickly switch between sets of materials for the same road, even those obtained from different sources. But there is nothing to prevent you from creating several **Tram** profiles in **Preset Profiles** (e.g., **Tram-1**, **Tram-new**, **Tram-old**) and assigning the appropriate profiles to **Road Lanes**.
 
-## Mesh UVs
+### Mesh UVs
 Procedural generation for Road Surface generates two levels of texture coordinates:  
   - UV0 - a separate track for each lane. UV0 is useful for displaying road ruts or tram tracks.
   - UV1 - a track for the left and right sides of the road. UV1 is useful for displaying road patches.
@@ -40,7 +40,7 @@ Procedural generation for Road Surface generates two levels of texture coordinat
 To display debugging materials (as shown in the image above), you need to add **UnrealDriveInteractiveToolsPreset** to the **Loaded Preset Collection** in the **Project Settings -> Plugins -> Interactive Tool Presets** menu. After that, two presets, **UV0 Debug** and **UV1 Debug** Debug, will become available:  
 ![alt text](img/debug-tex-coords.gif)  
 
-## Mesh Vertex Color
+### Mesh Vertex Color
 For road surface materials, we recommend using the **Vertex Color** mesh attribute to designate areas of the mesh where you need to control the presence of textures stretched across the UV0 and UV1 channels (such as puddles, ruts, and patches). This will eliminate artifacts at the seams (areas where several **URoadSplineComponent** intersect) and improve the overall appearance of the roads:  
 ![alt text](img/VertexColor2.gif)  
 
@@ -52,7 +52,7 @@ These parameters allow to set the color of vertices in the center and at the edg
 
 However, for complex intersections, you will most likely have to manually "paint" the necessary vertices in **Mesh Paint**mode, as shown above. In future releases of UnrealDrive, it may be possible to improve the vertex color generation mechanism so that you don't have to resort to **Mesh Paint** mode.
 
-## The principle of spline grouping
+### The principle of spline grouping
 ```{Important}
 It is important to remember that procedural road generation treats each actor containing at least one **URoadSplineComponent** as a separate generation unit, unrelated to other actors and **URoadSplineComponent** on the scene. This leads to two rules:
   - A group of **URoadSplineComponents** representing an intersection or junction must be located within a single AActor.

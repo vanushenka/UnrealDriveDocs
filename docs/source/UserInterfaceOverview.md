@@ -1,6 +1,6 @@
 # User Interface Overview
 After installing the plugin, new user interface elements become available in UnrealEngine, along with new classes:
-  * Road [Road Editor Modes](EditorModes.md) - allows to switch between **URoadSplineComponent** editing modes to edit spline properties described in [Road Model](RoadModel.md):  
+  * Road [Road Editing Modes](EditorModes.md) - allows to switch between **URoadSplineComponent** editing modes to edit spline properties described in [Road Model](RoadModel.md):  
     ![alt text](img/modeling-tools.png)  
     </br>
   * **Road Modeling Toolset** provides tools for [drawing new splines](DrawTool.md) and [generating assets](ProcedureGenerationTool.md):  

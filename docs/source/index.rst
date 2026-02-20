@@ -1,4 +1,4 @@
-Welcome to UnrealDrive documentation!
+Welcome to MetaRoad documentation!
 ===================================
 ..
   _.. subprojecttoctree::
@@ -13,8 +13,9 @@ Welcome to UnrealDrive documentation!
    RoadModel.md
    UserInterfaceOverview.md
    EditorModes.md
-   DrawTool.md
-   ProcedureGenerationTool.md
+   Tools.md
+    DrawTool.md
+    ProcedureGenerationTool.md
    ClosedLoopSplines.md
    Presets.md
    TileWindow.md
