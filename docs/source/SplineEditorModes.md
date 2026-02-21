@@ -1,4 +1,4 @@
-# Road Editing Modes
+# Spline Editing Modes
 Road Editing Modes are editing modes for **URoadSplineComponent**. Each mode provides access to editing the corresponding properties described in [Road Model](RoadModel.md):  
 ![alt text](img/edit-modes2.png).  
 
