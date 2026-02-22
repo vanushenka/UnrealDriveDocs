@@ -21,10 +21,6 @@ Once you've finished drawing a spline, you have two ways to create it:
 - Create a new actor and add a **URoadSplineComponent** to it.
 - Add a **URoadSplineComponent** to a selected actor that already contains at least one **URoadSplineComponent**.
 
-These two tools are identical, differing only in the need to create a new AActor:
-  - **New Spline** - creates a new AActor and adds a new **URoadSplineComponent** to it.
-  - **Add Spline** - adds a new  **URoadSplineComponent** to the selected actor, which already has at least one **URoadSplineComponent**.
-
 ![alt text](img/draw-spline-finish.png)  
 </br>
 

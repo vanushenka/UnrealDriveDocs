@@ -26,4 +26,4 @@ The plugin provides flexible APIs (C++ and BluePrint), allowing to:
   - Develop importers/exporters of road networks to/from any custom formats
   - Use the road graph to develop any gameplay logic.
 
-Generated content can be used without the plugin itself, as these are simple StaticMesh assets. But if there is a need to use graphs in a game project (for example, to generate traffic), then the presence of the UnrealDrive plugin will be necessary in the project.
+Generated content can be used without the plugin itself, as these are simple StaticMesh assets. But if there is a need to use graphs in a game project (for example, to generate traffic), then the presence of the MetaRoad plugin will be necessary in the project.

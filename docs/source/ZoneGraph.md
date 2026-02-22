@@ -1,21 +1,21 @@
 # Zone Graph (Pro)
 
-Билдниг **ZoneGraphData** происходит через меню **Build->Build ZoneGraph**, так же как и в [стандартном подходе для ZoneShape](https://dev.epicgames.com/community/learning/tutorials/qz6r/unreal-engine-zonegraph-quick-start-guide). В результате чего будет сгенерировано по одному **ZoneGraphData** актору для каждого левела, который будет содержать навигационные данные для соотвествующего левела:  
+**ZoneGraphData** is built via the **Build -> Build ZoneGraph** menu, just like the standard [ZoneShape](https://dev.epicgames.com/community/learning/tutorials/qz6r/unreal-engine-zonegraph-quick-start-guide) approach. This will generate one ZoneGraphData actor for each level, which will contain navigation data for the corresponding level:  
 ![alt text](img/zone-graph-build.png)  
 
-Визуализация построенных **ZoneGraphData** удобно посмотреть, активировав флаг **Navigation**:  
+It is convenient to view the visualization of the constructed **ZoneGraphData** by activating the **Navigation** flag:  
 ![alt text](img/zone-graph-view-debug.png)  
 
-**ZoneGraphData** не не билдится для **URoadSplineComponent**. Билдниг **ZoneGraphData** будет происходить только для тех акторов, у которых есть компонент **URoadGraphDataComponent**. :  
+**ZoneGraphData** is not built for **URoadSplineComponent**. **ZoneGraphData** will only be built for actors that have a **URoadGraphDataComponent** component:  
 ![alt text](img/zone-graph-data.png)  
 
-**URoadGraphDataComponent** генерируется в момент генерации меша (см. [Build Mesh Modeling Tool](ProcedureGenerationTool.md)) и содержит даные необходимы для генерации графов дорог (включая ZoneGraph):  
+**URoadGraphDataComponent** is generated during mesh generation (see [Build Mesh Tool](ProcedureGenerationTool.md)) and contains the data needed to generate road graphs (including ZoneGraph):  
 ![alt text](img/zone-graph-data2.png)  
 
-В **Edit -> Project Settings -> MetaRoad Editor** можно указать соотвесте **Road Lane Types** и **Zone Graph Tags** для того чтобы выбрать для каких типов дорожных полос необходимо генерировать **ZoneGraphData**:
+In **Edit -> Project Settings -> MetaRoad Editor** you can specify **Road Lane Types** and **Zone Graph Tags** to select for which types of road lanes **ZoneGraphData** should be generated:  
 ![alt text](img/zone-graph-settings.png)  
 
-В примере ниже показано, что для трамвайной полосы был сгенерирован участок ZoneGraph с Tag = Tram:
+The example below shows that a **ZoneGraph** section with **Tag** = Tram was generated for the tram lane:  
 ![alt text](img/zone-graph-settings2.png)  
 
 

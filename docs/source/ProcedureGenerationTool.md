@@ -1,5 +1,5 @@
 
-## Build Mesh Modeling Tool
+## Build Mesh Tool
 This Modeling Tool allows you to generate assets (static meshes, dynamic meshes, spline meshes, etc.) and create Actors with these assets on the scene.  
 To use the **Build Mesh Tool**, simply select one or more actors containing **URoadSplineComponent**, activate the **Build Mesh Tool**, and it will immediately display the preliminary result:  
 ![alt text](img/buid-mesh2.gif)  
@@ -37,8 +37,8 @@ Procedural generation for Road Surface generates two levels of texture coordinat
 
 ![alt text](img/TexCoords.png)  
 
-To display debugging materials (as shown in the image above), you need to add **UnrealDriveInteractiveToolsPreset** to the **Loaded Preset Collection** in the **Project Settings -> Plugins -> Interactive Tool Presets** menu. After that, two presets, **UV0 Debug** and **UV1 Debug** Debug, will become available:  
-![alt text](img/debug-tex-coords.gif)  
+To display debugging materials (as shown in the image above), you need choose **UV0 Debug**, **UV1 Debug** or **UV0 Debug** preset:  
+![alt text](img/debug-tex-coords.png)  
 
 ### Mesh Vertex Color
 For road surface materials, we recommend using the **Vertex Color** mesh attribute to designate areas of the mesh where you need to control the presence of textures stretched across the UV0 and UV1 channels (such as puddles, ruts, and patches). This will eliminate artifacts at the seams (areas where several **URoadSplineComponent** intersect) and improve the overall appearance of the roads:  
@@ -50,7 +50,7 @@ The following parameters are suggested for parameterizing **Vertex Color** for *
 These parameters allow to set the color of vertices in the center and at the edges of the mesh, as well as in the areas where lanes intersect:  
 ![alt text](img/VertexColor.png)  
 
-However, for complex intersections, you will most likely have to manually "paint" the necessary vertices in **Mesh Paint**mode, as shown above. In future releases of UnrealDrive, it may be possible to improve the vertex color generation mechanism so that you don't have to resort to **Mesh Paint** mode.
+However, for complex intersections, you will most likely have to manually "paint" the necessary vertices in **Mesh Paint**mode, as shown above. In future releases of MetaRoad, it may be possible to improve the vertex color generation mechanism so that you don't have to resort to **Mesh Paint** mode.
 
 ### The principle of spline grouping
 ```{Important}
