@@ -1,15 +1,16 @@
 # Road Model
 
 ## Basic concepts
-The ActorComponent **URoadSplineComponent** forms the basis of the road network model and the entire UnrealDrive plugin. 
+The ActorComponent **URoadSplineComponent** forms the basis of the roads, roads network model and the entire MetaRoad plugin. 
 **URoadSplineComponent** is the only component needed to represent a road network graph. Although the component itself describes only a single simple road segment, a combination of **URoadSplineComponent** can describe even very complex road networks, interchanges, and intersections.  
 Any section of the road network on the scene is an arbitrary AActor that includes one or more **URoadSplineComponent**, with one road typically consisting of one **URoadSplineComponent** and intersections or junctions consisting of several.
 Those familiar with the [ASM OpenDrive](https://www.asam.net/standards/detail/opendrive/) specification will find all the ideas implemented in **URoadSplineComponent** very familiar.  
-Indeed, UnrealDrive has emphasized much of this specification.
+Indeed, MetaRoad has emphasized much of this specification.
 
 ## Road Reference Line
 **URoadSplineComponent** - inherits from [USplineComponent](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/USplineComponent), i.e. it has all the properties of the base spline, which is the reference line along which the road is generated.  
-The reference line is marked in pink. It is a left-handed coordinate system. The S-axis (or S-Offset in UI) follows the tangent of the road reference line. The R-axis (R-Offset in UI) is orthogonal to the S-axis and may be rotated around the S-axis by superelevation. The left-handed coordinate system is completed by defining the up-direction H orthogonal to S-axis and R-axis.
+The reference line is marked in pink. It is a left-handed coordinate system. The S-axis (or S-Offset in UI) follows the tangent of the road reference line. The R-axis (R-Offset in UI) is orthogonal to the S-axis and may be rotated around the S-axis by superelevation. The left-handed coordinate system is completed by defining the up-direction H orthogonal to S-axis and R-axis.  
+![alt text](img/ref-line.png)  
 
 ## Road Lanes
 Lanes are an essential part of all roads. Lanes are attached to the road reference line of the road and are defined from inside to outside. A minimum road definition requires a center lane and an additional lane with a defined width. The number of lanes per road is not limited.
@@ -46,7 +47,7 @@ This figure shows the offset of the center lane away from the road reference lin
 
 ### Lane Attributes
 Lane attributes are arbitrary metadata that can be assigned along a **Road Lane**.  
-This is one of the most powerful tools for customizing and adding new features to UnrealDrive. Users can register and define the behavior of any number of attributes. Attributes can be used to customize procedural generation (e.g., to designate sections of uneven road), to define traffic priorities and speed limits (e.g., to generate road traffic), to generate spline meshes (e.g., to generate fences along the lane or vegetation), and more.  
+This is one of the most powerful tools for customizing and adding new features to MetaRoad. Users can register and define the behavior of any number of attributes. Attributes can be used to customize procedural generation (e.g., to designate sections of uneven road), to define traffic priorities and speed limits (e.g., to generate road traffic), to generate spline meshes (e.g., to generate fences along the lane or vegetation), and more.  
 An attribute has the following properties:
   - An attribute has a unique name (e.g., speed, mark, fence), which is the attribute type.
   - The added attribute applies to the entire **Road Lane**.
@@ -61,7 +62,7 @@ An attribute has the following properties:
 This figure shows a visualization of the ```Speed``` attribute. In this example, only one **Road Lane** with ID ```+1``` in **Road Section** ```1``` has the ```Speed``` attribute. This attribute sets the speed of traffic on the **Road Lane** and has three keys with SOffset coordinates: 0cm, 400cm, and 800cm. The key contains only one **Attribute Data** field - a floating point value ```Speed```. The three keys from the example have the following corresponding **Attribute Data**: 20km/h, 60km/h, 100km/h.
 
 ## Intersections and Junctions
-UnrealDrive does not have special types or classes that could be responsible for creating intersections or junctions. Instead, UnrealDrive offers the ability to link multiple **URoadSplineComponent** together. In turn, a group of linked **URoadSplineComponent** can naturally represent an intersection or junctions.  
+MetaRoad does not have special types or classes that could be responsible for creating intersections or junctions. Instead, MetaRoad offers the ability to link multiple **URoadSplineComponent** together. In turn, a group of linked **URoadSplineComponent** can naturally represent an intersection or junctions.  
 
 As mentioned earlier, each Road Lane has a direction. Along this direction, there is a **Lane Predecessor Connection** at the beginning and a **Lane Successor Connection** at the end. Similarly, each **URoadSplineComponent** spline also has a direction, a beginning, and an end. These beginnings and ends are an **Road Predecessor Connection** and **Road Successor Connection**.   
 ![alt text](img/connections.png "Road and Lane Connections")  
@@ -74,4 +75,37 @@ There are only two rules for linking:
 
 These two rules are sufficient to model any intersections or interchanges, even the most complex ones.  
 ![alt text](img/junction.png)  
+
+## Closed Loop Spline
+
+The closed loop **URoadSplineComponent** allows to place various "islands" or extra road marks on roads, such as refuge islands, pedestrian crossings, or arrows:  
+![alt text](img/loop-sample1.png)  
+
+![alt text](img/loop-sample2.png)  
+
+![alt text](img/loop-sample3.png)  
+
+To start using **Closed Loop Spline**, just specify two parameters for **URoadSplineComponent** in the **Details Panel**:
+  - Set **Spline -> Closed Loop** to ```true```
+  - Set **Road -> RoadLayout -> Filled Instance** to ```Driving``` or ```Sidewalk```
+
+![alt text](img/loop-init.png)  
+
+After this, **URoadSplineComponent** turns into a familiar polygon drawing tool:  
+![alt text](img/loop-moving.gif)  
+
+In the [Draw Tool](DrawTool.md), you can immediately begin drawing the closed loop **URoadSplineComponent**. To do this, set the following parameters in the **Draw Tool** parameters:
+  - Set **Road Spline -> Loop** to ```true```
+  - Set **Road Spline -> Filled Instance** to ```Driving``` or ```Sidewalk```
+
+![alt text](img/loop-drawing.gif)  
+
+In the **Details Panel** for **URoadSplineComponent** you can set the parameters for generating texture coordinates - angle and scale:
+![alt text](img/loop-tex.gif)  
+
+```{Important}
+It's important that the drawn "islands" be located within the same Actor as the main road surface (another logically related **URoadSplineComponents**).
+This will allow the procedural mesh of the entire road section to be correctly generated as a single unit.
+```
+
 

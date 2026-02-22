@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'UnrealDrive'
+project = 'MetaRoad'
 copyright = '2025, Ivan Zhukov'
 author = 'Ivan Zhukov'
 
-release = '1.0'
-version = '1.0.0'
+release = '2.0'
+version = '2.0.0'
 
 # -- General configuration
 

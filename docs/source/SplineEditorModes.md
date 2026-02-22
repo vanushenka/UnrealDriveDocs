@@ -1,5 +1,5 @@
-# Road Editor Modes
-Road Editor Modes are editing modes for **URoadSplineComponent**. Each mode provides access to editing the corresponding properties described in [Road Model](RoadModel.md):  
+# Spline Editing Modes
+Spline Editing Modes allows to switch between **URoadSplineComponent** editing modes to edit spline properties described in [Road Model](RoadModel.md):  
 ![alt text](img/edit-modes2.png).  
 
 ## Base Modes
@@ -57,7 +57,7 @@ These mode allow to add various **Road Attributes** to **Road Lane**, which can 
 
 By default, two types of attributes are available: speed limit and road markings. 
 To learn how to create new attribute types, see [Road Attribute Entries](Presets.md#road-attribute-entries).
-To add a new attribute for a lane, select the appropriate mode in the **Road Editor Modes** menu, select the required **Road Lane**, and select **Create ATTRIBUTE_NAME** from the context menu. Then, add the required **Attribute Keys** from the same context menu:  
+To add a new attribute for a lane, select the appropriate mode in the **Road Editing Modes** menu, select the required **Road Lane**, and select **Create ATTRIBUTE_NAME** from the context menu. Then, add the required **Attribute Keys** from the same context menu:  
 ![alt text](img/attribute-add.gif)  
 
 In the **Details Panel**, in the **Selection** group, you can edit the selected **Attribute Key**:  

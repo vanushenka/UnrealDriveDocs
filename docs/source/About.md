@@ -1,12 +1,12 @@
 # About
-The UnrealDrive is a plugin for UnrealEngine that turns UnrealEngine into a powerful road network editor. 
+The MetaRoad is a plugin for UnrealEngine that turns UnrealEngine into a powerful road network editor. 
 
-The main purpose of the UnrealDrive is to provide a tool for creating a **High Definition** road networks:
+The main purpose of the MetaRoad is to provide a tool for creating a **High Definition** road networks:
   - To create digital twins of cities
   - For simulations to validate ADAS (advanced driver-assistance systems) and AD (autonomous driving) features. 
   - For games and cinematic
 	
-The UnrealDrive allows to interactively create:
+The MetaRoad allows to interactively create:
   - Any types of road junctions, roundabouts, exits and entrances, etc. 
   - Sidewalks and any types of special roads lanes: bicycle, bus, parking, tram, etc.
   - Generate road additional objects: street lights, vegetation(trees, bushes, grass), bridges etc.
@@ -26,4 +26,4 @@ The plugin provides flexible APIs (C++ and BluePrint), allowing to:
   - Develop importers/exporters of road networks to/from any custom formats
   - Use the road graph to develop any gameplay logic.
 
-Generated content can be used without the plugin itself, as these are simple StaticMesh assets. But if there is a need to use graphs in a game project (for example, to generate traffic), then the presence of the UnrealDrive plugin will be necessary in the project.
+Generated content can be used without the plugin itself, as these are simple StaticMesh assets. But if there is a need to use graphs in a game project (for example, to generate traffic), then the presence of the MetaRoad plugin will be necessary in the project.

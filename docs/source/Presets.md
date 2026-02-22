@@ -1,16 +1,15 @@
 # Presets
 
-**UUnrealDrivePreset** - a class that allows you to store and use various user presets, such as:
+**UMetaRoadPreset** - a class that allows you to store and use various user presets, such as:
   - Profiles for all procedurally generated objects (Road Surface, Sidewalk, markings, curbs, etc.)
   - The road lane attributes
   - Road profiles for drawing (number and types of lanes) 
 
 There can be many presets in a project, but logically they are all combined into one. Therefore, you need to be careful with the names of profiles in presets, because if two or more presets contain profiles with the same name, only one will be used at random.  
-To create a new preset, simply create a new BP asset in the **Content Browser**, inherited from **UUnrealDrivePreset**:  
-![alt text](img/create-preset.gif)  
+To create a new preset, simply create a new **Meta Road Preset** asset in the **Content Browser**:  
+![alt text](img/create-preset.png)  
 
-**UUnrealDrivePreset** inherits from **UPrimaryDataAsset**, so it is important to add the corresponding paths where the preset was created in **Asset Manager -> Primary Assets to Scan**. Usually, it is sufficient to specify only two directories, **/Game** and **/UnrealDrive**, but if the preset is created inside a plugin, you must specify the paths to the corresponding plugins where the presets are located (see the [Installation](Installation.md)).
-The UnrealDrive plugin already has a default preset at **/UnrealDrive/DefaultPreset**. It should not be changed for backward compatibility, but there may be cases when it is necessary (for example, to change left-hand traffic to right-hand traffic):  
+The MetaRoad plugin already has a default preset at **/MetaRoad/DefaultPreset**. It should not be changed for backward compatibility, but there may be cases when it is necessary (for example, to change left-hand traffic to right-hand traffic):  
 ![alt text](img/default-preset.png)  
 
 ## Driveable Material Profiles
