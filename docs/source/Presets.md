@@ -1,6 +1,6 @@
 # Presets
 
-**UMetaRoadPreset** - a class that allows you to store and use various user presets, such as:
+**MetaRoadPreset** - a asset that allows you to store and use various user presets, such as:
   - Profiles for all procedurally generated objects (Road Surface, Sidewalk, markings, curbs, etc.)
   - The road lane attributes
   - Road profiles for drawing (number and types of lanes) 
