@@ -16,3 +16,4 @@
   - Fixed decales generation in the **Build Mesh Tool**
   - Fixed ctrl+z in the **Draw Spline Tool**
   - Fixed landscape layer painting in UE5.7
+  - Supported of Mac
