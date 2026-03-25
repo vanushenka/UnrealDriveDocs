@@ -21,3 +21,8 @@
 **v2.0.5**  
   - Fixed landscape spline intersections
   - Added collision profiles to the [Build Mesh Tool](ProcedureGenerationTool.md)
+
+**v2.0.6**  
+  - Fixed UV maps for long road splines
+  - Fixed wrong error messages in the **Build Mesh Mode** 
+  - Fixed the movement of multiple road actors simultaneously
