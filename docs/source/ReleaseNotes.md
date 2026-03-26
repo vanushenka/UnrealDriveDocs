@@ -26,3 +26,6 @@
   - Fixed UV maps for long road splines
   - Fixed wrong error messages in the **Build Mesh Mode** 
   - Fixed the movement of multiple road actors simultaneously
+  
+**v2.0.7** 
+  - Fixed UV maps bug from v2.0.6 release
