@@ -56,7 +56,7 @@ These mode allow to add various **Road Attributes** to **Road Lane**, which can 
 
 
 By default, two types of attributes are available: speed limit and road markings. 
-To learn how to create new attribute types, see [Road Attribute Entries](Presets.md#road-attribute-entries).
+To learn how to create new attribute types, see [Attribute Profile](Presets.md#attribute-profile).
 To add a new attribute for a lane, select the appropriate mode in the **Road Editing Modes** menu, select the required **Road Lane**, and select **Create ATTRIBUTE_NAME** from the context menu. Then, add the required **Attribute Keys** from the same context menu:  
 ![alt text](img/attribute-add.gif)  
 
@@ -64,10 +64,10 @@ In the **Details Panel**, in the **Selection** group, you can edit the selected 
 ![alt text](img/attribute-selection.png)  
 
 ### Road Mark Attribute
-**Road Mark Attribute** is one of the [Road Attributes](RoadModel.md#lane-attributes) types that is available "out of the box" and allows you to add a **Mark** attribute to **Road Lane**, which is used in [Procedural Generation](ProcedureGenerationTool.md) to generate road markings. Each **Attribute Key** is assigned a road marking type, which can be selected in ```Profile Name```. Or you can create a new type on the spot (```Profile Name -> Use Custom```):  
+**Road Mark Attribute** is one of the [Road Attributes](RoadModel.md#lane-attributes) types that is available "out of the box" and allows you to add a **Mark** attribute to **Road Lane**, which is used in [Procedural Generation](ProcedureGenerationTool.md) to generate road markings. Each **Attribute Key** is assigned a road marking type, which can be selected in ```Profile```. Or you can create a new type on the spot (```Profile Source -> Use Custom```):  
 ![alt text](img/mark.png)  
 
-If you need to remove markings for any of the sections on **Road Lane**, set ```Profile Name``` to ```None```:  
+If you need to remove markings for any of the sections on **Road Lane**, set ```Profile``` to ```empty```:  
 ![alt text](img/mark-none.png)  
 
-To add new road marking profiles, see [Lane Mark Profiles](Presets.md#lane-mark-profiles).
+To add new road marking profiles, see [Lane Mark Profiles](Presets.md#mark-profile).

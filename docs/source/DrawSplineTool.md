@@ -9,7 +9,7 @@ The drawing mode is determined automatically based on where you start drawing th
 If you start drawing a spline from any point other than the **Lane Successor Connection**, the **Drawing from Profile** mode will be selected. 
 In this mode, you can select a profile from the **Draw Profile** drop-down menu:  
 ![alt text](img/draw-spline-profile.gif)  
-A new road profile can be added in [presets](Presets.md#road-lanes-profiles).  
+A new road profile can be added in [presets](Presets.md#road-profile).  
 
 ## Drawing from Lane Successor Connection
 If you start drawing a spline with the [Lane Successor Connection](RoadModel.md#intersections-and-junctions), the **Drawing Lane Successor Connection** mode will be selected. 

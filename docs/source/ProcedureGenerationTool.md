@@ -23,12 +23,19 @@ The **Build Mesh Tool** separately generates assets for:
 For each of these asset types, there is a corresponding group of parameters in the **Build Mesh Tool**:  
 ![alt text](img/gen-params.png)  
 
-### Mesh Materials
-For each type of generated asset (Drive Surface, Sidewalks, Curbs, etc.), there is a ```Materials``` parameter. It allows you to replace materials from [Preset Profiles](Presets.md) set in **Road Lanes**:  
-![alt text](img/gen-materials.png)  
-
-Why was this necessary, instead of simply defining all the necessary materials in **Preset Profiles**?
-In practice, **Preset Profiles** usually define profile “domains,” such as **Tram**, and set a default material for them. And in the **Build Mesh Tool**, it is convenient to override the default material if necessary. This approach is more flexible and allows you to quickly switch between sets of materials for the same road, even those obtained from different sources. But there is nothing to prevent you from creating several **Tram** profiles in **Preset Profiles** (e.g., **Tram-1**, **Tram-new**, **Tram-old**) and assigning the appropriate profiles to **Road Lanes**.
+### Mesh Lane Materials
+All road lanes have a ```Lane Type```:  
+![alt text](img/lane-type.png)  
+You can add new ```Lane Type``` in the **Project Settings**. Each ```Lane Type``` also has a ```Default Material```:
+![alt text](img/lane-type-material.png)  
+For a selected road lane, you can override the default lane material:
+![alt text](img/lane-type-material-override.png)  
+You can also override the default ```Lane Type``` material from the  **Build Mesh Tool** settings:  
+![alt text](img/lane-type-material-override2.png)  
+Thus, the priority of determining the road lane material is as follows:  
+  -> Default material from ```Lane Type``` description  
+  -> Override materials from the **Build Mesh Tool**  
+  -> Override materials from the selected road lane menu 
 
 ### Mesh UVs
 Procedural generation for Road Surface generates two levels of texture coordinates:  

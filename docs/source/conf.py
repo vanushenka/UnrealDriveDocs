@@ -3,11 +3,11 @@
 # -- Project information
 
 project = 'MetaRoad'
-copyright = '2025, Ivan Zhukov'
+copyright = '2026, Ivan Zhukov'
 author = 'Ivan Zhukov'
 
-release = '2.0'
-version = '2.0.0'
+release = '2.1'
+version = '2.1.0'
 
 # -- General configuration
 
