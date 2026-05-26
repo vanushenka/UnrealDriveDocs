@@ -71,3 +71,7 @@ If you need to remove markings for any of the sections on **Road Lane**, set ```
 ![alt text](img/mark-none.png)  
 
 To add new road marking profiles, see [Lane Mark Profiles](Presets.md#mark-profile).
+
+### Curb Cut Attribute (Pro)
+This attribute allows to create curb cuts on sidewalks:  
+![alt text](img/curb-cut.gif)  

@@ -6,8 +6,8 @@ project = 'MetaRoad'
 copyright = '2026, Ivan Zhukov'
 author = 'Ivan Zhukov'
 
-release = '2.1'
-version = '2.1.0'
+release = '2.3'
+version = '2.3.0'
 
 # -- General configuration
 
