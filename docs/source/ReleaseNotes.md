@@ -47,15 +47,15 @@
   - FixedG of "shooting triangles" in the landscape due to sharp spline curvature
   
  **v2.3.0**
-  - New "Curb Cut" road attribute mode
+  - New [Curb Cut](AttributeModes.md#curb-cut-attribute-pro) road attribute
+  - New [Sidewalk Height](AttributeModes.md#sidewalk-height-attribute) attribute
   - Improved UI/UX for working with road attributes 
   - Added attribute spline mesh collision
   - Fixed crashes when working with road attributes
-  - New "Sidewalk Height" attribute mode
   - Improved "Sidewalk Height" workflow
   - Fixed build for linux
 
  **v2.4.0**
-   - Added "Polygon Profile" includes new attribute, and spline editor 
-   - Supported of Crosswalk - New tool and actor component
+   - Added [Polygon Profile](Presets.md#polygon-profile-pro) includes new [Attribute](AttributeModes.md#polygon-attribute-pro) , and  [Polygon Editor](Presets.md#polygon-editor)
+   - Supported of [Crosswalk](DrawCrosswalkTool.md)
    - Minor fixes and imporovments 

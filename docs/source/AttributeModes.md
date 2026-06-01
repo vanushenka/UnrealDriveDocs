@@ -67,5 +67,6 @@ There are 4 main types of the Curve Attributes:
   - Curve Attribute - a base type from which you can inherit in C++ or BP and write any logic for generating objects along the road lane.
   - Spline Mesh Attribute - designed to generate a USplineMeshComponent along a road lane
   - Component Template Attribute - designed to generate any USceneComponent along a road lane
-  - Actor Template Attribute  - designed to generate any AActor along a road lane
-See [Curve Profiles](Presets.md#attribute-profile) for details
+  - Actor Template Attribute  - designed to generate any AActor along a road lane  
+  
+See [Curve Profiles](Presets.md#attribute-profile) for details.
