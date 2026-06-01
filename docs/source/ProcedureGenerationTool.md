@@ -1,3 +1,8 @@
+# Procedure Generation Tool
+
+The **Procedure Generation Tool** converts road layout data stored in `URoadSplineComponent` into actual 3D assets placed in the level: static meshes for the drive surface, sidewalks, and curbs; spline meshes for road markings; and decals for surface overlays. To access it, switch **Editor Mode** to **Modeling Mode** and select the **Road** toolset.
+
+All `URoadSplineComponent` instances within a single actor are triangulated together as one unit. This means intersections (whose splines share an actor) are generated as a seamless mesh, while splines in separate actors are generated independently — see [Spline grouping rules](#the-principle-of-spline-grouping) below.
 
 ## Build Mesh Tool
 This Modeling Tool allows you to generate assets (static meshes, dynamic meshes, spline meshes, etc.) and create Actors with these assets on the scene.  

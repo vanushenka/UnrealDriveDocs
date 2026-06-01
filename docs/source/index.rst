@@ -10,8 +10,9 @@ Welcome to MetaRoad documentation!
    About.md
    Installation.md
    RoadModel.md
-   SplineEditorModes.md
-   MetaRoadEditorMode.rst
+   EditorModes.md
+   AttributeModes.md
+   CreateTools.rst
    Presets.md
    Landscape.md
    ZoneGraph.md

@@ -1,5 +1,7 @@
 # Zone Graph (Pro)
 
+[ZoneGraph](https://dev.epicgames.com/community/learning/tutorials/qz6r/unreal-engine-zonegraph-quick-start-guide) is Unreal Engine's zone-based navigation graph used by MassAI and crowd simulation systems. MetaRoad can populate ZoneGraph lanes directly from road lane data, so AI agents can path-find along roads, tram lines, sidewalks, or any other lane type without manual zone shape placement. To use this feature you need the **Pro** edition of MetaRoad plus the **ZoneGraph** and **MassAI** plugins enabled in your project.
+
 **ZoneGraphData** is built via the **Build -> Build ZoneGraph** menu, just like the standard [ZoneShape](https://dev.epicgames.com/community/learning/tutorials/qz6r/unreal-engine-zonegraph-quick-start-guide) approach. This will generate one ZoneGraphData actor for each level, which will contain navigation data for the corresponding level:  
 ![alt text](img/zone-graph-build.png)  
 

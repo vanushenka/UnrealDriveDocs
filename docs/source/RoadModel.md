@@ -36,8 +36,10 @@ Lanes may be split into multiple lane sections. Each lane section contains a **f
 ![alt text](img/lane-sections.png "Lane Sections")  
 This figure shows that every time the number of lanes changes, a new lane section is required. Lane sections are defined in ascending order along the road reference line.  
 
+### Asymmetric Lane Sections
 ![alt text](img/lane-sections-adv.png "Lane Sections Advanced")  
 This figure shows how lane sections for complex roads may be defined for one side of the road only - left, right and both sides
+In thess cases the left and right sides of a road need section boundaries at **different** positions along the reference line — for example, when a right-turn lane starts at S=500 m while the left side remains unchanged. This is called an asymmetric layout.
 
 ### Lane Offset
 A lane offset may be used to shift the center lane away from the road reference line. This makes it easier to model local lateral shifts of lanes on roads, for example for left turn lanes.  

@@ -33,20 +33,29 @@
 **v2.1.0**
   - The mechanism of preset has been completely refacted:
     - **UMetaRoadPreset** has been deprecated and is no longer used.
-    - Road profiles, markings, curbs and attributes have been added as separate assets. See [Presets](Presets.md).
+    - Road profiles, markings, curbs and attributes have been added as separate assets. See [Profiles](Presets.md).
   - More advanced **Lane Types** have been added and the ability to create new **Lane Types** has become available. See [Lane Types](ProcedureGenerationTool.md#mesh-lane-materials).
   - Improved approach to assigning materials to road lanes. See [Lane Types](ProcedureGenerationTool.md#mesh-lane-materials).
   
 **v2.2.0**
   - Ability to create a road profile from a selected road section 
   - Ability to automatically align the width of lanes at connections 
-  - Quick lane direction change (⁠dev-logs⁠)
+  - Quick lane direction change
   - Ability to quickly re-attach a road spline between different actors
   - Automatic fit of the width of the lanes at the end of the spline 
   - Added Landsacpe Attribute
   - FixedG of "shooting triangles" in the landscape due to sharp spline curvature
   
  **v2.3.0**
-   - New "curb cut" road attribute mode
-   - Improved UI/UX for working with road attributes
-   - Fixed crashes when working with road attributes
+  - New "Curb Cut" road attribute mode
+  - Improved UI/UX for working with road attributes 
+  - Added attribute spline mesh collision
+  - Fixed crashes when working with road attributes
+  - New "Sidewalk Height" attribute mode
+  - Improved "Sidewalk Height" workflow
+  - Fixed build for linux
+
+ **v2.4.0**
+   - Added "Polygon Profile" includes new attribute, and spline editor 
+   - Supported of Crosswalk - New tool and actor component
+   - Minor fixes and imporovments 
