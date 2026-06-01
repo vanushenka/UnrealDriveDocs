@@ -18,9 +18,9 @@ The center lane has no width and serves as reference for lane numbering. The cen
 ![alt text](img/lane-indexes.png "Lane Indexes")  
 This figure shows the center lane for a road with multiple traffic lanes and different driving directions. In this case, the center lane separates the driving directions, depending on left- and right-hand traffic, specified in Road type. Because no lane offset is used, the center lane is identical to the road reference line.
 
-### Lane Types
-The lane type is defined per lane. A lane type defines the main purpose of a lane and its corresponding traffic rules. There are basic types (such as driving, shoulder, border, biking, etc.) and user-defined types (which can be added via the C++ API).  
-![alt text](img/lane-types.png "Lane Types")  
+### Zone Types
+The Zone type is defined per lane or custom polygones. A Zone Types defines the main purpose of a lane or polygon and its corresponding traffic rules. There are basic types (such as driving, shoulder, border, biking, etc.) and user-defined types (which can be added via the C++ API).  
+![alt text](img/lane-types.png "Zone Types")  
 
 ### Lane Direction
 Each road lane has a direction. On the graphs, this direction is shown by white moving arrows. This direction is specified by a combination of different elements and attributes. For any individual lane, you can change the direction of movement.  
