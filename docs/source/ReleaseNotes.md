@@ -59,3 +59,7 @@
    - Added [Polygon Profile](Presets.md#polygon-profile-pro) includes new [Attribute](AttributeModes.md#polygon-attribute-pro) , and  [Polygon Editor](Presets.md#polygon-editor)
    - Supported of [Crosswalk](DrawCrosswalkTool.md)
    - Minor fixes and imporovments 
+   
+ **v2.5.0**
+	- Refacted (renamed): FLaneInstance -> FRoadZone, FLaneType -> FRoadZoneType, FLaneTypeDetails -> FRoadZoneTypeDetails, etc
+	- Hot fix: generated mesh vertex Z 
