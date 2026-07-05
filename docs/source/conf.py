@@ -6,8 +6,8 @@ project = 'MetaRoad'
 copyright = '2026, Ivan Zhukov'
 author = 'Ivan Zhukov'
 
-release = '2.4'
-version = '2.4.0'
+release = '3.0'
+version = '3.0.0'
 
 # -- General configuration
 
@@ -18,7 +18,19 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     'myst_parser',
+    'sphinxcontrib.mermaid',
 ]
+
+# Consistent, doc-friendly look for all Mermaid diagrams (grayscale, renders client-side).
+mermaid_light_theme = 'neutral'
+# securityLevel 'loose' lets node labels use inline HTML (bigger/bolder title + smaller/dimmer subtitle).
+# Keep startOnLoad False — the extension runs mermaid itself.
+mermaid_init_config = {"startOnLoad": False, "securityLevel": "loose"}
+
+# Auto-generate slug anchors for headings (h1..h4) so in-page cross-links like
+# `[text](/section/Page.md#some-heading)` resolve. Without this, MyST does not emit
+# implicit heading targets and every #anchor cross-reference warns.
+myst_heading_anchors = 4
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),

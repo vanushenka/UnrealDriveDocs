@@ -11,3 +11,21 @@ body, .rst-content .toctree-wrapper > p.caption, h1, h2, h3, h4, h5, h6, legend 
 .wy-nav-content {
     max-width: 1200px !important;
 }
+
+/* Quick Start step-navigation strip — a slim breadcrumb, not a blockquote or note box. */
+.qs-nav {
+    font-size: 0.85em;
+    line-height: 1.5;
+    padding: 0.55em 0.9em;
+    margin: 0 0 1.4em 0;
+    background: #f3f6f6;
+    border-left: 3px solid #2980b9;
+    border-radius: 3px;
+    color: #5a5a5a;
+}
+.qs-nav p {
+    margin: 0;
+}
+.qs-nav strong {
+    color: #2c3e50;
+}
