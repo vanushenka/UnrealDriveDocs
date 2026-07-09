@@ -1,8 +1,8 @@
 # Attribute Profile
 
-An **Attribute Profile** is the Content-Browser asset that registers a **custom lane attribute** as a Blueprint. Once
-created, the new attribute type appears automatically in [Attribute Mode](/editing/AttributeMode.md) — no changes to the
-core plugin.
+An **Attribute Profile** is the Content-Browser asset that registers a **custom lane attribute** (a
+`URoadLaneAttributeDescriptor` Blueprint). Once created, the new attribute type appears automatically in
+[Attribute Mode](/editing/AttributeMode.md) — no changes to the core plugin.
 
 ![Creating an Attribute Profile](/img/preset-attributes.png)
 
@@ -13,19 +13,20 @@ derives from:
 
 ![Choosing the base class of a new Attribute Profile](/img/entry-type.png)
 
-The base classes are the **[Generate Attributes](/attributes/GenerateAttributes.md)** family — each generates something along a
-lane. Pick one, configure it, and see its page in **Attribute Types** for the full field reference:
+The base classes are the **[Generate Attributes](/attributes/GenerateAttributes.md#types)** family — Spline Mesh,
+Component Template, Actor Template, or Lofting *(Pro)*. Pick the one that matches what you want to place along the lane
+(each has its own page under **Attribute Types** with the full field reference), or subclass the
+**[Generate](/attributes/GenerateAttributes.md#the-generate-base-class)** base directly to emit custom geometry from
+`GenerateAsset()`.
 
-- **[Generate](/attributes/GenerateAttributes.md#the-generate-base-class)** — the base class; override `GenerateAsset()` in
-  Blueprint to emit any geometry (samples: `/MetaRoad/MetaRoad/Profiles/Custom`).
-- **[Spline Mesh](/attributes/SplineMeshAttribute.md)** — sweep a static mesh along the lane (`SplineMeshSample`).
-- **[Component Template](/attributes/ComponentTemplateAttribute.md)** — repeat a scene component (`ComponentSample`).
-- **[Actor Template](/attributes/ActorTemplateAttribute.md)** — spawn an actor (`ActorSample`).
-- **[Lofting](/attributes/LoftingAttribute.md)** *(Pro)* — extrude a 2D cross-section (bridges, tunnels, decks); it has
-  its own [cross-section editor](/attributes/LoftingAttribute.md#lofting-attribute-editor).
+## How it's used
+
+The new attribute type appears automatically in the [Attribute Mode](/editing/AttributeMode.md) attribute tree — add it
+to a lane and place keys like any other attribute. You can also **drag the profile asset from the Content Browser onto a
+road lane** to add it directly (see [Profiles → Drag and drop](/profiles/Profiles.md#drag-and-drop)).
 
 ## See also
 
-- [Attributes](/concepts/Attributes.md) — what attributes are and the full type catalogue.
+- [Attributes](/concepts/Attributes.md) — what attributes are and the full type catalog.
 - [Generate Attributes](/attributes/GenerateAttributes.md) — the base-class family this profile derives from.
 - [Attribute Mode](/editing/AttributeMode.md) — add and edit attributes on a lane.

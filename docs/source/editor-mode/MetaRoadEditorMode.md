@@ -4,7 +4,7 @@ MetaRoad ships its own Unreal **editor mode**, shown as **Meta Road** in the lev
 **single entry point** for all road authoring — drawing roads, editing them, previewing, and baking all happen here.
 There is no separate "road" toolset in Modeling Mode any more.
 
-![alt text](/img/meta-road-editor-mode.png)
+![The Meta Road editor mode selected in the level-editor mode dropdown](/img/meta-road-editor-mode.png)
 
 ## The tile palette
 
@@ -17,21 +17,21 @@ The categories, in order (**Create** is the default when the mode opens):
 
 ### Create — make road geometry
 
-![alt text](/img/create-panel.png)
+![The Create category tiles in the Meta Road mode panel](/img/create-panel.png)
 
 Interactive tools that place new roads. (All except **Spline** are Pro.)
 
 | Tile | Creates |
 |------|---------|
 | **Spline** | A new road spline (`URoadSplineComponent`) drawn on a surface — see [Draw Spline Tool](/create-tools/DrawSplineTool.md) |
-| **Roundabout** *(Pro)* | A circular roundabout road — see [Roundabout Tool](/create-tools/RoundaboutTool.md) |
-| **Intersection** *(Pro)* | A junction linking several roads — see [Intersection Tool](/create-tools/IntersectionTool.md) |
-| **Crosswalk** *(Pro)* | A pedestrian crossing on the selected road — see [Crosswalk Tool](/create-tools/DrawCrosswalkTool.md) |
-| **Chevron** *(Pro)* | A chevron guide-island marking — see [Chevron Marking Tool](/create-tools/ChevronMarkingTool.md) |
+| **Roundabout** (Pro) | A circular roundabout road — see [Roundabout Tool](/create-tools/RoundaboutTool.md) |
+| **Intersection** (Pro) | A junction linking several roads — see [Intersection Tool](/create-tools/IntersectionTool.md) |
+| **Crosswalk** (Pro) | A pedestrian crossing on the selected road — see [Crosswalk Tool](/create-tools/DrawCrosswalkTool.md) |
+| **Chevron** (Pro) | A chevron guide-island marking — see [Chevron Marking Tool](/create-tools/ChevronMarkingTool.md) |
 
 ### Edit — shape the selected road
 
-![alt text](/img/edite-panel.png)
+![The Edit category tiles in the Meta Road mode panel](/img/edite-panel.png)
 
 Sub-modes for editing a selected road. Each swaps in a viewport editor and a Details "Selection" panel.
 
@@ -46,7 +46,7 @@ Sub-modes for editing a selected road. Each swaps in a viewport editor and a Det
 
 ### Bake — generate output
 
-![alt text](/img/bake-panel.png)
+![The Bake category tiles in the Meta Road mode panel](/img/bake-panel.png)
 
 | Tile | Does |
 |------|------|
@@ -55,7 +55,7 @@ Sub-modes for editing a selected road. Each swaps in a viewport editor and a Det
 
 ### Misc
 
-![alt text](/img/misc-panel.png)
+![The Misc category tile in the Meta Road mode panel](/img/misc-panel.png)
 
 | Tile | Does |
 |------|------|
@@ -75,7 +75,7 @@ At the top of the panel a toggle switches the viewport between two views:
     settings. While a build is running it turns into a red **stop** icon that cancels the in-progress build. It is
     disabled when there is no active preview to rebuild.
 
-![alt text](/img/schematic-vs-preview.png)
+![The Schematic and Preview toggle with the build-status and update buttons at the top of the mode panel](/img/schematic-vs-preview.png)
 
 ## Editing splines outside the mode
 
@@ -88,3 +88,15 @@ in the level and you can edit its road spline's points/tangents directly. The ot
 Road splines are only picked up by the build/preview/bake pipeline when they live on an **`AMetaRoad`** actor; splines
 on other actors are ignored. The Create tools always produce `AMetaRoad` actors for you. See
 [The MetaRoad Workflow](/concepts/Workflow.md) for the full picture.
+
+## See also
+
+- [The MetaRoad Workflow](/concepts/Workflow.md) — the end-to-end authoring pipeline.
+- Create tools: [Draw Spline Tool](/create-tools/DrawSplineTool.md),
+  [Roundabout Tool](/create-tools/RoundaboutTool.md) (Pro),
+  [Intersection Tool](/create-tools/IntersectionTool.md) (Pro),
+  [Draw Crosswalk Tool](/create-tools/DrawCrosswalkTool.md) (Pro),
+  [Chevron Marking Tool](/create-tools/ChevronMarkingTool.md) (Pro).
+- Edit sub-modes: [Spline Mode](/editing/SplineMode.md), [Section Mode](/editing/SectionMode.md),
+  [Offset Mode](/editing/OffsetMode.md), [Width Mode](/editing/WidthMode.md),
+  [Attribute Mode](/editing/AttributeMode.md), [Preset Mode](/editing/PresetMode.md).

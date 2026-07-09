@@ -13,7 +13,7 @@
   - Added **ZoneTags** property for FRoadLane
     
 **v2.0.4**  
-  - Fixed decales generation in the **Build Mesh Tool**
+  - Fixed decals generation in the **Build Mesh Tool**
   - Fixed ctrl+z in the **Draw Spline Tool**
   - Fixed landscape layer painting in UE5.7
   - Supported of Mac
@@ -31,8 +31,8 @@
   - Fixed UV maps bug from v2.0.6 release
 
 **v2.1.0**
-  - The mechanism of preset has been completely refacted:
-    - **UMetaRoadPreset** has been deprecated and is no longer used.
+  - The mechanism of preset has been completely refactored:
+    - `UMetaRoadPreset` has been deprecated and is no longer used.
     - Road profiles, markings, curbs and attributes have been added as separate assets. See [Profiles](/profiles/Profiles.md).
   - More advanced **Lane Types** have been added and the ability to create new **Lane Types** has become available. See [Lane Types](/baking/BakeStaticMesh.md#mesh-lane-materials).
   - Improved approach to assigning materials to road lanes. See [Lane Types](/baking/BakeStaticMesh.md#mesh-lane-materials).
@@ -43,7 +43,7 @@
   - Quick lane direction change
   - Ability to quickly re-attach a road spline between different actors
   - Automatic fit of the width of the lanes at the end of the spline 
-  - Added Landsacpe Attribute
+  - Added Landscape Attribute
   - FixedG of "shooting triangles" in the landscape due to sharp spline curvature
   
  **v2.3.0**
@@ -58,10 +58,10 @@
  **v2.4.0**
   - Added [Polygon Profile](/profiles/PolygonProfile.md) includes new [Attribute](/attributes/PolygonAttribute.md) , and  [Polygon Profile Editor](/profiles/PolygonProfile.md)
   - Supported of [Crosswalk](/create-tools/DrawCrosswalkTool.md)
-  - Minor fixes and imporovments 
+  - Minor fixes and improvements 
    
  **v2.5.0**
-  - Refacted (renamed): FLaneInstance -> FRoadZone, FLaneType -> FRoadZoneType, FLaneTypeDetails -> FRoadZoneTypeDetails, etc
+  - Refactored (renamed): FLaneInstance -> FRoadZone, FLaneType -> FRoadZoneType, FLaneTypeDetails -> FRoadZoneTypeDetails, etc
   - Hot fix: Height (Z coordinates of vertices) of the generated mesh
 
  **v3.0.0**

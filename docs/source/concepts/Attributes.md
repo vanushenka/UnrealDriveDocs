@@ -23,11 +23,11 @@ Each capability below is produced by a built-in attribute type — at bake time,
 - **Paint lane markings** — the [Road Mark](/attributes/RoadMarkAttribute.md) attribute generates center lines, edge
   lines, dashes, and custom strips.
 - **Line the road with meshes and props** — [Spline Mesh](/attributes/SplineMeshAttribute.md) sweeps a mesh (guardrails,
-  barriers, kerbs) while [Component](/attributes/ComponentTemplateAttribute.md) and
+  barriers, curbs) while [Component](/attributes/ComponentTemplateAttribute.md) and
   [Actor](/attributes/ActorTemplateAttribute.md) templates repeat props (lamp posts, cones, power lines) along the lane.
 - **Build bridges, tunnels and walls** — [Lofting](/attributes/LoftingAttribute.md) *(Pro)* extrudes a 2D cross-section
   into a continuous surface that follows the road.
-- **Shape sidewalks and drop kerbs** — [Sidewalk Height](/attributes/SidewalkHeightAttribute.md) ramps the walkway and
+- **Shape sidewalks and drop curbs** — [Sidewalk Height](/attributes/SidewalkHeightAttribute.md) ramps the walkway and
   [Curb Cut](/attributes/CurbCutAttribute.md) *(Pro)* lowers the curb at crossings and driveways.
 - **Drop surface overlays** — the [Polygon](/attributes/PolygonAttribute.md) *(Pro)* attribute places stop lines,
   arrows, and hatching.
@@ -60,7 +60,7 @@ blend smoothly between keys (landscape height, curve transforms).*
 For example, the `Speed` attribute below is set on a single lane (ID `+1` in section `1`) with three keys at `SOffset`
 0 cm, 400 cm and 800 cm. Each key's **Attribute Data** is a single float, giving 20, 60 and 100 km/h along the lane:
 
-![alt text](/img/lane-attr.png "Speed attribute with three keys")
+![A Speed attribute on one lane with three keys at 0, 400 and 800 cm giving 20, 60 and 100 km/h](/img/lane-attr.png "Speed attribute with three keys")
 
 ## Data or geometry
 
@@ -78,7 +78,7 @@ Every attribute type that ships with MetaRoad:
 
 - **[Speed](/attributes/SpeedAttribute.md)** — per-lane speed-limit metadata.
 - **[Road Mark](/attributes/RoadMarkAttribute.md)** — lane markings generated at bake time.
-- **[Curb Cut](/attributes/CurbCutAttribute.md)** *(Pro)* — dropped kerbs on sidewalks.
+- **[Curb Cut](/attributes/CurbCutAttribute.md)** *(Pro)* — dropped curbs on sidewalks.
 - **[Landscape](/attributes/LandscapeAttribute.md)** *(Pro)* — deform the Unreal landscape along the road.
 - **[Sidewalk Height](/attributes/SidewalkHeightAttribute.md)** — vary sidewalk vertex height for ramps and slopes.
 - **[Polygon](/attributes/PolygonAttribute.md)** *(Pro)* — custom 2D overlays: stop lines, arrows, hatching.

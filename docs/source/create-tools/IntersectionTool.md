@@ -7,10 +7,9 @@ This is the **Intersection** tile in the **Create** palette of the Meta Road edi
 
 ![Intersection tool active in the Create palette](/img/intersection-mode.png)
 
-This tool automates the creation of most standard intersections. You can still build any intersection or interchange
-manually with the [Draw Spline Tool](/create-tools/DrawSplineTool.md) — this tool just speeds up the common cases. For
-particularly complex or non-standard junctions, build them by hand with the
-[Draw Spline Tool](/create-tools/DrawSplineTool.md).
+This tool automates the creation of most standard intersections — it speeds up the common cases. For complex or
+non-standard junctions and interchanges, build them by hand with the
+[Draw Spline Tool](/create-tools/DrawSplineTool.md) instead.
 
 ## Supported Intersection Types
 
@@ -62,7 +61,7 @@ Solver options in the tool's **Details** panel:
 | `Forward Indent` | 600 | Indent applied to the generated forward splines, cm |
 | `Allow Forward Pass` / `Allow Reverse Pass` *(advanced)* | on | Solver passes that search for connecting splines |
 
-## Tips
+## Next steps
 
 - After generation, switch to [Section Mode](/editing/SectionMode.md) to fine-tune the lane layout inside the junction
   splines.

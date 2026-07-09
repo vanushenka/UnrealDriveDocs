@@ -1,0 +1,31 @@
+<svg viewBox="0 0 450 232" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Curb Profile's CurbCurve defines the curb cross-section: X=0 is the back wall on the sidewalk side (full height); moving toward the road the profile drops and ends sharply at Y=0">
+<style>svg{color:#404040}</style>
+<defs>
+<marker id="curb-ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="currentColor" stroke="none"/></marker>
+<marker id="curb-ah2" markerWidth="8" markerHeight="8" refX="1" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6 Z" fill="currentColor" stroke="none"/></marker>
+</defs>
+
+<!-- solid curb body under the silhouette (its left edge, on the Y axis, is the back wall) -->
+<path d="M64,74 L232,74 L322,84 C352,90 366,150 370,176 L374,188 L64,188 Z" fill="currentColor" fill-opacity="0.08" stroke="none"/>
+
+<!-- axes -->
+<line x1="64" y1="188" x2="420" y2="188" stroke="currentColor" stroke-opacity="0.6" marker-end="url(#curb-ah)"/>
+<line x1="64" y1="188" x2="64" y2="44" stroke="currentColor" stroke-opacity="0.6" marker-end="url(#curb-ah)"/>
+<text x="64" y="36" fill="currentColor" stroke="none" font-family="sans-serif" font-size="10" text-anchor="middle" fill-opacity="0.75">height (value)</text>
+<text x="242" y="218" fill="currentColor" stroke="none" font-family="sans-serif" font-size="10" text-anchor="middle" fill-opacity="0.75">lateral position: 0 = back wall (sidewalk) &#8594; road</text>
+
+<!-- the CurbCurve silhouette -->
+<path d="M64,74 L232,74 L322,84 C352,90 366,150 370,176 L374,188" stroke="currentColor" stroke-width="2"/>
+
+<!-- curve keys -->
+<g fill="currentColor" stroke="none"><circle cx="64" cy="74" r="3.5"/><circle cx="232" cy="74" r="3.5"/><circle cx="322" cy="84" r="3.5"/><circle cx="374" cy="188" r="3.5"/></g>
+
+<!-- curb-height bracket at the back wall -->
+<line x1="90" y1="76" x2="90" y2="186" stroke="currentColor" stroke-opacity="0.85" marker-start="url(#curb-ah2)" marker-end="url(#curb-ah)"/>
+<text x="97" y="132" fill="currentColor" stroke="none" font-family="sans-serif" font-size="9">curb height</text>
+
+<!-- side hints -->
+<text x="70" y="68" fill="currentColor" stroke="none" font-family="sans-serif" font-size="9" fill-opacity="0.6">back wall (sidewalk side)</text>
+<text x="384" y="168" fill="currentColor" stroke="none" font-family="sans-serif" font-size="9" fill-opacity="0.6">road side</text>
+<text x="384" y="180" fill="currentColor" stroke="none" font-family="sans-serif" font-size="9" fill-opacity="0.6">(ends at Y=0)</text>
+</svg>

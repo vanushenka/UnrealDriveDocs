@@ -49,7 +49,7 @@ Create a new attribute from the **Content Browser** under the **Meta Road** cate
 
 ![Creating a new attribute from the Content Browser Meta Road category](/img/create-new-attribute.png)
 
-In the **Pick Parent Class** dialog choose **RoadLaneAttributeGenerateDescriptor**:
+In the **Pick Parent Class** dialog choose `RoadLaneAttributeGenerateDescriptor`:
 
 ![Choosing RoadLaneAttributeGenerateDescriptor as the parent class](/img/curve-create.png)
 
@@ -136,7 +136,7 @@ Drag a Generate attribute profile from the Content Browser onto a road lane to a
 Custom Generate Attribute examples ship at **`/MetaRoad/MetaRoad/Profiles/Custom`**:
 
 - **`CustomSample`** — a minimal Generate subclass that overrides `GenerateAsset()`.
-- **`BridgeBeam`** — repeats a bridge-beam actor along the lane and compute beams size.
+- **`BridgeBeam`** — repeats a bridge-beam actor along the lane and computes each beam's size.
 
 ![A custom Generate Attribute building geometry along a road lane](/img/custom-attribute.gif)
 

@@ -16,7 +16,7 @@ details).
 MetaRoad ships a built-in set — **Driving, Sidewalk, Shoulder, Border, Stop, Median, Parking, Biking, Restricted,
 Marking, Tram, Rail, Bus** — and you can add your own.
 
-![alt text](/img/zone-types.png)
+![The built-in Road Zone Types listed in Project Settings](/img/zone-types.png)
 
 Each Zone Type stores:
 
@@ -26,7 +26,7 @@ Each Zone Type stores:
 | **Decal Material** | Default decal material — leave empty and no decal is built for this type |
 | **Material Priority** | Where surfaces overlap, the triangle takes the material with the **highest** priority |
 | **Is Decal** | The zone is a flat overlay projected onto the road surface (adds no height) — for asphalt markings such as arrows and stop lines. *(Unrelated to Unreal's `UDecalComponent`.)* |
-| **Editor Color** / **Editor Material** | Colour and preview material used only in the editor (Schematic view) |
+| **Editor Color** / **Editor Material** | Color and preview material used only in the editor (Schematic view) |
 | **Description** | Free-text note |
 
 ![Zone types shown on a road](/img/lane-types.png)
@@ -83,3 +83,9 @@ When baking, a surface's material is chosen in this order:
 3. where surfaces overlap, the one with the higher **Material Priority** wins.
 
 See [Baking → Mesh Lane Materials](/baking/BakeStaticMesh.md#mesh-lane-materials) for the baking side.
+
+## See also
+
+- [The Road Model](/concepts/RoadModel.md#road-lanes) — how lanes (which carry Road Zones) fit into a road.
+- [Closed-Loop Splines](/concepts/ClosedLoopSpline.md) — closed-loop fills that use a `LoopedRoadZone`.
+- [Baking](/baking/BakeStaticMesh.md) — how zones are baked into meshes and materials.

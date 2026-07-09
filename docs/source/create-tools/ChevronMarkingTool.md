@@ -35,11 +35,11 @@ filled with chevron V-bands pointing outward. Open-spline endpoints are skipped.
 
 | Property | Default | Description |
 |----------|---------|-------------|
-| `SectionSize` | 100 | Depth of one chevron band (the "V") along the wedge bisector, cm |
-| `SectionInterval` | 200 | Gap between consecutive chevron bands, cm |
-| `RoadZone` | — | Road surface type (material/color) applied to the marking |
-| `TextureAngle` | 0° | UV texture rotation, in degrees |
-| `TextureScale` | 1.0 | UV texture scale multiplier |
+| `Section Size` | 100 | Depth of one chevron band (the "V") along the wedge bisector, cm |
+| `Section Interval` | 200 | Gap between consecutive chevron bands, cm |
+| `Road Zone` | — | Road surface type (material/color) applied to the marking |
+| `Texture Angle` | 0° | UV texture rotation, in degrees |
+| `Texture Scale` | 1.0 | UV texture scale multiplier |
 
 **Per-point** (in the spline's **Selected Points** section — select one or more points first):
 

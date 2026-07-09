@@ -64,5 +64,5 @@ Once the spline is drawn, there are two ways to create it:
 - Configure lanes in [Section Mode](/editing/SectionMode.md) and shape the reference line in
   [Spline Mode](/editing/SplineMode.md).
 - Wire roads into junctions — see [Intersections and Junctions](/concepts/Junctions.md) or the
-  [Intersection Tool](/create-tools/IntersectionTool.md) *(Pro)*.
+  [Intersection Tool](/create-tools/IntersectionTool.md) (Pro).
 - [Bake](/baking/BakeStaticMesh.md) to generate the mesh.

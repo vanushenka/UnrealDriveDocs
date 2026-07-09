@@ -13,7 +13,7 @@ Profile editor described below.
 
 The editor is a small road editor with a **live 3D preview**, so you shape the profile and see the result immediately.
 
-![alt text](/img/road-profile-editor.png)
+![The Road Profile editor with a live 3D preview and details panel](/img/road-profile-editor.png)
 
 - **Preview viewport** — a 3D preview of the profile.
 - **Details panel** — properties of the current selection (a lane, the center line, or the whole profile).
@@ -29,7 +29,7 @@ A dropdown in the toolbar switches what the preview shows:
 
 **Right-click a lane** in the preview for its context menu:
 
-![alt text](/img/road-profile-editor-menu.png)
+![The right-click lane context menu in the Road Profile editor](/img/road-profile-editor-menu.png)
 
 - **Add Lane** (to the left or right of the clicked lane / center)
 - **Delete Lane**
@@ -37,12 +37,12 @@ A dropdown in the toolbar switches what the preview shows:
 
 Select a lane, the center line, or the whole profile to edit it in the details panel. Per-lane properties include:
 
-![alt text](/img/road-profile-editor-select-lane.png)
+![A selected lane showing its per-lane properties in the details panel](/img/road-profile-editor-select-lane.png)
 
 | Property | Description |
 |----------|-------------|
 | `Width` | Lane width |
-| `Road Zone` | Surface type of the lane (driving, sidewalk, tram, …) — sets material/behaviour |
+| `Road Zone` | Surface type of the lane (driving, sidewalk, tram, …) — sets material/behavior |
 | `Attributes` | Lane attributes carried by the profile (e.g. markings) |
 | `Direction` | Per-lane traffic direction (Default / Invert) |
 | `bSkipProceduralGeneration` | Exclude this lane from mesh generation |
@@ -57,9 +57,13 @@ presets work.
 
 ## Drag and Drop
 
-![alt text](/img/grag-and-drop-road-profile.gif)
+Drag a Road Profile from the Content Browser onto a road to apply its lane layout to that road:
+
+![Dragging a Road Profile from the Content Browser onto a road](/img/grag-and-drop-road-profile.gif)
 
 ## See also
 
 - [Profiles](/profiles/Profiles.md) — all Meta Road profile assets.
 - [Draw Spline Tool](/create-tools/DrawSplineTool.md) — where Road Profiles are used.
+- [Roundabout Tool](/create-tools/RoundaboutTool.md) — also draws roads from a Road Profile.
+- [Preset Mode](/editing/PresetMode.md) — preview build-setting presets against the profile.

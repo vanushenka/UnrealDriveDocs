@@ -1,10 +1,12 @@
 # Polygon Profile (Pro)
 
 A **Polygon Profile** (`URoadPolygonProfile`) is a reusable asset that stores one or more **2D closed polygon shapes**.
-The [Polygon Attribute](/attributes/PolygonAttribute.md) *(Pro)* uses them to place custom overlays — stop lines,
+The [Polygon Attribute](/attributes/PolygonAttribute.md) (Pro) uses them to place custom overlays — stop lines,
 arrows, hatching, and the like — on road lanes.
 
 ![A Polygon Profile with its 2D shapes](/img/polygon-profile.png)
+
+## Properties
 
 Each profile holds an array of **Polygon** entries. Every entry defines:
 

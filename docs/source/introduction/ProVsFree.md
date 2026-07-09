@@ -11,3 +11,8 @@ The **Pro** version includes everything in the **Free** version, plus:
 - [Curb Cut attribute](/attributes/CurbCutAttribute.md)
 - [Polygon attribute](/attributes/PolygonAttribute.md) (e.g. for road arrows) and [Polygon profile](/profiles/PolygonProfile.md)
 - [Lofting attribute](/attributes/LoftingAttribute.md) — extruded cross-sections for bridges and interchanges
+
+## See also
+
+- [About MetaRoad](/introduction/About.md) — what the plugin does.
+- [Installation](/introduction/Installation.md) — installing the plugin.

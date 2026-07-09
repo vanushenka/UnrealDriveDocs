@@ -3,8 +3,6 @@
 Creates **curb cuts** (dropped curbs) on sidewalks — the lowered ramp where a sidewalk meets a crossing or driveway.
 It reshapes the sidewalk's curb procedurally at each key position. Can only be added to **sidewalk lanes**.
 
-![A curb cut (dropped curb) generated on a sidewalk](/img/curb-cut.gif)
-
 ## Properties
 
 | Property | Default | Description |
@@ -17,6 +15,8 @@ It reshapes the sidewalk's curb procedurally at each key position. Can only be a
 | `Alpha` | 0.5 | Lateral position of the cut's end across the lane width [0.1 = inner edge … 0.5 = center … 1.0 = outer edge] (when `bIsCross` is off). |
 | `MeshDensity` | 4 | Subdivision density of the generated cut mesh [1–10]. |
 | `bSmooth` | off | Smooth (rounded) rather than sharp transition. |
+
+![A curb cut (dropped curb) generated on a sidewalk](/img/curb-cut.gif)
 
 ## See also
 

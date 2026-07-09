@@ -1,6 +1,6 @@
 # Mark Profile
 
-A **Mark Profile** (`URoadMarkProfile`) defines a single **road-marking strip** — its type, dimensions, and colour — for
+A **Mark Profile** (`URoadMarkProfile`) defines a single **road-marking strip** — its type, dimensions, and color — for
 **driving** lanes (`RoadLaneDriving`). The [Road Mark Attribute](/attributes/RoadMarkAttribute.md) then paints the strip
 along a lane.
 
@@ -14,15 +14,19 @@ Profile editor.
 - **Preview viewport** — a live preview of the marking strip as you edit it.
 - **Details panel** — the marking definition.
 
-![alt text](/img/mark-editor.png)
+![The Mark Profile editor previewing a marking strip](/img/mark-editor.png)
+
+Changes update the preview immediately.
+
+## Properties
 
 The marking definition (`FRoadLaneMarkProfile`) controls the strip's appearance:
 
-- **Type** — solid, dashed, or double.
-- **Dimensions** — strip width, and for dashed marks the dash length and gap.
-- **Colour / material** of the strip.
-
-Changes update the preview immediately.
+| Property | Description |
+|----------|-------------|
+| `Type` | Marking style — solid, dashed, or double. |
+| `Dimensions` | Strip width, and for dashed marks the dash length and gap. |
+| `Color / Material` | Color and material applied to the strip. |
 
 ## How it's used
 

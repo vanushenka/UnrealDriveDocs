@@ -22,3 +22,4 @@ In the **Details** panel, the **Selection** group edits the selected **Width Key
 
 - [Road Lanes](/concepts/RoadModel.md#road-lanes) — the lanes whose width you edit here.
 - [Section Mode](/editing/SectionMode.md) — add, remove and configure lanes and sections.
+- [Offset Mode](/editing/OffsetMode.md) — the other curve-editor sub-mode, for the center-line offset.

@@ -22,7 +22,7 @@ properties:
 
 | Property | Meaning |
 |----------|---------|
-| **Side** | `Both` / `Left` / `Right` — which side(s) this section governs (enables [asymmetric layouts](/concepts/RoadModel.md#lane-sections)) |
+| **Side** | `Both` / `Left` / `Right` — which side(s) this section governs (enables [asymmetric layouts](/concepts/RoadModel.md#asymmetric-lane-sections)) |
 | **SOffset** | Arc-length position where the section starts |
 | **SOffset End Cached** | Computed end of the section (read-only) |
 | **Label** | Optional name for the section |
@@ -53,7 +53,7 @@ lane's properties:
 | Property | Meaning |
 |----------|---------|
 | **Road Zone** | The lane's surface — a [Road Zone](/concepts/RoadZones.md) (a Zone Type + optional material/decal/priority overrides) |
-| **Zone Type** | Which [Zone Type](/concepts/RoadZones.md) the lane uses (Driving / Sidewalk / Tram / …) — sets the default material and behaviour |
+| **Zone Type** | Which [Zone Type](/concepts/RoadZones.md) the lane uses (Driving / Sidewalk / Tram / …) — sets the default material and behavior |
 | **Direction** | `Default` / `Invert` — per-lane traffic direction |
 | **Override Material / Decal / Priority** | Per-lane overrides of the zone's defaults |
 | **Invert UV0**, **Skip Procedural Generation** | Per-lane mesh flags |

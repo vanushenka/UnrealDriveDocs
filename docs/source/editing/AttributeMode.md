@@ -9,7 +9,7 @@ This is the **Attribute** tile in the **Edit** palette of the Meta Road editor m
 
 **Attribute Mode** adds and edits **lane attributes** — typed curves sampled along a lane that drive markings,
 guardrails, speed limits, landscape deformation, and more. This page covers **how to edit** attributes in the viewport;
-for the catalogue of attribute types and how to create your own, see [Attributes](/concepts/Attributes.md).
+for the catalog of attribute types and how to create your own, see [Attributes](/concepts/Attributes.md).
 
 ## The attribute tree
 
@@ -19,7 +19,7 @@ Pick a type here to work with it; the viewport then shows that attribute's keys 
 ![The searchable attribute tree with Pin, Attribute and Type columns](/img/attribute-tree.png)
 
 The tree lists **all** registered attribute types — both the built-in **native (C++)** ones and any defined in
-**Blueprint**. Types are grouped by category (uncategorised types sit at the top level; categories expand). It has
+**Blueprint**. Types are grouped by category (uncategorized types sit at the top level; categories expand). It has
 three columns:
 
 | Column | Meaning |
@@ -80,7 +80,7 @@ In the **Details** panel, the **Selection** group edits the selected **Attribute
 
 ## See also
 
-- [Attributes](/concepts/Attributes.md) — how attributes work (keys, interpolation, storage) and the full catalogue of
+- [Attributes](/concepts/Attributes.md) — how attributes work (keys, interpolation, storage) and the full catalog of
   types (speed, road marks, curb cuts, landscape, sidewalk height, polygon, …).
 - [Generate Attributes](/attributes/GenerateAttributes.md) — generate spline meshes, components, or actors along a lane.
 - [Profiles](/profiles/AttributeProfile.md) — register a new attribute type as an asset.

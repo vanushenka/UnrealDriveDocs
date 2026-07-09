@@ -17,7 +17,7 @@ Create a new attribute from the **Content Browser** under the **Meta Road** cate
 
 ![Creating a new attribute from the Content Browser Meta Road category](/img/create-new-attribute.png)
 
-In the **Pick Parent Class** dialog choose **RoadLaneAttributeComponentTemplateDescriptor**:
+In the **Pick Parent Class** dialog choose `RoadLaneAttributeComponentTemplateDescriptor`:
 
 ![Choosing RoadLaneAttributeComponentTemplateDescriptor as the parent class](/img/create-component-attribute.png)
 

@@ -26,8 +26,7 @@ Exactly one actor containing at least one `URoadSplineComponent` must be selecte
 
 ![Click-dragging to place a pedestrian crosswalk](/img/crosswalk-life.gif)
 
-After placement, select the `UCrosswalkComponent` in the **Details** panel to edit its properties, or drag the
-start/end handles directly in the viewport.
+After placement, you can also drag the start/end handles directly in the viewport.
 
 ## Properties
 
@@ -35,16 +34,16 @@ After placement, edit the `UCrosswalkComponent` in the **Details** panel (all le
 
 | Property | Default | Description |
 |----------|---------|-------------|
-| `EndPos` | (400, 0, 0) | End of the crosswalk center line, in local component space. Drag the end handle in the viewport or set it here |
-| `StartWidth` | 300 | Crosswalk width at the start (origin) end |
-| `EndWidth` | 300 | Crosswalk width at the `EndPos` end — the width is interpolated along the center line |
-| `StripeLength` | 40 | Length of each stripe along the center line |
-| `StripeInterval` | 40 | Gap between consecutive stripes |
+| `End Pos` | (400, 0, 0) | End of the crosswalk center line, in local component space. Drag the end handle in the viewport or set it here |
+| `Start Width` | 300 | Crosswalk width at the start (origin) end |
+| `End Width` | 300 | Crosswalk width at the `End Pos` end — the width is interpolated along the center line |
+| `Stripe Length` | 40 | Length of each stripe along the center line |
+| `Stripe Interval` | 40 | Gap between consecutive stripes |
 | `Rotation` | 0° | Rotation of each stripe around its own center (clamped to ±45°) |
-| `bRectangularStripes` | `false` | `true` — each stripe is a uniform-width rectangle; `false` — a trapezoid (width interpolated at the stripe edges) |
-| `RoadZone` | — | Road surface type (material/color) applied to the generated stripe polygons |
-| `TextureAngle` | 0° | UV texture rotation, in degrees |
-| `TextureScale` | 1.0 | UV texture scale multiplier |
+| `Rectangular Stripes` | off | on — each stripe is a uniform-width rectangle; off — a trapezoid (width interpolated at the stripe edges) |
+| `Road Zone` | — | Road surface type (material/color) applied to the generated stripe polygons |
+| `Texture Angle` | 0° | UV texture rotation, in degrees |
+| `Texture Scale` | 1.0 | UV texture scale multiplier |
 
 <!-- TODO 📷 screenshot: the UCrosswalkComponent Details panel with the stripe properties -->
 

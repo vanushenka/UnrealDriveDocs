@@ -16,7 +16,7 @@ interactively — draw, edit, preview, bake — and get real, game-ready meshes 
   posts, landscape deformation, sidewalk ramps, and fully custom types. Attributes are the plugin's main extension
   point — no core changes needed.
 - **Bake to meshes** — generate static/spline meshes (drive surface, sidewalks, curbs, marks, decals) with materials,
-  multi-channel UVs, and vertex colours. Export to **FBX** for any pipeline.
+  multi-channel UVs, and vertex colors. Export to **FBX** for any pipeline.
 - **Logical road graph** — connections and junctions for traffic, pathfinding, and *(Pro)* **ZoneGraph** AI navigation.
 - **Landscape integration** — deform the Unreal landscape to follow the roads *(Pro)*.
 - **Extensible** — C++ and Blueprint APIs to add lane types, custom attributes, generators, and importers/exporters.

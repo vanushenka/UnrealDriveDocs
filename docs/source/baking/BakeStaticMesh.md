@@ -26,12 +26,12 @@ preview of exactly what will be generated — nothing is written to disk until y
 
 For example, baking the actor *RoadActor11* produces *RoadActor11_Gen*:
 
-![alt text](/img/gen-actor.png)
+![The generated RoadActor11_Gen actor created next to the source road actor](/img/gen-actor.png)
 
 The generated actor holds the mesh components (usually `UStaticMeshComponent` and `USplineMeshComponent`) referencing
 the generated assets:
 
-![alt text](/img/buid-mesh3.png)
+![The generated actor's mesh components referencing the baked static and spline mesh assets](/img/buid-mesh3.png)
 
 **Clear** (on the same tile) removes the generated `_Gen` actors/assets without generating new ones.
 
@@ -125,15 +125,15 @@ junction is its own unit. This rule is explained in full — with examples — i
 
 All road lanes have a `Lane Type`:
 
-![alt text](/img/lane-type.png)
+![The Lane Type property shown on a selected road lane](/img/lane-type.png)
 
 You can add new `Lane Type`s in **Project Settings**. Each `Lane Type` has a `Default Material`:
 
-![alt text](/img/lane-type-material.png)
+![The Default Material assigned to a Lane Type in Project Settings](/img/lane-type-material.png)
 
 For a selected road lane you can override the default lane material:
 
-![alt text](/img/lane-type-material-override.png)
+![Overriding the default lane material on a selected road lane](/img/lane-type-material-override.png)
 
 You can also override the `Lane Type` material from the road's **build settings**:
 
@@ -152,26 +152,26 @@ Road-surface generation produces two texture-coordinate channels:
 - **UV0** — a separate track per lane. Useful for road ruts or tram tracks.
 - **UV1** — a track for the left and right sides of the road. Useful for road patches.
 
-![alt text](/img/TexCoords.png)
+![The UV0 per-lane and UV1 left/right texture-coordinate channels on the road surface](/img/TexCoords.png)
 
 To display the debugging materials shown above, choose the **UV0 Debug** or **UV1 Debug** preset:
 
-![alt text](/img/debug-tex-coords.png)
+![The UV0 Debug and UV1 Debug preset materials visualizing the texture-coordinate channels](/img/debug-tex-coords.png)
 
 ## Mesh Vertex Color
 
 For road-surface materials we recommend using the **Vertex Color** attribute to control where textures on the UV0/UV1
 channels appear (puddles, ruts, patches). This removes artifacts at seams where several `URoadSplineComponent`s meet:
 
-![alt text](/img/VertexColor2.gif)
+![Vertex color removing texture artifacts at seams where road spline components meet](/img/VertexColor2.gif)
 
 Suggested parameters for the Drive Surface vertex color:
 
-![alt text](/img/VertexColor3.png)
+![Suggested vertex color parameters for the Drive Surface material](/img/VertexColor3.png)
 
-They set the vertex colour at the center and edges of the mesh, and where lanes intersect:
+They set the vertex color at the center and edges of the mesh, and where lanes intersect:
 
-![alt text](/img/VertexColor.png)
+![Vertex colors applied at the mesh center, edges, and lane intersections](/img/VertexColor.png)
 
 For complex intersections you may still need to paint vertices manually in **Mesh Paint** mode.
 

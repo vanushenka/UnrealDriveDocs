@@ -6,7 +6,7 @@ complete snapshot of a road's **mesh-build settings** — the same `UMetaRoadBui
 meshes, …) — together with a **Display Name** and **Description**. You apply it to roads from
 [Preset Mode](/editing/PresetMode.md).
 
-![alt text](/img/edit-preset.png)
+![The Road Build Preset asset editor with its Settings, Display Name, and Description](/img/edit-preset.png)
 
 ```{note}
 A Build Preset bundles **how a road bakes**. It is *not* one of the content [Profiles](/profiles/Profiles.md)
@@ -22,27 +22,26 @@ plugin — you create your own.
 
 ## Creating a Build Preset
 
-There are two ways:
-
-- **From the Content Browser** — right-click → **Meta Road → Road Build Preset**. The asset is created with the default
-  property sets and the blue **Meta Road** asset colour; double-click it to fill in the settings, name, and description.
-- **From the Preset panel** — in [Preset Mode](/editing/PresetMode.md), set up the build settings on a road, then choose
-  **Save As New** from the preset combo's **Manage** section. This captures the current working settings of the primary
-  selected actor into a new asset (a Content Browser save dialog asks where to store it).
-
-![alt text](/img/preset-combo.png)
+Right-click in the Content Browser → **Meta Road → Road Build Preset**. The asset is created with the default property
+sets and the blue **Meta Road** asset color; double-click it to fill in the settings, name, and description.
 
 <!-- TODO 📷 screenshot: creating a Road Build Preset from the Content Browser "Meta Road" menu -->
+
+You can also **capture a preset from a road** you have already set up — from the
+[Preset panel](/editing/PresetMode.md#the-preset-panel), choose **Save As New** (a new asset) or **Save to Selected**
+(overwrite an existing preset). Both capture the **primary (first) selected** actor's build settings.
+
+![The Preset combo's Manage section — Save As New and Save to Selected](/img/preset-combo.png)
 
 ## Editing and updating
 
 - **Edit the asset** — double-click it to change its **Settings**, **Display Name**, and **Description** in the standard
   asset editor.
-- **Update from a road** — in [Preset Mode](/editing/PresetMode.md), select the preset in the combo, adjust the
-  settings, then choose **Save to Selected** to overwrite the asset with the current working settings.
+- **Update from a road** — from the [Preset panel](/editing/PresetMode.md#the-preset-panel), select the preset, adjust
+  the build settings, and **Save to Selected**.
 
-Both panel actions capture the **primary (first) selected** actor's settings. Saving or updating a preset changes the
-**asset**, not any road actor — save it (**Ctrl+S** / **Save All**) to keep the change.
+Saving or updating a preset changes the **asset**, not any road actor — save it (**Ctrl+S** / **Save All**) to keep the
+change.
 
 ## See also
 

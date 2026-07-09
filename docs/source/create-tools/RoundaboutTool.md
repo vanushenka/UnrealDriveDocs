@@ -27,17 +27,17 @@ After placing it you can keep tuning the shape from the **Details** panel (the v
 | Property | Default | Description |
 |----------|---------|-------------|
 | `Radius` | 1000 (min 200) | Circle radius, cm; also set live while dragging |
-| `NumPoints` | 4 (2–16) | Number of control points; more points = smoother circle |
+| `Num Points` | 4 (2–16) | Number of control points; more points = smoother circle |
 | `Rotation` | 0° (−180…180) | Rotates node 0 around the center — useful to align entry points with approach roads |
-| `bClockwise` | off | Spline traversal direction — off = counter-clockwise, on = clockwise |
-| `DrawProfile` | `2_Lanes+Borders_Coodirect` | [Road Profile](/profiles/RoadProfile.md) applied to the spline after each rebuild |
-| `LoopedRoadZone` | — | Surface zone that fills the interior island (`FRoadLayout::LoopedRoadZone`) |
-| `bHitWorld` / `bHitGroundPlane` | on / on | Raycast targets: world geometry and/or the Z=0 plane |
-| `ClickOffset` | 20 (0–100) | Offset above the hit surface, cm |
-| `bCreateBlueprint` / `BlueprintToCreate` | off | Optionally output a Blueprint instead of a level actor |
+| `Clockwise` | off | Spline traversal direction — off = counter-clockwise, on = clockwise |
+| `Draw Profile` | `2_Lanes+Borders_Coodirect` | [Road Profile](/profiles/RoadProfile.md) applied to the spline after each rebuild |
+| `Looped Road Zone` | — | Surface zone that fills the interior island |
+| `Hit World` / `Hit Ground Plane` | on / on | Raycast targets: world geometry and/or the Z=0 plane |
+| `Click Offset` | 20 (0–100) | Offset above the hit surface, cm |
+| `Create Blueprint` / `Blueprint To Create` | off | Optionally output a Blueprint instead of a level actor |
 
 ```{note}
-The control-point tangents are computed automatically so the spline forms a smooth circle for any `NumPoints`.
+The control-point tangents are computed automatically so the spline forms a smooth circle for any `Num Points` value.
 ```
 
 ## Next steps

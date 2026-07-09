@@ -30,27 +30,17 @@ same lane** to build independent lofted meshes (e.g. a deck plus its parapets).
 
 How large the lofted mesh is across its cross-section depends on each item's **Coordinate System**:
 
-- **Relative (Normalized)** *(default)* — you draw the cross-section curve in a normalized **−1 … +1** box, and at bake
-  MetaRoad stretches it onto the lane, so the loft **adapts to the road**: X spans the lane width and Y scales with it.
-  Widen the road and the loft grows with it, keeping its proportions.
-- **Absolute (cm)** — the curve's X and Y are taken as literal **centimeters** (X = offset from the reference line,
-  Y = height above the surface), so the loft keeps a **fixed** real-world size regardless of lane width.
+- **Relative (Normalized)** *(default)* — you draw the cross-section curve in a normalized **−1 … +1** box that MetaRoad
+  stretches onto the lane at bake, so the loft **adapts to the road**: `X = −1` lands on the lane's **left** edge and
+  `X = +1` on its **right** edge (exactly as wide as the lane, following its width changes), and `Y = 1.0` equals **half
+  the lane width**, so the loft keeps its proportions as the road widens or narrows. The anchor position, `Alignment`,
+  `Alpha`, and `Override Left/Right Width` behave exactly as for every other
+  [Generate Attribute](/attributes/GenerateAttributes.md#how-a-generate-attribute-follows-the-lane).
+- **Absolute (cm)** — the curve's X and Y are literal **centimeters** (X = offset from the reference line, Y = height
+  above the surface), so the loft keeps a **fixed** real-world size regardless of lane width (alignment and width
+  overrides are ignored).
 
-**Width**: 
-- In **Relative** mode the horizontal extent of the cross-section is mapped across the lane, using the **same
-width machinery as every [Generate Attribute](/attributes/GenerateAttributes.md#how-a-generate-attribute-follows-the-lane)**: the
-curve's **X = −1** lands on the lane's **left** edge and **X = +1** on its **right** edge, so the loft is exactly as wide
-as the lane at each point (and follows the lane's width changes along the road). **Alignment** positions the `X = 0`
-anchor (`Auto` = lane center; `Fixed` = by `Alpha`, 0 = inner edge … 1 = outer), and on the **center lane** you can
-decouple the extents with `Override Left/Right Width` + `Left/Right Width` (cm). 
-- In **Absolute** mode, width is simply
-the curve's X range in centimeters from the reference line (alignment and width overrides ignored).
-
-**Height**: 
-- In **Relative** mode the vertical extent scales with the road too: by default **`Y = 1.0` equals half the
-lane width**, so the loft keeps its aspect ratio as the road widens or narrows. To give it a **fixed** height instead,
-enable `bOverrideHeight`. 
-- In **Absolute** mode, `Y` is the height in centimeters above the surface directly.
+To give the loft a **fixed height** instead of scaling it with the lane, enable `bOverrideHeight`:
 
 | Field | Default | Description |
 |-------|---------|-------------|

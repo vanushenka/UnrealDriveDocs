@@ -8,7 +8,7 @@ This is the **Visibility** tile in the **Misc** palette of the Meta Road editor 
 The **Visibility** panel holds editor-only visibility and debug-draw settings for MetaRoad. They affect only the editor
 viewport, not the baked meshes.
 
-![alt text](/img/misc-visibility.png)
+![The Visibility tile panel with its editor visibility and debug-draw toggles](/img/misc-visibility.png)
 
 | Setting | Description |
 |---------|-------------|
@@ -19,3 +19,8 @@ viewport, not the baked meshes.
 
 You can hide an individual selected road spline and later restore all of them with **Unhide All Splines** — handy when
 working on a busy junction.
+
+## See also
+
+- [Tile Window](/integrations/TileWindow.md) — the tile-map renders toggled by **Tiles Visibility**.
+- [The Meta Road Editor Mode](/editor-mode/MetaRoadEditorMode.md) — the mode and palette this tile belongs to.

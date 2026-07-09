@@ -14,7 +14,7 @@ exports both static meshes and spline meshes of the road.
 2. Set the export options in the panel (below).
 3. Click **Export Selected** (the selected road actors) or **Export All** (every road actor in the level).
 
-![alt text](/img/fbx-props.png)
+![The FBX Export tile panel with its Export Selected / Export All actions and settings](/img/fbx-props.png)
 
 
 ## Settings

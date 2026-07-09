@@ -24,3 +24,4 @@ In the **Details** panel, the **Selection** group edits the selected **Offset Ke
 
 - [Lane Offset](/concepts/RoadModel.md#lane-offset) — the road-model concept this mode edits.
 - [Road Reference Line](/concepts/RoadModel.md#road-reference-line) — what the offset is measured from.
+- [Width Mode](/editing/WidthMode.md) — the other curve-editor sub-mode, for per-lane width.
