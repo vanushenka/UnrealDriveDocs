@@ -51,8 +51,9 @@ sidewalks, curbs, markings, guardrails, bridges and more — together with a log
 
 ## Free vs Pro
 
-Core authoring and baking are **FREE**. **Pro** adds the Intersection, Roundabout, Crosswalk and Chevron tools;
-ZoneGraph and Landscape integration; and the Curb Cut, Polygon, and Lofting attributes.
+Core road authoring and baking are **FREE**. **Pro** unlocks the advanced automated tools and integrations.
+
+Full breakdown: https://unrealdrive.readthedocs.io/en/latest/introduction/ProVsFree.html
 
 ## Good to know
 
@@ -61,7 +62,7 @@ use the road **graph** in-game (for example, to drive traffic).
 
 ## Documentation & Support
 
-- 📖 Documentation: ‹your Read the Docs URL›
+- 📖 Documentation: https://unrealdrive.readthedocs.io/en/latest/
 - ✉️ Support: ivzhuk7@gmail.com
 
 ---
@@ -88,5 +89,5 @@ use the road **graph** in-game (for example, to drive traffic).
 **Network Replicated:** No
 **Supported Development Platforms:** Windows ‹+ macOS if applicable›
 **Supported Target Build Platforms:** All *(baked content is standard `StaticMesh`; the runtime graph module is optional)*
-**Documentation:** ‹your Read the Docs URL›
+**Documentation:** https://unrealdrive.readthedocs.io/en/latest/
 **Example Project / Important:** Baked meshes are plain StaticMesh assets and require no plugin at runtime.

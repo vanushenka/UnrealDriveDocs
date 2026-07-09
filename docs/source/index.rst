@@ -9,13 +9,14 @@ Welcome to MetaRoad documentation!
    introduction/ProVsFree
    introduction/Installation
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Getting Started
+.. Getting Started — temporarily hidden from the nav; uncomment the block below to restore.
+   .. toctree::
+      :maxdepth: 2
+      :caption: Getting Started
 
-   getting-started/QuickStart
-   getting-started/QuickStartTJunctionManual
-   getting-started/QuickStartTJunctionAuto
+      getting-started/QuickStart
+      getting-started/QuickStartTJunctionManual
+      getting-started/QuickStartTJunctionAuto
 
 .. toctree::
    :maxdepth: 2
