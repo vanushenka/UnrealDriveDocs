@@ -64,11 +64,34 @@
   - Refactored (renamed): FLaneInstance -> FRoadZone, FLaneType -> FRoadZoneType, FLaneTypeDetails -> FRoadZoneTypeDetails, etc
   - Hot fix: Height (Z coordinates of vertices) of the generated mesh
 
- **v3.0.0**
+**v2.6.0**
+  - New [Lofting](/attributes/LoftingAttribute.md) attribute *(Pro)* — extrude 2D cross-section profiles along a lane into bridges, tunnels, and walls, with a dedicated 2D cross-section editor
+  - New [Roundabout Tool](/create-tools/RoundaboutTool.md) *(Pro)* — draw circular roundabouts and ring roads
+  - Roads are now **`AMetaRoad`** actors
+  - **Spline grouping** — group a road's splines so they bake into one seamless mesh; added road underside generation
+  - Added a segment **sampler** mode for generative attributes (by segment length / between keys)
+  - Landscape improvements and smoother meshes on sharp spline curvature
+  - Fixes: looped road marks, SVG-imported polygons, loft cap normals
+
+**v2.7.0**
+  - New [Chevron Marking Tool](/create-tools/ChevronMarkingTool.md) *(Pro)* — chevron guide-island markings
+  - **Drag & drop** — drag Mark / Polygon / Attribute profiles from the Content Browser straight onto a road lane
+  - **Multiple lane selection** — edit several lanes at once
+  - Dedicated **Road Profile editor**
+  - New selected-key **overlay widget** and reworked attribute-editor UI
+  - Fix: broken spline node handling
+
+**v2.7.1**
+  - Fixed a baking bug where cleanup could **delete user meshes**
+  - Added an **undoable Clean Strategy** for re-bakes — *Move to Trash* or *Permanent Delete* (see [Auto-cleaning](/baking/BakeStaticMesh.md#auto-cleaning-previous-assets))
+
+**v3.0.0**
   - Unified **Meta Road** editor mode — a single entry point for all road authoring (drawing, editing, live preview, baking) with an integrated tile palette (Create / Edit / Bake / Misc)
   - Baking is now a **mode action** ([Bake Selected / Bake All](/baking/BakeStaticMesh.md), asynchronous with a progress notification); the separate interactive "Build Mesh Tool" was removed
   - New **Schematic / Preview** view toggle with a live, non-destructive mesh preview
   - New [FBX Export](/baking/FbxExport.md)
-  - New [Roundabout Tool](/create-tools/RoundaboutTool.md) and [Chevron Marking Tool](/create-tools/ChevronMarkingTool.md) *(Pro)*
+  - **Closed-loop splines** to fill areas — plazas, parking lots, and intersection interiors (see [Closed-Loop Spline](/concepts/ClosedLoopSpline.md))
+  - Roads can **drape onto the landscape** (Snap-to-Ground overlap strategy)
+  - The generative attribute family "Curve" was renamed to **[Generate](/attributes/GenerateAttributes.md)** (Spline Mesh / Component / Actor / Lofting)
   - Road-spline editing is now available even outside the Meta Road editor mode
   - Documentation fully restructured for this release
