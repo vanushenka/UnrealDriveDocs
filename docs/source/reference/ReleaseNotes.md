@@ -86,6 +86,7 @@
   - Added an **undoable Clean Strategy** for re-bakes — *Move to Trash* or *Permanent Delete* (see [Auto-cleaning](/baking/BakeStaticMesh.md#auto-cleaning-previous-assets))
 
 ## v3.0.0
+  - Supported of UE5.8
   - Unified **Meta Road** editor mode — a single entry point for all road authoring (drawing, editing, live preview, baking) with an integrated tile palette (Create / Edit / Bake / Misc)
   - Baking is now a **mode action** ([Bake Selected / Bake All](/baking/BakeStaticMesh.md), asynchronous with a progress notification); the separate interactive "Build Mesh Tool" was removed
   - New **Schematic / Preview** view toggle with a live, non-destructive mesh preview
