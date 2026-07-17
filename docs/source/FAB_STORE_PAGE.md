@@ -22,7 +22,7 @@ sidewalks, curbs, markings, guardrails, bridges and more — together with a log
 **Interactive authoring**
 - Draw roads as splines and connect them into networks — one **Meta Road** editor mode with Create / Edit / Bake tile palettes.
 - **Live, non-destructive preview** — the road stays editable data until you bake; nothing is written to disk until you choose to.
-- One-click tools for the common cases: **Intersections** (T / X / multi-lane), **Roundabouts**, **Crosswalks**, and **Chevron** guide-islands. *(Pro)*
+- One-click tools for the common cases: **Intersections** (T / X / multi-lane), **Roundabouts**, **Crosswalks**, **Mark** splines (chevron islands / stripes), and **Sidewalk** splines. *(Pro)*
 
 **Rich road model**
 - Any number of lanes with **asymmetric sections** and per-lane types: driving, sidewalk, bicycle, bus, parking, tram, shoulder, and custom.
@@ -72,7 +72,7 @@ use the road **graph** in-game (for example, to drive traffic).
 **Features:**
 - Spline-based road-network editor with a live mesh preview
 - Multi-lane model: asymmetric sections, per-lane zone types, offset/width curves, junctions, closed-loop fills
-- Automated Intersection / Roundabout / Crosswalk / Chevron tools *(Pro)*
+- Automated Intersection / Roundabout / Crosswalk tools + Mark & Sidewalk detail splines *(Pro)*
 - Lane attributes: speed & metadata, markings, guardrails/props (spline-mesh/component/actor generators), lofted bridges & tunnels, landscape deformation, sidewalk ramps, curb cuts, surface polygons — extensible in Blueprint or C++
 - Bake to StaticMesh/SplineMesh + decals with materials, multi-channel UVs and vertex colors; configurable output + auto-cleanup
 - FBX export; ZoneGraph AI-navigation generation *(Pro)*; real-world map tiles; City Sample compatible

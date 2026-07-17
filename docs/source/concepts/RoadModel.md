@@ -2,8 +2,9 @@
 
 ## Basic concepts
 The ActorComponent `URoadSplineComponent` forms the basis of the roads, roads network model and the entire MetaRoad plugin. 
-`URoadSplineComponent` is the only component needed to represent a road network graph. Although the component itself describes only a single simple road segment, a combination of `URoadSplineComponent` can describe even very complex road networks, interchanges, and intersections.  
-Any section of the road network on the scene is an arbitrary `AActor` that includes one or more `URoadSplineComponent`, with one road typically consisting of one `URoadSplineComponent` and intersections or junctions consisting of several.
+`URoadSplineComponent` is the **primary** component and the only one that makes up the road network graph — it carries the lanes, sections, and connections. Although the component itself describes only a single simple road segment, a combination of `URoadSplineComponent` can describe even very complex road networks, interchanges, and intersections.  
+Any section of the road network on the scene is an arbitrary `AActor` that includes one or more `URoadSplineComponent`, with one road typically consisting of one `URoadSplineComponent` and intersections or junctions consisting of several.  
+Alongside the road splines you can place supplementary **[detail splines](/concepts/DetailSplines.md)** *(Pro)* — Mark and Sidewalk splines that add markings and pedestrian surfaces. They live on the same actor and can magnetically follow the road, but they carry no lanes or connections and are **not** part of the network graph.
 Those familiar with the [ASAM OpenDrive](https://www.asam.net/standards/detail/opendrive/) specification will find all the ideas implemented in `URoadSplineComponent` very familiar.  
 Indeed, MetaRoad has emphasized much of this specification.
 

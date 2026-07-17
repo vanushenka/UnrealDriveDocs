@@ -28,6 +28,7 @@ Welcome to MetaRoad documentation!
    concepts/Attributes
    concepts/Junctions
    concepts/ClosedLoopSpline
+   concepts/DetailSplines
 
 .. toctree::
    :maxdepth: 2
@@ -43,7 +44,8 @@ Welcome to MetaRoad documentation!
    create-tools/RoundaboutTool
    create-tools/IntersectionTool
    create-tools/DrawCrosswalkTool
-   create-tools/ChevronMarkingTool
+   create-tools/MarkSplineTool
+   create-tools/SidewalkSplineTool
 
 .. toctree::
    :maxdepth: 2

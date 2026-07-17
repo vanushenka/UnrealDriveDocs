@@ -27,7 +27,8 @@ Interactive tools that place new roads. (All except **Spline** are Pro.)
 | **Roundabout** (Pro) | A circular roundabout road — see [Roundabout Tool](/create-tools/RoundaboutTool.md) |
 | **Intersection** (Pro) | A junction linking several roads — see [Intersection Tool](/create-tools/IntersectionTool.md) |
 | **Crosswalk** (Pro) | A pedestrian crossing on the selected road — see [Crosswalk Tool](/create-tools/DrawCrosswalkTool.md) |
-| **Chevron** (Pro) | A chevron guide-island marking — see [Chevron Marking Tool](/create-tools/ChevronMarkingTool.md) |
+| **Mark** (Pro) | A mark spline — chevron islands, stripes, marking fills — see [Mark Spline Tool](/create-tools/MarkSplineTool.md) |
+| **Sidewalk** (Pro) | A sidewalk spline — raised surface + curb — see [Sidewalk Spline Tool](/create-tools/SidewalkSplineTool.md) |
 
 ### Edit — shape the selected road
 
@@ -96,7 +97,9 @@ on other actors are ignored. The Create tools always produce `AMetaRoad` actors 
   [Roundabout Tool](/create-tools/RoundaboutTool.md) (Pro),
   [Intersection Tool](/create-tools/IntersectionTool.md) (Pro),
   [Draw Crosswalk Tool](/create-tools/DrawCrosswalkTool.md) (Pro),
-  [Chevron Marking Tool](/create-tools/ChevronMarkingTool.md) (Pro).
+  [Mark Spline Tool](/create-tools/MarkSplineTool.md) (Pro),
+  [Sidewalk Spline Tool](/create-tools/SidewalkSplineTool.md) (Pro).
+- [Detail Splines](/concepts/DetailSplines.md) — the Mark/Sidewalk splines and their magnetism.
 - Edit sub-modes: [Spline Mode](/editing/SplineMode.md), [Section Mode](/editing/SectionMode.md),
   [Offset Mode](/editing/OffsetMode.md), [Width Mode](/editing/WidthMode.md),
   [Attribute Mode](/editing/AttributeMode.md), [Preset Mode](/editing/PresetMode.md).

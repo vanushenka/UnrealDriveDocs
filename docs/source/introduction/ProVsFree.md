@@ -5,7 +5,8 @@ The **Pro** version includes everything in the **Free** version, plus:
 - [Intersection Tool](/create-tools/IntersectionTool.md) — quickly generate typical intersections
 - [Roundabout Tool](/create-tools/RoundaboutTool.md) — draw circular roundabouts and ring roads
 - [Crosswalk Tool](/create-tools/DrawCrosswalkTool.md) — pedestrian crossings
-- [Chevron Marking Tool](/create-tools/ChevronMarkingTool.md) — chevron guide-island markings
+- [Mark Spline Tool](/create-tools/MarkSplineTool.md) — chevron islands, stripes and marking fills ([detail spline](/concepts/DetailSplines.md))
+- [Sidewalk Spline Tool](/create-tools/SidewalkSplineTool.md) — sidewalk surface + curb ([detail spline](/concepts/DetailSplines.md))
 - [ZoneGraph generation](/integrations/ZoneGraph.md) — AI navigation data
 - [Landscape support](/integrations/Landscape.md) and the [Landscape attribute](/attributes/LandscapeAttribute.md)
 - [Curb Cut attribute](/attributes/CurbCutAttribute.md)

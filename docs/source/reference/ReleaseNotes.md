@@ -74,7 +74,7 @@
   - Fixes: looped road marks, SVG-imported polygons, loft cap normals
 
 ## v2.7.0
-  - New [Chevron Marking Tool](/create-tools/ChevronMarkingTool.md) *(Pro)* — chevron guide-island markings
+  - New **Chevron Marking Tool** *(Pro)* — chevron guide-island markings (now the [Mark Spline Tool](/create-tools/MarkSplineTool.md))
   - **Drag & drop** — drag Mark / Polygon / Attribute profiles from the Content Browser straight onto a road lane
   - **Multiple lane selection** — edit several lanes at once
   - Dedicated **Road Profile editor**
@@ -96,3 +96,9 @@
   - The generative attribute family "Curve" was renamed to **[Generate](/attributes/GenerateAttributes.md)** (Spline Mesh / Component / Actor / Lofting)
   - Road-spline editing is now available even outside the Meta Road editor mode
   - Documentation fully restructured for this release
+
+## v3.1.0
+  - New **[Detail Splines](/concepts/DetailSplines.md)** *(Pro)* — supplementary splines that add surface details on top of the road network:
+    - **[Mark Spline Tool](/create-tools/MarkSplineTool.md)** — chevron guide-islands, stripe markings, and closed-loop marking fills (replaces and expands the former Chevron Marking Tool)
+    - **[Sidewalk Spline Tool](/create-tools/SidewalkSplineTool.md)** — a raised sidewalk surface with a curb along its boundary
+  - **Magnetism** — detail-spline nodes can be Alt-dragged to anchor onto road geometry (lane corners / spline nodes) and rigidly follow it, and per-segment **magnetic segments** snap to and route along the road edge

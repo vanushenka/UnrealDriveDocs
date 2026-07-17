@@ -23,8 +23,8 @@ interactively — draw, edit, preview, bake — and get real, game-ready meshes 
 
 ## Free vs Pro
 
-Core authoring and baking are in the Free version; advanced tools (Intersection, Roundabout, Crosswalk, Chevron),
-ZoneGraph, Landscape support, and several attributes are Pro — see [Pro vs Free](/introduction/ProVsFree.md).
+Core authoring and baking are in the Free version; advanced tools (Intersection, Roundabout, Crosswalk, Mark,
+Sidewalk), ZoneGraph, Landscape support, and several attributes are Pro — see [Pro vs Free](/introduction/ProVsFree.md).
 
 ## Good to know
 

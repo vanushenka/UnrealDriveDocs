@@ -26,13 +26,20 @@ of the baked mesh — nothing is written to disk until you Bake.
 
 ## Create: roads are connected splines
 
-Everything on the road side is **road splines** (`URoadSplineComponent`) — a straight road, an intersection, a
-roundabout, a bridge, or a whole interchange is just a set of splines. Splines must live on an **`AMetaRoad`** actor
-(the pipeline ignores splines on other actors; the Create tools make the actor for you). Splines **link end-to-end
-through connections** to form junctions and let lanes flow between roads — the Create tools wire these for you (full
-model: [Intersections and Junctions](/concepts/Junctions.md)).
+The **road network is built from road splines** (`URoadSplineComponent`) — a straight road, an intersection, a
+roundabout, a bridge, or a whole interchange is just a set of these. `URoadSplineComponent` is the **primary**
+spline: it carries the lanes, sections, and connections, and it is the only thing the drivable network graph is
+made of. Splines must live on an **`AMetaRoad`** actor (the pipeline ignores splines on other actors; the Create
+tools make the actor for you). Splines **link end-to-end through connections** to form junctions and let lanes flow
+between roads — the Create tools wire these for you (full model: [Intersections and Junctions](/concepts/Junctions.md)).
 
-Three tools create splines:
+On top of the road network you can add **[detail splines](/concepts/DetailSplines.md)** *(Pro)* — supplementary
+splines that draw surface details (a [Mark spline](/create-tools/MarkSplineTool.md) for markings, a
+[Sidewalk spline](/create-tools/SidewalkSplineTool.md) for pedestrian surfaces). They live on the same `AMetaRoad`,
+have no lanes or connections of their own, and can magnetically follow the road geometry — they are a separate layer
+of detail, not part of the network graph.
+
+Three tools create road splines:
 
 - **[Draw Spline Tool](/create-tools/DrawSplineTool.md)** — the universal way; draw any spline and connect them by hand.
   Complex or non-standard interchanges are built here.
