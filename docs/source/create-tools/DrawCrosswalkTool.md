@@ -42,8 +42,7 @@ After placement, edit the `UCrosswalkComponent` in the **Details** panel (all le
 | `Rotation` | 0° | Rotation of each stripe around its own center (clamped to ±45°) |
 | `Rectangular Stripes` | off | on — each stripe is a uniform-width rectangle; off — a trapezoid (width interpolated at the stripe edges) |
 | `Road Zone` | — | Road surface type (material/color) applied to the generated stripe polygons |
-| `Texture Angle` | 0° | UV texture rotation, in degrees |
-| `Texture Scale` | 1.0 | UV texture scale multiplier |
+| `Texture` | — | UV placement of the stripe polygons: `Angle` (deg), `Scale` (multiplier on the road-wide [UV density](/baking/BakeStaticMesh.md#uv-density)) and `Shift` (world cm) — see [Per-shape Texture group](/baking/BakeStaticMesh.md#per-shape-texture-group) |
 
 <!-- TODO 📷 screenshot: the UCrosswalkComponent Details panel with the stripe properties -->
 

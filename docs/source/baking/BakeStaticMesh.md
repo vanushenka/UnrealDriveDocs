@@ -147,16 +147,92 @@ So the road-lane material is resolved in this priority order:
 
 ## Mesh UVs
 
-Road-surface generation produces two texture-coordinate channels:
+Road-surface generation produces three texture-coordinate channels:
 
 - **UV0** — a separate track per lane. Useful for road ruts or tram tracks.
 - **UV1** — a track for the left and right sides of the road. Useful for road patches.
+- **UV2** — a **uniform-density** channel spanning the whole surface. Useful for asphalt, wear and detail textures
+  that must keep the same real-world size everywhere.
 
 ![The UV0 per-lane and UV1 left/right texture-coordinate channels on the road surface](/img/TexCoords.png)
 
 To display the debugging materials shown above, choose the **UV0 Debug** or **UV1 Debug** preset:
 
 ![The UV0 Debug and UV1 Debug preset materials visualizing the texture-coordinate channels](/img/debug-tex-coords.png)
+
+(UV0 and UV1 are normalized per lane / per road, so their density follows the road's width — that is the point of
+those channels. UV2 is the one that keeps a constant real-world texel size.)
+
+### UV density
+
+**Default UV Density** (in the triangulation settings, part of the per-actor build settings) sets the texture density
+of the whole generated surface in **UV units per centimetre**. The default `0.001` means **one texture tile per
+1000 cm**; doubling it to `0.002` halves every tile everywhere.
+
+It drives:
+
+- **UV2** of the road lanes,
+- **all UV channels** of the filled shapes — [closed-loop fills](/concepts/ClosedLoopSpline.md),
+  [crosswalks](/create-tools/DrawCrosswalkTool.md), [chevrons and island fills](/create-tools/MarkSplineTool.md),
+  sidewalk-spline surfaces and [polygon-profile](/profiles/PolygonProfile.md) shapes,
+- the along-the-stripe coordinate of road **markings**.
+
+Curbs and lofted cross-sections are not affected — they are separate meshes with their own scales.
+
+#### Per-zone overrides
+
+Default UV Density is the road-wide fallback. Two levels can override it, checked in this order — the first one set
+wins:
+
+1. **A single surface** — `Override UV Density` on its [Road Zone](/concepts/RoadZones.md#road-zones-per-surface)
+   (one lane, one fill).
+2. **A whole zone type** — `Override UV Density` / `UV Density` on the
+   [Zone Type](/concepts/RoadZones.md#zone-types-project-wide) in Project Settings, e.g. to give every sidewalk a
+   finer paving texture than the asphalt.
+3. Otherwise **Default UV Density**.
+
+Both are **absolute** densities (UV per cm) that *replace* the default — they do not scale it. A shape's own
+`Texture > Scale` still multiplies on top of whichever value wins.
+
+```{note}
+Editing a Zone Type in Project Settings does **not** rebuild the road mesh — press **Update** in the Meta Road panel
+(or re-bake) to see it. The same is true of the Zone Type's material and priority settings.
+```
+
+Note this deliberately breaks the uniform density *within* one mesh: `Driving` and `Marking` surfaces both bake into
+`RoadSurface` and share its UV space, so giving them different densities cuts the tiling at their shared edge. That is
+usually what you want (markings are authored at a different scale), but it is why the density is one number by
+default.
+
+### Per-shape Texture group
+
+Every shape that produces a filled surface — crosswalk, chevron, closed-loop fill, sidewalk-spline surface,
+polygon-profile shape — carries the same **Texture** group in its Details panel:
+
+| Property | Default | Meaning |
+|----------|---------|---------|
+| `Angle` | 0° | Rotation of the texture about the shape's centre, in degrees |
+| `Scale` | 1.0 | **Multiplier** on the Default UV Density above: `1.0` = the same density as the road surface, `2.0` = twice as many tiles on this shape only |
+| `Shift` | (0, 0) | Offset of the texture in **world centimetres**, along world X/Y |
+
+`Shift` moves the texture across the ground by exactly that many centimetres, so it stays put when you later change
+the Default UV Density or the `Scale` — use it to line a pattern up with a physical feature. It is applied along the
+world axes, independent of `Angle`.
+
+Each shape keeps its own texture origin (its centre), so neighbouring shapes tile independently — two crosswalk
+stripes do not share a continuous texture field unless you shift them to match.
+
+```{warning}
+**Changed in 3.1.** Filled shapes used to normalize their texture to the shape's own bounding box, so `Texture Scale
+= 1.0` meant "exactly one tile across this shape" whatever its size — a small crosswalk stripe and a large island
+carried the texture at completely different scales, and rotating a shape changed its texture size. They now use the
+global density instead, so **existing crosswalks, chevrons, islands, sidewalk fills and polygon-profile shapes change
+appearance** and may need their `Texture > Scale` re-tuned. Roughly, the new texture is `bbox_cm × Default UV Density`
+times the old one — shapes smaller than 1000 cm get a larger texture, bigger ones a smaller texture.
+
+The former separate `Texture Angle` / `Texture Scale` properties were also merged into the **Texture** group and
+renamed, without redirects — **their saved values reset to the defaults** on the first load.
+```
 
 ## Mesh Vertex Color
 

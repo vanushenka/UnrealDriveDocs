@@ -48,8 +48,7 @@ follows the road edge as you keep editing — see [Detail Splines → Magnetism]
 | `Chevron Section Size` | 100 | Depth of one chevron band (the "V") along the wedge bisector, cm |
 | `Chevron Section Interval` | 200 | Gap between consecutive chevron bands, cm |
 | `Chevron Road Zone` | `Driving` | Road surface type (material/color) applied to the chevron polygons |
-| `Chevron Texture Angle` | 0° | UV texture rotation for the chevrons, in degrees |
-| `Chevron Texture Scale` | 1.0 | UV texture scale for the chevrons |
+| `Chevron Texture` | — | UV placement of the chevron polygons: `Angle` (deg), `Scale` (multiplier on the road-wide [UV density](/baking/BakeStaticMesh.md#uv-density)) and `Shift` (world cm) — see [Per-shape Texture group](/baking/BakeStaticMesh.md#per-shape-texture-group) |
 | `Mark Profile` | — | Base [Mark Profile](/profiles/MarkProfile.md) (stripe type/dimensions/material) for the spline |
 | `Draw Looped Zone` | off | Fill the enclosed area when the spline is closed (needs a closed loop + valid zone) |
 | `Looped Road Zone` | `Driving` | Surface zone that fills the closed-loop marking island |

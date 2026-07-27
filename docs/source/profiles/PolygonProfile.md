@@ -14,8 +14,7 @@ Each profile holds an array of **Polygon** entries. Every entry defines:
 |----------|-------------|
 | `Curve` | A 2D Hermite spline (`FInterpCurveVector2D`) defining the closed polygon outline in local lane space |
 | `RoadZone` | Road surface type applied to this polygon (determines its material and color) |
-| `TextureAngle` | UV texture rotation in degrees |
-| `TextureScale` | UV texture scale multiplier |
+| `Texture` | UV placement of this polygon: `Angle` (deg), `Scale` (multiplier on the road-wide [UV density](/baking/BakeStaticMesh.md#uv-density)) and `Shift` (world cm) — see [Per-shape Texture group](/baking/BakeStaticMesh.md#per-shape-texture-group) |
 | `MaxSquareDistanceFromSpline` | Curve-to-polyline simplification tolerance |
 
 Create one from the Content Browser (**right-click → Meta Road → Polygon Profile**); **double-click** it to open the

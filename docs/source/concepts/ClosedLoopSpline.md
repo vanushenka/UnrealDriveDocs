@@ -22,8 +22,13 @@ In the [Draw Spline Tool](/create-tools/DrawSplineTool.md) you can start drawing
 
 ![Drawing a closed-loop spline directly with the Draw Spline Tool](/img/loop-drawing.gif)  
 
-In the **Details Panel** of the `URoadSplineComponent` you can set the texture-coordinate parameters for the fill — angle and scale (`LoopedRoadZoneTexAngle` / `LoopedRoadZoneTexScale`):
+In the **Details Panel** of the `URoadSplineComponent` you can set the texture-coordinate parameters for the fill — the **Texture** group (`LoopedTexture`: angle, scale and shift):
 ![Adjusting the fill texture angle and scale of a closed-loop spline](/img/loop-tex.gif)  
+
+`Scale` is a **multiplier** on the road-wide [texture density](/baking/BakeStaticMesh.md#uv-density), so the default
+`1.0` gives the fill exactly the same texture density as the surrounding road surface — regardless of how large the
+island is. Raise it to tile the texture more finely on this fill only, and use `Shift` (world centimetres) to line the
+pattern up with the road. See [Per-shape Texture group](/baking/BakeStaticMesh.md#per-shape-texture-group).
 
 ```{important}
 Keep the drawn "islands" in the **same actor _and_ `SubGroup`** as the main road surface (the logically related `URoadSplineComponent`s). That way [baking](/concepts/Workflow.md#bake-spline-grouping) generates the whole road section as a single seamless unit.

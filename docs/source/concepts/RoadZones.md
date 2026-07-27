@@ -28,6 +28,7 @@ Each Zone Type stores:
 | **Is Decal** | The zone is a flat overlay projected onto the road surface (adds no height) — for asphalt markings such as arrows and stop lines. *(Unrelated to Unreal's `UDecalComponent`.)* |
 | **Editor Color** / **Editor Material** | Color and preview material used only in the editor (Schematic view) |
 | **Description** | Free-text note |
+| **Override UV Density** / **UV Density** | Give this zone type its own texture density instead of the road-wide [Default UV Density](/baking/BakeStaticMesh.md#uv-density) — e.g. finer paving on sidewalks than on asphalt. Absolute (UV per cm), it *replaces* the default rather than scaling it |
 
 ![Zone types shown on a road](/img/lane-types.png)
 
@@ -42,6 +43,7 @@ type's defaults for this one surface:
 | **Override Material** | Use a custom material instead of the Zone Type's default |
 | **Override Decal** | Use a custom decal material instead of the default |
 | **Override Priority** | Use a custom material priority instead of the default |
+| **Override UV Density** | Use a custom texture density for this one surface. Wins over the Zone Type's UV Density, which in turn wins over the road-wide Default UV Density |
 
 ### Driving and Sidewalk zones
 
