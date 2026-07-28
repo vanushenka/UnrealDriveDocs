@@ -72,6 +72,9 @@ it adds:
 
 - **Per lane** — every road lane carries a Road Zone, edited in its **Selection** panel in
   [Section Mode](/editing/SectionMode.md) (the *Road Zone* / *Zone Type* rows).
+- **Per stretch of a lane** — the [Road Zone attribute](/attributes/RoadZoneAttribute.md) overrides the shared
+  Road Zone fields (Zone Type, material, priority, UV density) between two keys along a lane. It cannot change
+  the *kind* (Driving ↔ Sidewalk) — that still needs a new lane section.
 - **Closed-loop fill** — a closed spline fills its outline with a Road Zone via **`LoopedRoadZone`** — used for refuge
   islands, pedestrian crossings, and arrow markings. See
   [Closed Loop Spline](/concepts/ClosedLoopSpline.md).
@@ -89,5 +92,6 @@ See [Baking → Mesh Lane Materials](/baking/BakeStaticMesh.md#mesh-lane-materia
 ## See also
 
 - [The Road Model](/concepts/RoadModel.md#road-lanes) — how lanes (which carry Road Zones) fit into a road.
+- [Road Zone Attribute](/attributes/RoadZoneAttribute.md) — vary a Road Zone along one lane.
 - [Closed-Loop Splines](/concepts/ClosedLoopSpline.md) — closed-loop fills that use a `LoopedRoadZone`.
 - [Baking](/baking/BakeStaticMesh.md) — how zones are baked into meshes and materials.

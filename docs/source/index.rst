@@ -63,7 +63,9 @@ Welcome to MetaRoad documentation!
    :caption: Attribute Types
 
    attributes/SpeedAttribute
+   attributes/SignalAttribute
    attributes/RoadMarkAttribute
+   attributes/RoadZoneAttribute
    attributes/CurbCutAttribute
    attributes/LandscapeAttribute
    attributes/SidewalkHeightAttribute
@@ -73,6 +75,12 @@ Welcome to MetaRoad documentation!
    attributes/ComponentTemplateAttribute
    attributes/ActorTemplateAttribute
    attributes/LoftingAttribute
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Traffic Control
+
+   traffic/TrafficController
 
 .. toctree::
    :maxdepth: 2

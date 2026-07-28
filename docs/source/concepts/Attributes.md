@@ -77,7 +77,11 @@ An attribute produces one of two things along the lane:
 Every attribute type that ships with MetaRoad:
 
 - **[Speed](/attributes/SpeedAttribute.md)** — per-lane speed-limit metadata.
+- **[Signal](/attributes/SignalAttribute.md)** — a traffic signal on a lane, sequenced by a
+  [Traffic Controller](/traffic/TrafficController.md).
 - **[Road Mark](/attributes/RoadMarkAttribute.md)** — lane markings generated at bake time.
+- **[Road Zone](/attributes/RoadZoneAttribute.md)** — change a lane's surface type, material or texture density
+  over a stretch of its length.
 - **[Curb Cut](/attributes/CurbCutAttribute.md)** *(Pro)* — dropped curbs on sidewalks.
 - **[Landscape](/attributes/LandscapeAttribute.md)** *(Pro)* — deform the Unreal landscape along the road.
 - **[Sidewalk Height](/attributes/SidewalkHeightAttribute.md)** — vary sidewalk vertex height for ramps and slopes.
