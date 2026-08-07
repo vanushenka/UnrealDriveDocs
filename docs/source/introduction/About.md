@@ -31,7 +31,7 @@ Sidewalk), ZoneGraph, Landscape support, and several attributes are Pro — see 
 Baked content is plain `StaticMesh` assets and works **without** the plugin. The plugin is only required at runtime if
 you use the road **graph** in-game (e.g. to generate traffic).
 
-## Start here
+## See also
 
 - [Installation](/introduction/Installation.md) → [Quick Start](/getting-started/QuickStart.md) →
   [The MetaRoad Workflow](/concepts/Workflow.md).

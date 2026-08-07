@@ -28,14 +28,14 @@ three road arms so their ends come together at the junction point:
 
 The arms may be in **any actors** — the tool doesn't require them to share one, unlike the manual method.
 
-<!-- TODO 🎞 gif: drawing the three road arms meeting at a point -->
+<!-- ![Drawing the three road arms so they meet at a point](/img/qs-tj-auto-arms.gif) -->
 
 ## 2. Run the Intersection Tool
 
 Activate the **Intersection** tile in the **Create** palette, then **click the end** of each arm that should join the
 junction. Selected endpoints are highlighted.
 
-<!-- TODO 🎞 gif: selecting the three arm ends with the Intersection Tool -->
+<!-- ![Selecting the three arm ends with the Intersection Tool](/img/qs-tj-auto-select.gif) -->
 
 ## 3. Let it build the junction
 
@@ -55,9 +55,9 @@ Bake the junction actor **separately** from the approach-road actors — each is
 ([Spline grouping](/concepts/Workflow.md#bake-spline-grouping)).
 ```
 
-<!-- TODO 📷 screenshot: the baked junction _Gen mesh -->
+<!-- ![The baked junction mesh](/img/qs-tj-auto-baked.png) -->
 
-## Where to go next
+## Next steps
 
 - Add markings and objects along your roads with [Attributes](/concepts/Attributes.md).
 - Place a [Roundabout](/create-tools/RoundaboutTool.md) *(Pro)*.

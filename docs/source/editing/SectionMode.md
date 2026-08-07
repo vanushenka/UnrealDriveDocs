@@ -41,6 +41,49 @@ count changes (for example before a ramp):
 
 ![Adding and removing road sections via the context menu](/img/section-split.gif)
 
+```{note}
+**Delete Section** also refreshes the [detail splines](/concepts/DetailSplines.md) *(Pro)* attached to this road: their
+linked nodes re-pin and their magnetic segments re-follow the renumbered sections straight away, instead of staying
+attached to geometry that has moved.
+```
+
+### Splitting a spline
+
+**Split Spline** — in the same right-click menu, just below the two section splits — cuts the selected **road spline**
+in two at the point you clicked. Use it when a road has grown too long to manage comfortably, or when you want to give
+one half a different [Sub Group](/concepts/Workflow.md#bake-spline-grouping), profile or landscape target.
+
+- The **first half** keeps the original component and its **Predecessor** connection, together with every section and
+  lane before the cut.
+- The **second half** becomes a **new road spline component on the same actor**. It takes the geometry, the sections
+  and lanes after the cut — re-based so the cut sits at `S = 0` — the matching part of the
+  [center-line offset curve](/editing/OffsetMode.md), the **Successor** connection, and the connections of the lanes
+  that moved with it.
+- The **cut itself is left unconnected**: the two halves are separate roads until you wire them together in
+  [Spline Mode](/editing/SplineMode.md).
+- The new second half becomes the **selected spline**, so you can carry on editing it.
+
+A section boundary is created at the cut if there is not one there already, so no section ends up split between the
+two halves.
+
+```{important}
+**Closed-loop splines cannot be split.** On a ring road the command simply does nothing (a warning goes to the Output
+Log) — clear **Closed Loop** on the spline first if you need to cut it.
+```
+
+```{note}
+Cutting between two control points inserts a new control point at the cut and recomputes the tangents of its two
+neighbours, so a hand-tuned curve can shift slightly right there. Cut at an existing spline node to leave the curve
+untouched.
+```
+
+```{tip}
+Only the road layout travels across the cut. The road spline's own component settings — **Sub Group**, **Material
+Priority**, **Skip Procedural Generation** and the whole **Landscape** group — start at their defaults on the new half,
+so set them again if the road used them. A **Sub Group** left at its default would otherwise bake the two halves as
+separate meshes.
+```
+
 ## Road Lane Editing
 
 ### Selecting a lane
@@ -80,16 +123,23 @@ The right-click context menu also acts on the whole selection:
 - **Delete Lane** — removes all selected lanes.
 - **Reverse Direction** — flips the [traffic direction](/concepts/RoadModel.md#lane-direction) of all selected lanes.
 
-<!-- TODO 🎞 gif: Ctrl+click several lanes across two sections, change Road Zone once → all update; then Reverse Direction from the context menu -->
-
 ### Adding and removing lanes
 
 Add and delete **Road Lanes** from the right-click context menu:
 
 ![Adding and removing road lanes via the context menu](/img/lane-add.gif)
 
+```{note}
+**Add Lane**, **Delete Lane** and **Reverse Direction** re-anchor the [detail splines](/concepts/DetailSplines.md)
+*(Pro)* attached to this road as soon as you use them — adding or removing a lane renumbers the lanes outside it, and
+every Mark or Sidewalk spline linked to the road re-pins its nodes and re-magnetizes its segments against the new
+numbering instead of keeping a stale attachment.
+```
+
 ## See also
 
 - [Road Lanes](/concepts/RoadModel.md#road-lanes) and [Lane Sections](/concepts/RoadModel.md#lane-sections) — the data model this mode edits.
 - [Road Zones and Zone Types](/concepts/RoadZones.md) — the lane surface types you assign here.
 - [Width Mode](/editing/WidthMode.md) and [Attribute Mode](/editing/AttributeMode.md) — other per-lane editing.
+- [Detail Splines](/concepts/DetailSplines.md) *(Pro)* — Mark and Sidewalk splines that anchor to the lanes and
+  sections you edit here.

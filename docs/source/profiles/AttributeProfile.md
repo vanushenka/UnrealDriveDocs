@@ -16,7 +16,7 @@ derives from:
 The base classes are the **[Generate Attributes](/attributes/GenerateAttributes.md#types)** family — Spline Mesh,
 Component Template, Actor Template, or Lofting *(Pro)*. Pick the one that matches what you want to place along the lane
 (each has its own page under **Attribute Types** with the full field reference), or subclass the
-**[Generate](/attributes/GenerateAttributes.md#the-generate-base-class)** base directly to emit custom geometry from
+**[Generate](/attributes/GenerateBlueprintAPI.md)** base directly to emit custom geometry from
 `GenerateAsset()`.
 
 ## How it's used

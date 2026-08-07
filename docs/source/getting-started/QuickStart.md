@@ -19,7 +19,7 @@ In the level editor, open the **editor mode** dropdown (top-left toolbar) and ch
 appears with its tile palette; the **Create** category is selected by default. See
 [The Meta Road Editor Mode](/editor-mode/MetaRoadEditorMode.md).
 
-<!-- TODO 📷 screenshot: choosing "Meta Road" from the mode dropdown -->
+<!-- ![Choosing Meta Road from the editor mode dropdown](/img/qs-choose-mode.png) -->
 
 ## 2. Draw a road (Create)
 
@@ -27,7 +27,7 @@ In the **Create** palette, click the **Spline** tile to activate the Draw Spline
 road points; each click adds a point and the road preview follows. Press **Enter/Accept** to finish. A new `AMetaRoad`
 actor containing your road spline is created. Full details: [Draw Spline Tool](/create-tools/DrawSplineTool.md).
 
-<!-- TODO 🎞 gif: drawing a road spline with the Spline tool and accepting -->
+<!-- ![Drawing a road spline with the Spline tool and accepting it](/img/qs-draw-spline.gif) -->
 
 ## 3. Add lanes (Edit)
 
@@ -37,14 +37,14 @@ context menu to add lanes and lane sections, and the **Selection** panel to tune
 [Spline Mode](/editing/SplineMode.md), the center-line offset in [Offset Mode](/editing/OffsetMode.md), and per-lane
 width in [Width Mode](/editing/WidthMode.md).
 
-<!-- TODO 🎞 gif: adding lanes in Section mode -->
+<!-- ![Adding lanes to the road in Section mode](/img/qs-add-lanes.gif) -->
 
 ## 4. Preview the result
 
 At the top of the panel, switch the view toggle from **Schematic** to **Preview**. You now see a live, non-destructive
 preview of the generated road mesh that updates as you keep editing — nothing has been written to disk yet.
 
-<!-- TODO 🎞 gif: toggling to Preview to see the generated mesh -->
+<!-- ![Toggling to Preview to see the generated mesh](/img/qs-preview.gif) -->
 
 ## 5. Bake the mesh
 
@@ -52,7 +52,7 @@ Open the **Bake** palette and click the **Bake** tile, then **Bake Selected** (o
 background with a progress notification; when it finishes, a generated actor named `<YourActor>_Gen` appears in the
 level, holding the baked static/spline meshes. Full details: [Baking](/baking/BakeStaticMesh.md).
 
-<!-- TODO 📷 screenshot: the _Gen actor and its baked meshes in the level -->
+<!-- ![The generated _Gen actor and its baked meshes in the level](/img/qs-gen-actor.png) -->
 
 ```{tip}
 **Grouping tip.** Each road actor bakes as its own mesh. If you later join roads at a junction, keep their splines in

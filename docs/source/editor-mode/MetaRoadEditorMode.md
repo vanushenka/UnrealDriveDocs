@@ -11,8 +11,6 @@ There is no separate "road" toolset in Modeling Mode any more.
 The mode's panel is an integrated **tile palette** at the top, split into four categories. Selecting a category shows
 its tiles; selecting a tile activates that tool or editing sub-mode and shows its panel below.
 
-<!-- TODO 📷 screenshot: the palette showing the Create / Edit / Bake / Misc category tabs and their tiles -->
-
 The categories, in order (**Create** is the default when the mode opens):
 
 ### Create — make road geometry

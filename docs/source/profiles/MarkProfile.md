@@ -24,9 +24,22 @@ The marking definition (`FRoadLaneMarkProfile`) controls the strip's appearance:
 
 | Property | Description |
 |----------|-------------|
-| `Type` | Marking style — solid, dashed, or double. |
-| `Dimensions` | Strip width, and for dashed marks the dash length and gap. |
+| `Type` | Marking style: `None`, `Solid`, `Broken`, `Double Solid`, `Double Broken`, `Solid Broken`, `Broken Solid`, `Custom`. |
+| `Dimensions` | Strip width, and for broken marks the dash length and gap. |
 | `Color / Material` | Color and material applied to the strip. |
+
+```{note}
+`Type` is **metadata**, not geometry. The strip's appearance comes from the dimensions and material below it;
+`Type` labels what kind of marking it is, so your own systems — traffic generation, HD-map export, lane-change
+rules — can read it. Changing it does not change what is baked.
+```
+
+```{note}
+**Renamed in 3.2.0.** The `Broked` spellings became `Broken`: `Broked → Broken`, `Double Broked → Double Broken`,
+`Solid Broked → Solid Broken`, `Broked Solid → Broken Solid`. Existing assets are redirected automatically and
+keep their value; only the label in the dropdown changed. The asset **file names** in the shipped library still
+use the old spelling, and are left alone deliberately so existing references keep resolving.
+```
 
 ## How it's used
 

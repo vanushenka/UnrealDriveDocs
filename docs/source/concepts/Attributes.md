@@ -29,6 +29,8 @@ Each capability below is produced by a built-in attribute type — at bake time,
   into a continuous surface that follows the road.
 - **Shape sidewalks and drop curbs** — [Sidewalk Height](/attributes/SidewalkHeightAttribute.md) ramps the walkway and
   [Curb Cut](/attributes/CurbCutAttribute.md) *(Pro)* lowers the curb at crossings and driveways.
+- **Shape the road across its width** — [Cross Section](/attributes/CrossSectionAttribute.md) sinks the driving
+  surface toward its edges, so the road drains instead of holding water.
 - **Drop surface overlays** — the [Polygon](/attributes/PolygonAttribute.md) *(Pro)* attribute places stop lines,
   arrows, and hatching.
 - **Shape the terrain** — the [Landscape](/attributes/LandscapeAttribute.md) *(Pro)* attribute deforms the Unreal
@@ -82,13 +84,15 @@ Every attribute type that ships with MetaRoad:
 - **[Road Mark](/attributes/RoadMarkAttribute.md)** — lane markings generated at bake time.
 - **[Road Zone](/attributes/RoadZoneAttribute.md)** — change a lane's surface type, material or texture density
   over a stretch of its length.
+- **[Cross Section](/attributes/CrossSectionAttribute.md)** — lower the driving surface toward its edges (a
+  gutter). Section center line only.
 - **[Curb Cut](/attributes/CurbCutAttribute.md)** *(Pro)* — dropped curbs on sidewalks.
 - **[Landscape](/attributes/LandscapeAttribute.md)** *(Pro)* — deform the Unreal landscape along the road.
 - **[Sidewalk Height](/attributes/SidewalkHeightAttribute.md)** — vary sidewalk vertex height for ramps and slopes.
 - **[Polygon](/attributes/PolygonAttribute.md)** *(Pro)* — custom 2D overlays: stop lines, arrows, hatching.
 - **[Generate Attributes](/attributes/GenerateAttributes.md)** — generate geometry along a lane (guardrails, barriers, fences,
   lamp posts, power lines, bridges). A family of related types:
-  - **[Generate (base)](/attributes/GenerateAttributes.md#the-generate-base-class)** — the base class; subclass it in Blueprint to
+  - **[Generate (base)](/attributes/GenerateBlueprintAPI.md)** — the base class; subclass it in Blueprint to
     build your own generator.
   - **[Spline Mesh](/attributes/SplineMeshAttribute.md)** — sweep a static mesh into a spline mesh along the lane.
   - **[Component Template](/attributes/ComponentTemplateAttribute.md)** — repeat a scene component along the lane.
@@ -103,7 +107,7 @@ with no edits to the core plugin (MetaRoad auto-discovers every attribute descri
 
 - **Attribute Profile assets** register and pre-configure a type — see
   [Attribute Profile](/profiles/AttributeProfile.md).
-- **Blueprint** — subclass **[Generate](/attributes/GenerateAttributes.md#the-generate-base-class)** and override
+- **Blueprint** — subclass **[Generate](/attributes/GenerateBlueprintAPI.md)** and override
   `GenerateAsset()` to emit any geometry along a lane (no C++ needed); the mesh pipeline builds it automatically.
 - **C++** — subclass `FRoadLaneAttributeValue` + `URoadLaneAttributeDescriptor` for a brand-new data type with its own
   evaluation and editor drawing. *(To be documented in the upcoming C++ API section.)*

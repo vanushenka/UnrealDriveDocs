@@ -37,7 +37,7 @@ the lane-level connection is wired automatically. See
 [Draw Spline Tool → Start Drawing from Lane Successor Connection](/create-tools/DrawSplineTool.md#start-drawing-from-lane-successor-connection).
 ```
 
-<!-- TODO 🎞 gif: drawing the branch into the through-road actor so its end meets the road -->
+<!-- ![Drawing the branch into the through-road actor so its end meets the road](/img/qs-tj-manual-branch.gif) -->
 
 ## 3. Connect the lanes
 
@@ -46,7 +46,7 @@ endpoint **connections** between the branch and the through road — link the br
 so the lanes are joined (see [Intersections and Junctions](/concepts/Junctions.md)). If you
 drew straight into a lane connection in step 2, this is already done.
 
-<!-- TODO 🎞 gif: connecting the branch endpoint to the through road in Spline Mode -->
+<!-- ![Connecting the branch endpoint to the through road in Spline Mode](/img/qs-tj-manual-connect.gif) -->
 
 ## 4. Check the group
 
@@ -59,15 +59,15 @@ Switch the view toggle to **Preview**. The junction surface now fills in where t
 [Section Mode](/editing/SectionMode.md) and [Width Mode](/editing/WidthMode.md) to tidy the lanes and widths around the
 junction.
 
-<!-- TODO 🎞 gif: Preview showing the filled T-junction surface -->
+<!-- ![Preview showing the filled T-junction surface](/img/qs-tj-manual-preview.gif) -->
 
 ## 6. Bake
 
 Open the **Bake** palette → **Bake Selected** on the junction actor. Because all its splines share one actor and group,
 the T-junction bakes as a single seamless mesh (`<YourActor>_Gen`). See [Baking](/baking/BakeStaticMesh.md).
 
-<!-- TODO 📷 screenshot: the baked seamless T-junction _Gen mesh -->
+<!-- ![The baked seamless T-junction mesh](/img/qs-tj-manual-baked.png) -->
 
-## Next
+## Next steps
 
 - Let MetaRoad do steps 2–3 for you → **[3. Build a T-Junction with the Intersection Tool](/getting-started/QuickStartTJunctionAuto.md)**.

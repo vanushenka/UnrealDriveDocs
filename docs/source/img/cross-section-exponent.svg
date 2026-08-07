@@ -1,0 +1,49 @@
+<svg viewBox="0 0 470 250" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three edge-profile shapes sharing the same Depth and Falloff Width. All start at full depth at the edge of the driveable area and return to the flat surface one Falloff Width inboard. Exponent 2 rises steeply at the edge and flattens gently inboard; Exponent 1 is a straight wedge; Exponent 0.5 stays deep across most of the falloff and rises steeply at its inner end.">
+<style>svg{color:#404040}</style>
+<defs>
+<marker id="xs-ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="currentColor" stroke="none"/></marker>
+<marker id="xs-ah2" markerWidth="8" markerHeight="8" refX="1" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6 Z" fill="currentColor" stroke="none"/></marker>
+</defs>
+
+<!-- the un-lowered surface level -->
+<line x1="100" y1="70" x2="440" y2="70" stroke="currentColor" stroke-opacity="0.35" stroke-dasharray="4 4"/>
+<text x="392" y="62" fill="currentColor" stroke="none" font-family="sans-serif" font-size="9" text-anchor="middle" fill-opacity="0.6">surface stays flat</text>
+
+<!-- vertical guides: the edge, and where the falloff ends -->
+<line x1="110" y1="62" x2="110" y2="182" stroke="currentColor" stroke-opacity="0.35" stroke-dasharray="3 3"/>
+<line x1="350" y1="62" x2="350" y2="182" stroke="currentColor" stroke-opacity="0.35" stroke-dasharray="3 3"/>
+
+<!-- Exponent 0.5 — stays deep, then rises steeply at the inner end of the falloff -->
+<polyline stroke-width="1.6" stroke-dasharray="1.5 3" points="110,170 125,166.8 140,163.5 155,160.1 170,156.6 185,152.9 200,149.1 215,145 230,140.7 245,136.1 260,131.2 275,125.9 290,120 305,113.3 320,105.4 335,95 342.5,87.7 346.3,82.5 349.1,76.3 350,70"/>
+
+<!-- Exponent 1 — a straight wedge -->
+<line x1="110" y1="170" x2="350" y2="70" stroke-width="1.6" stroke-dasharray="6 4"/>
+
+<!-- Exponent 2 (the default) — steep at the edge, gentle inboard -->
+<polyline stroke-width="2" points="110,170 125,157.9 140,146.6 155,136 170,126.3 185,117.3 200,109.1 215,101.6 230,95 245,89.1 260,84.1 275,79.8 290,76.3 305,73.5 320,71.6 335,70.4 350,70"/>
+
+<!-- the flat run inboard of the falloff, shared by all three -->
+<line x1="350" y1="70" x2="430" y2="70" stroke-width="2"/>
+
+<!-- Depth bracket -->
+<line x1="88" y1="70" x2="88" y2="170" stroke="currentColor" stroke-opacity="0.85" marker-start="url(#xs-ah2)" marker-end="url(#xs-ah)"/>
+<text x="82" y="123" fill="currentColor" stroke="none" font-family="sans-serif" font-size="9" text-anchor="end">Depth</text>
+
+<!-- Falloff Width bracket -->
+<line x1="110" y1="190" x2="350" y2="190" stroke="currentColor" stroke-opacity="0.85" marker-start="url(#xs-ah2)" marker-end="url(#xs-ah)"/>
+<text x="230" y="203" fill="currentColor" stroke="none" font-family="sans-serif" font-size="9" text-anchor="middle">Falloff Width</text>
+
+<text x="110" y="217" fill="currentColor" stroke="none" font-family="sans-serif" font-size="9" text-anchor="middle" fill-opacity="0.6">edge of the driveable area</text>
+
+<!-- legend -->
+<g stroke-linecap="butt">
+<line x1="64" y1="236" x2="88" y2="236" stroke-width="2"/>
+<line x1="200" y1="236" x2="224" y2="236" stroke-width="1.6" stroke-dasharray="6 4"/>
+<line x1="300" y1="236" x2="324" y2="236" stroke-width="1.6" stroke-dasharray="1.5 3"/>
+</g>
+<g fill="currentColor" stroke="none" font-family="sans-serif" font-size="9">
+<text x="93" y="239">Exponent 2 (default)</text>
+<text x="229" y="239">Exponent 1</text>
+<text x="329" y="239">Exponent 0.5</text>
+</g>
+</svg>

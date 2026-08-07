@@ -17,3 +17,5 @@ together. Can only be added to **sidewalk lanes** (`FRoadZoneSidewalk`). Keys us
 - [Attribute Mode](/editing/AttributeMode.md) — add and edit this attribute along a lane.
 - [Attributes](/concepts/Attributes.md) — how attributes evaluate and are stored.
 - [Curb Cut Attribute](/attributes/CurbCutAttribute.md) — related sidewalk shaping.
+- [Cross Section Attribute](/attributes/CrossSectionAttribute.md) — shapes the **driving** surface across its
+  width, rather than raising a sidewalk along its length.

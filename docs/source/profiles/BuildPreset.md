@@ -2,9 +2,9 @@
 
 A **Build Preset** is a reusable **Road Build Preset** asset (`URoadBuildPreset`) in the Content Browser. It stores a
 complete snapshot of a road's **mesh-build settings** — the same `UMetaRoadBuildSettings` a road actor carries
-(triangulation parameters plus one property set per mesh layer: surface, decals, sidewalks, curbs, marks, spline
-meshes, …) — together with a **Display Name** and **Description**. You apply it to roads from
-[Preset Mode](/editing/PresetMode.md).
+([triangulation parameters](/baking/Triangulation.md) plus one property set per mesh layer: surface, decals,
+sidewalks, curbs, marks, spline meshes, …) — together with a **Display Name** and **Description**. You apply it to
+roads from [Preset Mode](/editing/PresetMode.md).
 
 ![The Road Build Preset asset editor with its Settings, Display Name, and Description](/img/edit-preset.png)
 
@@ -16,7 +16,7 @@ plugin — you create your own.
 
 | Field | Meaning |
 |-------|---------|
-| **Settings** | The embedded build settings (triangulation + per-layer property sets) — the payload applied to a road |
+| **Settings** | The embedded build settings ([triangulation](/baking/Triangulation.md) + per-layer property sets) — the payload applied to a road. Surface density and the edge profile are part of it, so a preset can carry a whole mesh-resolution policy |
 | **Display Name** | User-facing name shown in the Preset combo |
 | **Description** | Free-text notes about the preset |
 
@@ -25,7 +25,7 @@ plugin — you create your own.
 Right-click in the Content Browser → **Meta Road → Road Build Preset**. The asset is created with the default property
 sets and the blue **Meta Road** asset color; double-click it to fill in the settings, name, and description.
 
-<!-- TODO 📷 screenshot: creating a Road Build Preset from the Content Browser "Meta Road" menu -->
+![Creating a Road Build Preset from the Content Browser Meta Road menu](/img/create-build-preset.png)
 
 You can also **capture a preset from a road** you have already set up — from the
 [Preset panel](/editing/PresetMode.md#the-preset-panel), choose **Save As New** (a new asset) or **Save to Selected**
@@ -46,4 +46,5 @@ change.
 ## See also
 
 - [Preset Mode](/editing/PresetMode.md) — apply and stage build settings on road actors with a live preview.
+- [Triangulation](/baking/Triangulation.md) — what the settings a preset carries actually do.
 - [Baking](/baking/BakeStaticMesh.md) — the build settings a preset carries are what the bake reads.

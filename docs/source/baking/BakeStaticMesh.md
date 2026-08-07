@@ -22,7 +22,6 @@ preview of exactly what will be generated — nothing is written to disk until y
    Open Log button). When it finishes, a generated actor named `<YourActor>_Gen` is created, or the mesh is written in
    place, depending on the [generated-asset settings](#generated-asset-settings).
 
-![The Bake tile panel with its Bake Selected / Bake All / Clear actions and settings](/img/bake-props.png)
 
 For example, baking the actor *RoadActor11* produces *RoadActor11_Gen*:
 
@@ -45,9 +44,11 @@ Each bake generates assets for these layers:
 
 ## Where the settings live
 
-- **Per-actor build settings** (`UMetaRoadBuildSettings`) — which layers to build, their materials, and triangulation
-  parameters. Edit them per road in the **[Preset](/editing/PresetMode.md)** sub-mode (with a live preview) or in the
-  actor's Details. Baking always uses each actor's committed build settings.
+- **Per-actor build settings** (`UMetaRoadBuildSettings`) — which layers to build, their materials, and
+  [triangulation parameters](/baking/Triangulation.md). Edit them per road in the
+  **[Preset](/editing/PresetMode.md)** sub-mode (with a live preview), or from the actor's Details panel via
+  **Meta Road → Build Settings → Edit...**, which opens them in their own window. Baking always uses each
+  actor's committed build settings.
 - **Generated-asset settings** (`UMetaRoadBakeSettings`) — where the assets are written and how (see below), edited in
   the Bake panel.
 
@@ -58,7 +59,7 @@ generated mesh assets are written, **how** they are saved, and **what happens to
 re-bake. These settings live in your **per-project editor preferences** — a single shared instance, not stored per road
 and not saved in the level — so they apply to every bake until you change them.
 
-<!-- TODO 📷 screenshot: the Bake panel's "Generated Assets" settings category -->
+![The Generated Assets settings category in the Bake panel](/img/bake-props.png)
 
 #### Where assets are saved — output location
 
@@ -121,137 +122,10 @@ independently. **Keep an intersection's splines in one actor and SubGroup**, and
 junction is its own unit. This rule is explained in full — with examples — in
 [The MetaRoad Workflow → Spline grouping](/concepts/Workflow.md#bake-spline-grouping).
 
-## Mesh Lane Materials
-
-All road lanes have a `Lane Type`:
-
-![The Lane Type property shown on a selected road lane](/img/lane-type.png)
-
-You can add new `Lane Type`s in **Project Settings**. Each `Lane Type` has a `Default Material`:
-
-![The Default Material assigned to a Lane Type in Project Settings](/img/lane-type-material.png)
-
-For a selected road lane you can override the default lane material:
-
-![Overriding the default lane material on a selected road lane](/img/lane-type-material-override.png)
-
-You can also override the `Lane Type` material from the road's **build settings**:
-
-<!-- TODO 📷 screenshot: material override in the road's Build Settings (Preset panel) -->
-
-So the road-lane material is resolved in this priority order:
-
-1. Default material from the `Lane Type` description
-2. Override material from the road's **build settings**
-3. Override material from the selected road-lane menu
-
-## Mesh UVs
-
-Road-surface generation produces three texture-coordinate channels:
-
-- **UV0** — a separate track per lane. Useful for road ruts or tram tracks.
-- **UV1** — a track for the left and right sides of the road. Useful for road patches.
-- **UV2** — a **uniform-density** channel spanning the whole surface. Useful for asphalt, wear and detail textures
-  that must keep the same real-world size everywhere.
-
-![The UV0 per-lane and UV1 left/right texture-coordinate channels on the road surface](/img/TexCoords.png)
-
-To display the debugging materials shown above, choose the **UV0 Debug** or **UV1 Debug** preset:
-
-![The UV0 Debug and UV1 Debug preset materials visualizing the texture-coordinate channels](/img/debug-tex-coords.png)
-
-(UV0 and UV1 are normalized per lane / per road, so their density follows the road's width — that is the point of
-those channels. UV2 is the one that keeps a constant real-world texel size.)
-
-### UV density
-
-**Default UV Density** (in the triangulation settings, part of the per-actor build settings) sets the texture density
-of the whole generated surface in **UV units per centimetre**. The default `0.001` means **one texture tile per
-1000 cm**; doubling it to `0.002` halves every tile everywhere.
-
-It drives:
-
-- **UV2** of the road lanes,
-- **all UV channels** of the filled shapes — [closed-loop fills](/concepts/ClosedLoopSpline.md),
-  [crosswalks](/create-tools/DrawCrosswalkTool.md), [chevrons and island fills](/create-tools/MarkSplineTool.md),
-  sidewalk-spline surfaces and [polygon-profile](/profiles/PolygonProfile.md) shapes,
-- the along-the-stripe coordinate of road **markings**.
-
-Curbs and lofted cross-sections are not affected — they are separate meshes with their own scales.
-
-#### Per-zone overrides
-
-Default UV Density is the road-wide fallback. Two levels can override it, checked in this order — the first one set
-wins:
-
-1. **A single surface** — `Override UV Density` on its [Road Zone](/concepts/RoadZones.md#road-zones-per-surface)
-   (one lane, one fill).
-2. **A whole zone type** — `Override UV Density` / `UV Density` on the
-   [Zone Type](/concepts/RoadZones.md#zone-types-project-wide) in Project Settings, e.g. to give every sidewalk a
-   finer paving texture than the asphalt.
-3. Otherwise **Default UV Density**.
-
-Both are **absolute** densities (UV per cm) that *replace* the default — they do not scale it. A shape's own
-`Texture > Scale` still multiplies on top of whichever value wins.
-
-```{note}
-Editing a Zone Type in Project Settings does **not** rebuild the road mesh — press **Update** in the Meta Road panel
-(or re-bake) to see it. The same is true of the Zone Type's material and priority settings.
-```
-
-Note this deliberately breaks the uniform density *within* one mesh: `Driving` and `Marking` surfaces both bake into
-`RoadSurface` and share its UV space, so giving them different densities cuts the tiling at their shared edge. That is
-usually what you want (markings are authored at a different scale), but it is why the density is one number by
-default.
-
-### Per-shape Texture group
-
-Every shape that produces a filled surface — crosswalk, chevron, closed-loop fill, sidewalk-spline surface,
-polygon-profile shape — carries the same **Texture** group in its Details panel:
-
-| Property | Default | Meaning |
-|----------|---------|---------|
-| `Angle` | 0° | Rotation of the texture about the shape's centre, in degrees |
-| `Scale` | 1.0 | **Multiplier** on the Default UV Density above: `1.0` = the same density as the road surface, `2.0` = twice as many tiles on this shape only |
-| `Shift` | (0, 0) | Offset of the texture in **world centimetres**, along world X/Y |
-
-`Shift` moves the texture across the ground by exactly that many centimetres, so it stays put when you later change
-the Default UV Density or the `Scale` — use it to line a pattern up with a physical feature. It is applied along the
-world axes, independent of `Angle`.
-
-Each shape keeps its own texture origin (its centre), so neighbouring shapes tile independently — two crosswalk
-stripes do not share a continuous texture field unless you shift them to match.
-
-```{warning}
-**Changed in 3.1.** Filled shapes used to normalize their texture to the shape's own bounding box, so `Texture Scale
-= 1.0` meant "exactly one tile across this shape" whatever its size — a small crosswalk stripe and a large island
-carried the texture at completely different scales, and rotating a shape changed its texture size. They now use the
-global density instead, so **existing crosswalks, chevrons, islands, sidewalk fills and polygon-profile shapes change
-appearance** and may need their `Texture > Scale` re-tuned. Roughly, the new texture is `bbox_cm × Default UV Density`
-times the old one — shapes smaller than 1000 cm get a larger texture, bigger ones a smaller texture.
-
-The former separate `Texture Angle` / `Texture Scale` properties were also merged into the **Texture** group and
-renamed, without redirects — **their saved values reset to the defaults** on the first load.
-```
-
-## Mesh Vertex Color
-
-For road-surface materials we recommend using the **Vertex Color** attribute to control where textures on the UV0/UV1
-channels appear (puddles, ruts, patches). This removes artifacts at seams where several `URoadSplineComponent`s meet:
-
-![Vertex color removing texture artifacts at seams where road spline components meet](/img/VertexColor2.gif)
-
-Suggested parameters for the Drive Surface vertex color:
-
-![Suggested vertex color parameters for the Drive Surface material](/img/VertexColor3.png)
-
-They set the vertex color at the center and edges of the mesh, and where lanes intersect:
-
-![Vertex colors applied at the mesh center, edges, and lane intersections](/img/VertexColor.png)
-
-For complex intersections you may still need to paint vertices manually in **Mesh Paint** mode.
-
 ## See also
 
+- [Texturing](/baking/Texturing.md) — lane materials, the UV channels, texture density and vertex color.
+- [Triangulation](/baking/Triangulation.md) — the shared build settings every layer reads: spline sampling,
+  surface density, the edge profile, overlap handling and smoothing.
 - [FBX Export](/baking/FbxExport.md) — export the road meshes to `.fbx` files.
 - [Preset Mode](/editing/PresetMode.md) — stage build settings against the live preview.

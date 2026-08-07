@@ -22,7 +22,7 @@ All road authoring happens in one editor mode, **Meta Road** (see
 While in Create/Edit you work in the **Schematic** view; flip to **Preview** any time for a live, non-destructive preview
 of the baked mesh — nothing is written to disk until you Bake.
 
-<!-- TODO 🎞 gif: toggling the view between Schematic and Preview on the same road -->
+![Toggling one road between the Schematic lane graph and the live Preview mesh](/img/preview-schematic.gif)  
 
 ## Create: roads are connected splines
 
@@ -50,7 +50,7 @@ Three tools create road splines:
 The Pro tools are just faster ways to produce ordinary splines — there is no special "intersection" or "roundabout"
 object underneath.
 
-<!-- TODO 🖼 illustration: real road elements (straight road, T-junction, roundabout, overpass) each shown as a set of connected/highlighted splines — a hand-drawn concept figure -->
+![A straight road, a T-junction, a roundabout and an overpass, each built from ordinary connected splines](/img/road-elements.png)  
 
 ## Edit: the road data model
 
@@ -120,7 +120,7 @@ types plug into the pipeline automatically. See [Attributes](/concepts/Attribute
 attributes — see [Profiles](/profiles/Profiles.md). **Presets** are saved **build settings** that control how a road
 bakes — see [Preset Mode](/editing/PresetMode.md).
 
-## Where to go next
+## See also
 
 - New here? Do the [Quick Start](/getting-started/QuickStart.md).
 - The data model in depth: [The Road Model](/concepts/RoadModel.md).

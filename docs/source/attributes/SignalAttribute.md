@@ -7,11 +7,11 @@ controls*; the actual light sequencing (red/green phases) lives on a
 
 ```{note}
 The lane itself gives the signal its meaning: placing a key on a lane defines the controlled lane **and** the
-traffic direction — no extra "orientation" or "validity" fields are needed. The centre line cannot carry
+traffic direction — no extra "orientation" or "validity" fields are needed. The center line cannot carry
 signals; add them to real lanes only.
 ```
 
-<!-- TODO 📷 screenshot: a junction with several signal keys — poles with colored heads and association arrows along the lanes → /img/signal-attribute.png -->
+![A junction with signal keys on several lanes, drawn as poles with colored heads and guide lines along the lanes](/img/signal-attribute.png)  
 
 ## Properties
 
@@ -37,7 +37,7 @@ traffic direction. On reverse-direction lanes the segment correctly runs against
 Typical placement is on the **approach lane right before the junction** — like a real stop line — one key per
 controlled lane.
 
-<!-- TODO 🎞 gif: adding a Signal key to a lane in Attribute mode; the guide arrow appears along the lane → /img/signal-add.gif -->
+![Adding a Signal key on the approach lane before a junction, with its guide line appearing along the lane](/img/signal-add.gif)  
 
 ## Linking to a controller
 
@@ -52,7 +52,7 @@ menu section:
 Once linked, the head and the guide line take the **color of the signal's state in the previewed phase**
 (red / red-yellow / green / yellow / gray for Off).
 
-<!-- TODO 🎞 gif: right-clicking a signal key → Link to controller → the head turns to the phase state color → /img/signal-link.gif -->
+![Linking a signal to a controller, after which the head takes the color of its state in the previewed phase](/img/signal-link.gif)  
 
 ## See also
 

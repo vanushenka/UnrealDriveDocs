@@ -66,11 +66,13 @@ Welcome to MetaRoad documentation!
    attributes/SignalAttribute
    attributes/RoadMarkAttribute
    attributes/RoadZoneAttribute
+   attributes/CrossSectionAttribute
    attributes/CurbCutAttribute
    attributes/LandscapeAttribute
    attributes/SidewalkHeightAttribute
    attributes/PolygonAttribute
    attributes/GenerateAttributes
+   attributes/GenerateBlueprintAPI
    attributes/SplineMeshAttribute
    attributes/ComponentTemplateAttribute
    attributes/ActorTemplateAttribute
@@ -87,6 +89,8 @@ Welcome to MetaRoad documentation!
    :caption: Baking & Export
 
    baking/BakeStaticMesh
+   baking/Triangulation
+   baking/Texturing
    baking/FbxExport
 
 .. toctree::
@@ -106,6 +110,7 @@ Welcome to MetaRoad documentation!
    :caption: Visibility & Debug
 
    misc/Visibility
+   misc/Performance
 
 .. toctree::
    :maxdepth: 2
@@ -113,6 +118,7 @@ Welcome to MetaRoad documentation!
 
    integrations/Landscape
    integrations/ZoneGraph
+   integrations/PCG
    integrations/TileWindow
    integrations/CitySamplePack
 
